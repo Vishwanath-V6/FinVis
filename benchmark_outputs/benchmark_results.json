@@ -1,0 +1,4248 @@
+{
+  "dataset_name": "Tata Motors FY25 Financial RAG Benchmark — Hard Set",
+  "pdf": "C:\\Users\\user\\Downloads\\tata-motors-IAR-2024-25.pdf",
+  "question_count": 128,
+  "answerable_count": 104,
+  "unanswerable_count": 24,
+  "chunk_count": 2638,
+  "table_chunk_count": 1507,
+  "printed_page_physical_pages": [
+    154
+  ],
+  "ground_truth_chunk_mapping": [
+    {
+      "question_id": "TATA001",
+      "answerable": true,
+      "relevant_chunk_ids": [
+        239
+      ]
+    },
+    {
+      "question_id": "TATA002",
+      "answerable": true,
+      "relevant_chunk_ids": [
+        239
+      ]
+    },
+    {
+      "question_id": "TATA003",
+      "answerable": true,
+      "relevant_chunk_ids": [
+        239
+      ]
+    },
+    {
+      "question_id": "TATA004",
+      "answerable": true,
+      "relevant_chunk_ids": [
+        239
+      ]
+    },
+    {
+      "question_id": "TATA005",
+      "answerable": true,
+      "relevant_chunk_ids": [
+        240
+      ]
+    },
+    {
+      "question_id": "TATA006",
+      "answerable": true,
+      "relevant_chunk_ids": [
+        240
+      ]
+    },
+    {
+      "question_id": "TATA007",
+      "answerable": true,
+      "relevant_chunk_ids": [
+        240
+      ]
+    },
+    {
+      "question_id": "TATA008",
+      "answerable": true,
+      "relevant_chunk_ids": [
+        240
+      ]
+    },
+    {
+      "question_id": "TATA009",
+      "answerable": true,
+      "relevant_chunk_ids": [
+        241
+      ]
+    },
+    {
+      "question_id": "TATA010",
+      "answerable": true,
+      "relevant_chunk_ids": [
+        241
+      ]
+    },
+    {
+      "question_id": "TATA011",
+      "answerable": true,
+      "relevant_chunk_ids": [
+        241
+      ]
+    },
+    {
+      "question_id": "TATA012",
+      "answerable": true,
+      "relevant_chunk_ids": [
+        241
+      ]
+    },
+    {
+      "question_id": "TATA013",
+      "answerable": true,
+      "relevant_chunk_ids": [
+        242
+      ]
+    },
+    {
+      "question_id": "TATA014",
+      "answerable": true,
+      "relevant_chunk_ids": [
+        242
+      ]
+    },
+    {
+      "question_id": "TATA015",
+      "answerable": true,
+      "relevant_chunk_ids": [
+        242
+      ]
+    },
+    {
+      "question_id": "TATA016",
+      "answerable": true,
+      "relevant_chunk_ids": [
+        242
+      ]
+    },
+    {
+      "question_id": "TATA017",
+      "answerable": true,
+      "relevant_chunk_ids": [
+        243
+      ]
+    },
+    {
+      "question_id": "TATA018",
+      "answerable": true,
+      "relevant_chunk_ids": [
+        243
+      ]
+    },
+    {
+      "question_id": "TATA019",
+      "answerable": true,
+      "relevant_chunk_ids": [
+        243
+      ]
+    },
+    {
+      "question_id": "TATA020",
+      "answerable": true,
+      "relevant_chunk_ids": [
+        243
+      ]
+    },
+    {
+      "question_id": "TATA021",
+      "answerable": true,
+      "relevant_chunk_ids": [
+        244
+      ]
+    },
+    {
+      "question_id": "TATA022",
+      "answerable": true,
+      "relevant_chunk_ids": [
+        244
+      ]
+    },
+    {
+      "question_id": "TATA023",
+      "answerable": true,
+      "relevant_chunk_ids": [
+        245,
+        2222
+      ]
+    },
+    {
+      "question_id": "TATA024",
+      "answerable": true,
+      "relevant_chunk_ids": [
+        245
+      ]
+    },
+    {
+      "question_id": "TATA025",
+      "answerable": true,
+      "relevant_chunk_ids": [
+        245
+      ]
+    },
+    {
+      "question_id": "TATA026",
+      "answerable": true,
+      "relevant_chunk_ids": [
+        245
+      ]
+    },
+    {
+      "question_id": "TATA027",
+      "answerable": true,
+      "relevant_chunk_ids": [
+        246
+      ]
+    },
+    {
+      "question_id": "TATA028",
+      "answerable": true,
+      "relevant_chunk_ids": [
+        246
+      ]
+    },
+    {
+      "question_id": "TATA029",
+      "answerable": true,
+      "relevant_chunk_ids": [
+        246
+      ]
+    },
+    {
+      "question_id": "TATA030",
+      "answerable": true,
+      "relevant_chunk_ids": [
+        246
+      ]
+    },
+    {
+      "question_id": "TATA031",
+      "answerable": true,
+      "relevant_chunk_ids": [
+        247
+      ]
+    },
+    {
+      "question_id": "TATA032",
+      "answerable": true,
+      "relevant_chunk_ids": [
+        247
+      ]
+    },
+    {
+      "question_id": "TATA033",
+      "answerable": true,
+      "relevant_chunk_ids": [
+        247
+      ]
+    },
+    {
+      "question_id": "TATA034",
+      "answerable": true,
+      "relevant_chunk_ids": [
+        247
+      ]
+    },
+    {
+      "question_id": "TATA035",
+      "answerable": true,
+      "relevant_chunk_ids": [
+        248,
+        2018,
+        2088
+      ]
+    },
+    {
+      "question_id": "TATA036",
+      "answerable": true,
+      "relevant_chunk_ids": [
+        248
+      ]
+    },
+    {
+      "question_id": "TATA037",
+      "answerable": true,
+      "relevant_chunk_ids": [
+        248
+      ]
+    },
+    {
+      "question_id": "TATA038",
+      "answerable": true,
+      "relevant_chunk_ids": [
+        248,
+        2019,
+        2026
+      ]
+    },
+    {
+      "question_id": "TATA039",
+      "answerable": true,
+      "relevant_chunk_ids": [
+        249
+      ]
+    },
+    {
+      "question_id": "TATA040",
+      "answerable": true,
+      "relevant_chunk_ids": [
+        249
+      ]
+    },
+    {
+      "question_id": "TATA041",
+      "answerable": true,
+      "relevant_chunk_ids": [
+        249
+      ]
+    },
+    {
+      "question_id": "TATA042",
+      "answerable": true,
+      "relevant_chunk_ids": [
+        249
+      ]
+    },
+    {
+      "question_id": "TATA043",
+      "answerable": true,
+      "relevant_chunk_ids": [
+        250,
+        2252
+      ]
+    },
+    {
+      "question_id": "TATA044",
+      "answerable": true,
+      "relevant_chunk_ids": [
+        250
+      ]
+    },
+    {
+      "question_id": "TATA045",
+      "answerable": true,
+      "relevant_chunk_ids": [
+        250,
+        1339
+      ]
+    },
+    {
+      "question_id": "TATA046",
+      "answerable": true,
+      "relevant_chunk_ids": [
+        250
+      ]
+    },
+    {
+      "question_id": "TATA047",
+      "answerable": true,
+      "relevant_chunk_ids": [
+        251
+      ]
+    },
+    {
+      "question_id": "TATA048",
+      "answerable": true,
+      "relevant_chunk_ids": [
+        251
+      ]
+    },
+    {
+      "question_id": "TATA049",
+      "answerable": true,
+      "relevant_chunk_ids": [
+        251
+      ]
+    },
+    {
+      "question_id": "TATA050",
+      "answerable": true,
+      "relevant_chunk_ids": [
+        251
+      ]
+    },
+    {
+      "question_id": "TATA051",
+      "answerable": true,
+      "relevant_chunk_ids": [
+        252
+      ]
+    },
+    {
+      "question_id": "TATA052",
+      "answerable": true,
+      "relevant_chunk_ids": [
+        252
+      ]
+    },
+    {
+      "question_id": "TATA053",
+      "answerable": true,
+      "relevant_chunk_ids": [
+        252
+      ]
+    },
+    {
+      "question_id": "TATA054",
+      "answerable": true,
+      "relevant_chunk_ids": [
+        252
+      ]
+    },
+    {
+      "question_id": "TATA055",
+      "answerable": true,
+      "relevant_chunk_ids": [
+        253,
+        1904,
+        1905
+      ]
+    },
+    {
+      "question_id": "TATA056",
+      "answerable": true,
+      "relevant_chunk_ids": [
+        253
+      ]
+    },
+    {
+      "question_id": "TATA057",
+      "answerable": true,
+      "relevant_chunk_ids": [
+        253
+      ]
+    },
+    {
+      "question_id": "TATA058",
+      "answerable": true,
+      "relevant_chunk_ids": [
+        253
+      ]
+    },
+    {
+      "question_id": "TATA059",
+      "answerable": true,
+      "relevant_chunk_ids": [
+        254
+      ]
+    },
+    {
+      "question_id": "TATA060",
+      "answerable": true,
+      "relevant_chunk_ids": [
+        254
+      ]
+    },
+    {
+      "question_id": "TATA061",
+      "answerable": true,
+      "relevant_chunk_ids": [
+        255,
+        1904,
+        1905
+      ]
+    },
+    {
+      "question_id": "TATA062",
+      "answerable": true,
+      "relevant_chunk_ids": [
+        255
+      ]
+    },
+    {
+      "question_id": "TATA063",
+      "answerable": true,
+      "relevant_chunk_ids": [
+        255,
+        702,
+        972,
+        973
+      ]
+    },
+    {
+      "question_id": "TATA064",
+      "answerable": true,
+      "relevant_chunk_ids": [
+        255,
+        702
+      ]
+    },
+    {
+      "question_id": "TATA065",
+      "answerable": true,
+      "relevant_chunk_ids": [
+        256
+      ]
+    },
+    {
+      "question_id": "TATA066",
+      "answerable": true,
+      "relevant_chunk_ids": [
+        256
+      ]
+    },
+    {
+      "question_id": "TATA067",
+      "answerable": true,
+      "relevant_chunk_ids": [
+        256
+      ]
+    },
+    {
+      "question_id": "TATA068",
+      "answerable": true,
+      "relevant_chunk_ids": [
+        256
+      ]
+    },
+    {
+      "question_id": "TATA069",
+      "answerable": true,
+      "relevant_chunk_ids": [
+        257,
+        1904,
+        1905
+      ]
+    },
+    {
+      "question_id": "TATA070",
+      "answerable": true,
+      "relevant_chunk_ids": [
+        257
+      ]
+    },
+    {
+      "question_id": "TATA071",
+      "answerable": true,
+      "relevant_chunk_ids": [
+        257,
+        962,
+        972,
+        973,
+        1765
+      ]
+    },
+    {
+      "question_id": "TATA072",
+      "answerable": true,
+      "relevant_chunk_ids": [
+        257
+      ]
+    },
+    {
+      "question_id": "TATA073",
+      "answerable": true,
+      "relevant_chunk_ids": [
+        239
+      ]
+    },
+    {
+      "question_id": "TATA074",
+      "answerable": true,
+      "relevant_chunk_ids": [
+        239
+      ]
+    },
+    {
+      "question_id": "TATA075",
+      "answerable": true,
+      "relevant_chunk_ids": [
+        240
+      ]
+    },
+    {
+      "question_id": "TATA076",
+      "answerable": true,
+      "relevant_chunk_ids": [
+        240
+      ]
+    },
+    {
+      "question_id": "TATA077",
+      "answerable": true,
+      "relevant_chunk_ids": [
+        241
+      ]
+    },
+    {
+      "question_id": "TATA078",
+      "answerable": true,
+      "relevant_chunk_ids": [
+        241
+      ]
+    },
+    {
+      "question_id": "TATA079",
+      "answerable": true,
+      "relevant_chunk_ids": [
+        242
+      ]
+    },
+    {
+      "question_id": "TATA080",
+      "answerable": true,
+      "relevant_chunk_ids": [
+        242
+      ]
+    },
+    {
+      "question_id": "TATA081",
+      "answerable": true,
+      "relevant_chunk_ids": [
+        245,
+        2222
+      ]
+    },
+    {
+      "question_id": "TATA082",
+      "answerable": true,
+      "relevant_chunk_ids": [
+        245
+      ]
+    },
+    {
+      "question_id": "TATA083",
+      "answerable": true,
+      "relevant_chunk_ids": [
+        249
+      ]
+    },
+    {
+      "question_id": "TATA084",
+      "answerable": true,
+      "relevant_chunk_ids": [
+        249
+      ]
+    },
+    {
+      "question_id": "TATA085",
+      "answerable": true,
+      "relevant_chunk_ids": [
+        251
+      ]
+    },
+    {
+      "question_id": "TATA086",
+      "answerable": true,
+      "relevant_chunk_ids": [
+        251
+      ]
+    },
+    {
+      "question_id": "TATA087",
+      "answerable": true,
+      "relevant_chunk_ids": [
+        255,
+        1904,
+        1905
+      ]
+    },
+    {
+      "question_id": "TATA088",
+      "answerable": true,
+      "relevant_chunk_ids": [
+        255,
+        702,
+        972,
+        973
+      ]
+    },
+    {
+      "question_id": "TATA089",
+      "answerable": true,
+      "relevant_chunk_ids": [
+        257,
+        1904,
+        1905
+      ]
+    },
+    {
+      "question_id": "TATA090",
+      "answerable": true,
+      "relevant_chunk_ids": [
+        257,
+        962,
+        972,
+        973,
+        1765
+      ]
+    },
+    {
+      "question_id": "TATA091",
+      "answerable": true,
+      "relevant_chunk_ids": [
+        239
+      ]
+    },
+    {
+      "question_id": "TATA092",
+      "answerable": true,
+      "relevant_chunk_ids": [
+        239
+      ]
+    },
+    {
+      "question_id": "TATA093",
+      "answerable": true,
+      "relevant_chunk_ids": [
+        241
+      ]
+    },
+    {
+      "question_id": "TATA094",
+      "answerable": true,
+      "relevant_chunk_ids": [
+        251
+      ]
+    },
+    {
+      "question_id": "TATA095",
+      "answerable": true,
+      "relevant_chunk_ids": [
+        245
+      ]
+    },
+    {
+      "question_id": "TATA096",
+      "answerable": true,
+      "relevant_chunk_ids": [
+        255,
+        702,
+        972,
+        973
+      ]
+    },
+    {
+      "question_id": "TATA097",
+      "answerable": true,
+      "relevant_chunk_ids": [
+        239
+      ]
+    },
+    {
+      "question_id": "TATA098",
+      "answerable": true,
+      "relevant_chunk_ids": [
+        239
+      ]
+    },
+    {
+      "question_id": "TATA099",
+      "answerable": true,
+      "relevant_chunk_ids": [
+        240
+      ]
+    },
+    {
+      "question_id": "TATA100",
+      "answerable": true,
+      "relevant_chunk_ids": [
+        240
+      ]
+    },
+    {
+      "question_id": "TATA101",
+      "answerable": true,
+      "relevant_chunk_ids": [
+        239,
+        241
+      ]
+    },
+    {
+      "question_id": "TATA102",
+      "answerable": true,
+      "relevant_chunk_ids": [
+        239,
+        241
+      ]
+    },
+    {
+      "question_id": "TATA103",
+      "answerable": true,
+      "relevant_chunk_ids": [
+        239,
+        241
+      ]
+    },
+    {
+      "question_id": "TATA104",
+      "answerable": true,
+      "relevant_chunk_ids": [
+        239,
+        241
+      ]
+    },
+    {
+      "question_id": "TATA105",
+      "answerable": false,
+      "relevant_chunk_ids": []
+    },
+    {
+      "question_id": "TATA106",
+      "answerable": false,
+      "relevant_chunk_ids": []
+    },
+    {
+      "question_id": "TATA107",
+      "answerable": false,
+      "relevant_chunk_ids": []
+    },
+    {
+      "question_id": "TATA108",
+      "answerable": false,
+      "relevant_chunk_ids": []
+    },
+    {
+      "question_id": "TATA109",
+      "answerable": false,
+      "relevant_chunk_ids": []
+    },
+    {
+      "question_id": "TATA110",
+      "answerable": false,
+      "relevant_chunk_ids": []
+    },
+    {
+      "question_id": "TATA111",
+      "answerable": false,
+      "relevant_chunk_ids": []
+    },
+    {
+      "question_id": "TATA112",
+      "answerable": false,
+      "relevant_chunk_ids": []
+    },
+    {
+      "question_id": "TATA113",
+      "answerable": false,
+      "relevant_chunk_ids": []
+    },
+    {
+      "question_id": "TATA114",
+      "answerable": false,
+      "relevant_chunk_ids": []
+    },
+    {
+      "question_id": "TATA115",
+      "answerable": false,
+      "relevant_chunk_ids": []
+    },
+    {
+      "question_id": "TATA116",
+      "answerable": false,
+      "relevant_chunk_ids": []
+    },
+    {
+      "question_id": "TATA117",
+      "answerable": false,
+      "relevant_chunk_ids": []
+    },
+    {
+      "question_id": "TATA118",
+      "answerable": false,
+      "relevant_chunk_ids": []
+    },
+    {
+      "question_id": "TATA119",
+      "answerable": false,
+      "relevant_chunk_ids": []
+    },
+    {
+      "question_id": "TATA120",
+      "answerable": false,
+      "relevant_chunk_ids": []
+    },
+    {
+      "question_id": "TATA121",
+      "answerable": false,
+      "relevant_chunk_ids": []
+    },
+    {
+      "question_id": "TATA122",
+      "answerable": false,
+      "relevant_chunk_ids": []
+    },
+    {
+      "question_id": "TATA123",
+      "answerable": false,
+      "relevant_chunk_ids": []
+    },
+    {
+      "question_id": "TATA124",
+      "answerable": false,
+      "relevant_chunk_ids": []
+    },
+    {
+      "question_id": "TATA125",
+      "answerable": false,
+      "relevant_chunk_ids": []
+    },
+    {
+      "question_id": "TATA126",
+      "answerable": false,
+      "relevant_chunk_ids": []
+    },
+    {
+      "question_id": "TATA127",
+      "answerable": false,
+      "relevant_chunk_ids": []
+    },
+    {
+      "question_id": "TATA128",
+      "answerable": false,
+      "relevant_chunk_ids": []
+    }
+  ],
+  "systems": {
+    "minilm": {
+      "retrieval": {
+        "denominator": 104,
+        "hit_at_5": {
+          "count": 79,
+          "percent": 75.96153846153847
+        },
+        "mrr": 0.6955128205128206
+      },
+      "answer_correctness": {
+        "count": 43,
+        "denominator": 104,
+        "percent": 41.34615384615385
+      },
+      "citation_accuracy": {
+        "count": 76,
+        "denominator": 104,
+        "percent": 73.07692307692308
+      },
+      "abstention_accuracy": {
+        "count": 23,
+        "denominator": 24,
+        "percent": 95.83333333333333
+      },
+      "median_cpu_inference_latency_ms": 31.25,
+      "error_counts": {
+        "retrieval_miss": 25,
+        "incorrect_answer": 61,
+        "wrong_citation": 0,
+        "abstention_failure": 50
+      },
+      "details": [
+        {
+          "question_id": "TATA001",
+          "answer": null,
+          "reference_answer": "₹69,419 crore",
+          "answer_correct": false,
+          "citation_correct": false,
+          "abstention_correct": false,
+          "returned_chunk_ids": [],
+          "errors": [
+            "retrieval_miss",
+            "incorrect_answer",
+            "abstention_failure"
+          ]
+        },
+        {
+          "question_id": "TATA002",
+          "answer": null,
+          "reference_answer": "₹73,303 crore",
+          "answer_correct": false,
+          "citation_correct": false,
+          "abstention_correct": false,
+          "returned_chunk_ids": [],
+          "errors": [
+            "retrieval_miss",
+            "incorrect_answer",
+            "abstention_failure"
+          ]
+        },
+        {
+          "question_id": "TATA003",
+          "answer": null,
+          "reference_answer": "₹439,695 crore",
+          "answer_correct": false,
+          "citation_correct": false,
+          "abstention_correct": false,
+          "returned_chunk_ids": [],
+          "errors": [
+            "retrieval_miss",
+            "incorrect_answer",
+            "abstention_failure"
+          ]
+        },
+        {
+          "question_id": "TATA004",
+          "answer": null,
+          "reference_answer": "₹434,016 crore",
+          "answer_correct": false,
+          "citation_correct": false,
+          "abstention_correct": false,
+          "returned_chunk_ids": [],
+          "errors": [
+            "retrieval_miss",
+            "incorrect_answer",
+            "abstention_failure"
+          ]
+        },
+        {
+          "question_id": "TATA005",
+          "answer": "60,304 ₹ crore",
+          "reference_answer": "₹60,304 crore",
+          "answer_correct": true,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            240
+          ],
+          "errors": []
+        },
+        {
+          "question_id": "TATA006",
+          "answer": "64,328 ₹ crore",
+          "reference_answer": "₹64,328 crore",
+          "answer_correct": true,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            240
+          ],
+          "errors": []
+        },
+        {
+          "question_id": "TATA007",
+          "answer": null,
+          "reference_answer": "₹373,847 crore",
+          "answer_correct": false,
+          "citation_correct": false,
+          "abstention_correct": false,
+          "returned_chunk_ids": [],
+          "errors": [
+            "retrieval_miss",
+            "incorrect_answer",
+            "abstention_failure"
+          ]
+        },
+        {
+          "question_id": "TATA008",
+          "answer": null,
+          "reference_answer": "₹365,185 crore",
+          "answer_correct": false,
+          "citation_correct": false,
+          "abstention_correct": false,
+          "returned_chunk_ids": [],
+          "errors": [
+            "retrieval_miss",
+            "incorrect_answer",
+            "abstention_failure"
+          ]
+        },
+        {
+          "question_id": "TATA009",
+          "answer": null,
+          "reference_answer": "₹9,115 crore",
+          "answer_correct": false,
+          "citation_correct": false,
+          "abstention_correct": false,
+          "returned_chunk_ids": [],
+          "errors": [
+            "retrieval_miss",
+            "incorrect_answer",
+            "abstention_failure"
+          ]
+        },
+        {
+          "question_id": "TATA010",
+          "answer": "8,975 ₹ crore",
+          "reference_answer": "₹8,975 crore",
+          "answer_correct": true,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            241
+          ],
+          "errors": []
+        },
+        {
+          "question_id": "TATA011",
+          "answer": "65,848 ₹ crore",
+          "reference_answer": "₹65,848 crore",
+          "answer_correct": true,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            241
+          ],
+          "errors": []
+        },
+        {
+          "question_id": "TATA012",
+          "answer": "68,831 ₹ crore",
+          "reference_answer": "₹68,831 crore",
+          "answer_correct": true,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            241
+          ],
+          "errors": []
+        },
+        {
+          "question_id": "TATA013",
+          "answer": null,
+          "reference_answer": "₹2,796 crore",
+          "answer_correct": false,
+          "citation_correct": false,
+          "abstention_correct": false,
+          "returned_chunk_ids": [],
+          "errors": [
+            "retrieval_miss",
+            "incorrect_answer",
+            "abstention_failure"
+          ]
+        },
+        {
+          "question_id": "TATA014",
+          "answer": null,
+          "reference_answer": "₹1,150 crore",
+          "answer_correct": false,
+          "citation_correct": false,
+          "abstention_correct": false,
+          "returned_chunk_ids": [],
+          "errors": [
+            "retrieval_miss",
+            "incorrect_answer",
+            "abstention_failure"
+          ]
+        },
+        {
+          "question_id": "TATA015",
+          "answer": null,
+          "reference_answer": "₹6,244 crore",
+          "answer_correct": false,
+          "citation_correct": false,
+          "abstention_correct": false,
+          "returned_chunk_ids": [],
+          "errors": [
+            "retrieval_miss",
+            "incorrect_answer",
+            "abstention_failure"
+          ]
+        },
+        {
+          "question_id": "TATA016",
+          "answer": null,
+          "reference_answer": "₹5,692 crore",
+          "answer_correct": false,
+          "citation_correct": false,
+          "abstention_correct": false,
+          "returned_chunk_ids": [],
+          "errors": [
+            "retrieval_miss",
+            "incorrect_answer",
+            "abstention_failure"
+          ]
+        },
+        {
+          "question_id": "TATA017",
+          "answer": "10,789 ₹ crore",
+          "reference_answer": "₹11,911 crore",
+          "answer_correct": false,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            246
+          ],
+          "errors": [
+            "incorrect_answer"
+          ]
+        },
+        {
+          "question_id": "TATA018",
+          "answer": "8,419 ₹ crore",
+          "reference_answer": "₹10,125 crore",
+          "answer_correct": false,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            246
+          ],
+          "errors": [
+            "incorrect_answer"
+          ]
+        },
+        {
+          "question_id": "TATA019",
+          "answer": "67,380 ₹ crore",
+          "reference_answer": "₹72,092 crore",
+          "answer_correct": false,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            246
+          ],
+          "errors": [
+            "incorrect_answer"
+          ]
+        },
+        {
+          "question_id": "TATA020",
+          "answer": "67,581 ₹ crore",
+          "reference_answer": "₹74,523 crore",
+          "answer_correct": false,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            246
+          ],
+          "errors": [
+            "incorrect_answer"
+          ]
+        },
+        {
+          "question_id": "TATA021",
+          "answer": "287 ₹ crore",
+          "reference_answer": "₹287 crore",
+          "answer_correct": true,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            244
+          ],
+          "errors": []
+        },
+        {
+          "question_id": "TATA022",
+          "answer": "700 ₹ crore",
+          "reference_answer": "₹700 crore",
+          "answer_correct": true,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            244
+          ],
+          "errors": []
+        },
+        {
+          "question_id": "TATA023",
+          "answer": "1,122 ₹ crore",
+          "reference_answer": "₹1,122 crore",
+          "answer_correct": true,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            245
+          ],
+          "errors": []
+        },
+        {
+          "question_id": "TATA024",
+          "answer": "1,706 ₹ crore",
+          "reference_answer": "₹1,706 crore",
+          "answer_correct": true,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            245
+          ],
+          "errors": []
+        },
+        {
+          "question_id": "TATA025",
+          "answer": "4,999 ₹ crore",
+          "reference_answer": "₹4,999 crore",
+          "answer_correct": true,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            245
+          ],
+          "errors": []
+        },
+        {
+          "question_id": "TATA026",
+          "answer": "7,642 ₹ crore",
+          "reference_answer": "₹7,642 crore",
+          "answer_correct": true,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            245
+          ],
+          "errors": []
+        },
+        {
+          "question_id": "TATA027",
+          "answer": "7,352 ₹ crore",
+          "reference_answer": "₹10,789 crore",
+          "answer_correct": false,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            251
+          ],
+          "errors": [
+            "retrieval_miss",
+            "incorrect_answer"
+          ]
+        },
+        {
+          "question_id": "TATA028",
+          "answer": "8,419 ₹ crore",
+          "reference_answer": "₹8,419 crore",
+          "answer_correct": true,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            246
+          ],
+          "errors": []
+        },
+        {
+          "question_id": "TATA029",
+          "answer": "67,380 ₹ crore",
+          "reference_answer": "₹67,380 crore",
+          "answer_correct": true,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            246
+          ],
+          "errors": []
+        },
+        {
+          "question_id": "TATA030",
+          "answer": "67,581 ₹ crore",
+          "reference_answer": "₹67,581 crore",
+          "answer_correct": true,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            246
+          ],
+          "errors": []
+        },
+        {
+          "question_id": "TATA031",
+          "answer": "3,041 ₹ crore",
+          "reference_answer": "₹3,041 crore",
+          "answer_correct": true,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            247
+          ],
+          "errors": []
+        },
+        {
+          "question_id": "TATA032",
+          "answer": "3,122 ₹ crore",
+          "reference_answer": "₹3,122 crore",
+          "answer_correct": true,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            247
+          ],
+          "errors": []
+        },
+        {
+          "question_id": "TATA033",
+          "answer": "33,972 ₹ crore",
+          "reference_answer": "₹33,972 crore",
+          "answer_correct": true,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            247
+          ],
+          "errors": []
+        },
+        {
+          "question_id": "TATA034",
+          "answer": "38,198 ₹ crore",
+          "reference_answer": "₹38,198 crore",
+          "answer_correct": true,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            247
+          ],
+          "errors": []
+        },
+        {
+          "question_id": "TATA035",
+          "answer": "71 ₹ crore",
+          "reference_answer": "₹71 crore",
+          "answer_correct": true,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            248
+          ],
+          "errors": []
+        },
+        {
+          "question_id": "TATA036",
+          "answer": "255 ₹ crore",
+          "reference_answer": "₹255 crore",
+          "answer_correct": true,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            248
+          ],
+          "errors": []
+        },
+        {
+          "question_id": "TATA037",
+          "answer": "(922) ₹ crore",
+          "reference_answer": "₹922 crore, shown as (922) in the table",
+          "answer_correct": false,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            248
+          ],
+          "errors": [
+            "incorrect_answer"
+          ]
+        },
+        {
+          "question_id": "TATA038",
+          "answer": "15 ₹ crore",
+          "reference_answer": "₹15 crore",
+          "answer_correct": true,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            248
+          ],
+          "errors": []
+        },
+        {
+          "question_id": "TATA039",
+          "answer": null,
+          "reference_answer": "₹7,677 crore",
+          "answer_correct": false,
+          "citation_correct": false,
+          "abstention_correct": false,
+          "returned_chunk_ids": [],
+          "errors": [
+            "retrieval_miss",
+            "incorrect_answer",
+            "abstention_failure"
+          ]
+        },
+        {
+          "question_id": "TATA040",
+          "answer": null,
+          "reference_answer": "₹5,042 crore",
+          "answer_correct": false,
+          "citation_correct": false,
+          "abstention_correct": false,
+          "returned_chunk_ids": [],
+          "errors": [
+            "retrieval_miss",
+            "incorrect_answer",
+            "abstention_failure"
+          ]
+        },
+        {
+          "question_id": "TATA041",
+          "answer": "33,780 ₹ crore",
+          "reference_answer": "₹34,330 crore",
+          "answer_correct": false,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            251
+          ],
+          "errors": [
+            "retrieval_miss",
+            "incorrect_answer"
+          ]
+        },
+        {
+          "question_id": "TATA042",
+          "answer": "28,429 ₹ crore",
+          "reference_answer": "₹29,368 crore",
+          "answer_correct": false,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            251
+          ],
+          "errors": [
+            "retrieval_miss",
+            "incorrect_answer"
+          ]
+        },
+        {
+          "question_id": "TATA043",
+          "answer": "325 ₹ crore",
+          "reference_answer": "₹325 crore",
+          "answer_correct": true,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            250
+          ],
+          "errors": []
+        },
+        {
+          "question_id": "TATA044",
+          "answer": "(2,809) ₹ crore",
+          "reference_answer": "₹2,809 crore, shown as (2,809) in the table",
+          "answer_correct": false,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            250
+          ],
+          "errors": [
+            "incorrect_answer"
+          ]
+        },
+        {
+          "question_id": "TATA045",
+          "answer": "550 ₹ crore",
+          "reference_answer": "₹550 crore",
+          "answer_correct": true,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            250
+          ],
+          "errors": []
+        },
+        {
+          "question_id": "TATA046",
+          "answer": "939 ₹ crore",
+          "reference_answer": "₹939 crore",
+          "answer_correct": true,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            250
+          ],
+          "errors": []
+        },
+        {
+          "question_id": "TATA047",
+          "answer": "7,352 ₹ crore",
+          "reference_answer": "₹7,352 crore",
+          "answer_correct": true,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            251
+          ],
+          "errors": []
+        },
+        {
+          "question_id": "TATA048",
+          "answer": "7,851 ₹ crore",
+          "reference_answer": "₹7,851 crore",
+          "answer_correct": true,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            251
+          ],
+          "errors": []
+        },
+        {
+          "question_id": "TATA049",
+          "answer": "33,780 ₹ crore",
+          "reference_answer": "₹33,780 crore",
+          "answer_correct": true,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            251
+          ],
+          "errors": []
+        },
+        {
+          "question_id": "TATA050",
+          "answer": "28,429 ₹ crore",
+          "reference_answer": "₹28,429 crore",
+          "answer_correct": true,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            251
+          ],
+          "errors": []
+        },
+        {
+          "question_id": "TATA051",
+          "answer": "1,900 ₹ crore",
+          "reference_answer": "₹1,900 crore",
+          "answer_correct": true,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            252
+          ],
+          "errors": []
+        },
+        {
+          "question_id": "TATA052",
+          "answer": "(51) ₹ crore",
+          "reference_answer": "₹51 crore, shown as (51) in the table",
+          "answer_correct": false,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            252
+          ],
+          "errors": [
+            "incorrect_answer"
+          ]
+        },
+        {
+          "question_id": "TATA053",
+          "answer": "10,502 ₹ crore",
+          "reference_answer": "₹10,502 crore",
+          "answer_correct": true,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            252
+          ],
+          "errors": []
+        },
+        {
+          "question_id": "TATA054",
+          "answer": "(4,024) ₹ crore",
+          "reference_answer": "₹4,024 crore, shown as (4,024) in the table",
+          "answer_correct": false,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            252
+          ],
+          "errors": [
+            "incorrect_answer"
+          ]
+        },
+        {
+          "question_id": "TATA055",
+          "answer": "5,452 ₹ crore",
+          "reference_answer": "₹5,452 crore",
+          "answer_correct": true,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            253
+          ],
+          "errors": []
+        },
+        {
+          "question_id": "TATA056",
+          "answer": "7,902 ₹ crore",
+          "reference_answer": "₹7,902 crore",
+          "answer_correct": true,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            253
+          ],
+          "errors": []
+        },
+        {
+          "question_id": "TATA057",
+          "answer": "23,278 ₹ crore",
+          "reference_answer": "₹23,278 crore",
+          "answer_correct": true,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            253
+          ],
+          "errors": []
+        },
+        {
+          "question_id": "TATA058",
+          "answer": "32,453 ₹ crore",
+          "reference_answer": "₹32,453 crore",
+          "answer_correct": true,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            253
+          ],
+          "errors": []
+        },
+        {
+          "question_id": "TATA059",
+          "answer": "4,871 ₹ crore",
+          "reference_answer": "₹4,871 crore",
+          "answer_correct": true,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            254
+          ],
+          "errors": []
+        },
+        {
+          "question_id": "TATA060",
+          "answer": "(646) ₹ crore",
+          "reference_answer": "₹646 crore, shown as (646) in the table",
+          "answer_correct": false,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            254
+          ],
+          "errors": [
+            "incorrect_answer"
+          ]
+        },
+        {
+          "question_id": "TATA061",
+          "answer": "5,452 ₹ crore",
+          "reference_answer": "₹5,452 crore",
+          "answer_correct": true,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            255
+          ],
+          "errors": []
+        },
+        {
+          "question_id": "TATA062",
+          "answer": "7,902 ₹ crore",
+          "reference_answer": "₹7,902 crore",
+          "answer_correct": true,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            255
+          ],
+          "errors": []
+        },
+        {
+          "question_id": "TATA063",
+          "answer": "28,149 ₹ crore",
+          "reference_answer": "₹28,149 crore",
+          "answer_correct": true,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            255
+          ],
+          "errors": []
+        },
+        {
+          "question_id": "TATA064",
+          "answer": "31,807 ₹ crore",
+          "reference_answer": "₹31,807 crore",
+          "answer_correct": true,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            255
+          ],
+          "errors": []
+        },
+        {
+          "question_id": "TATA065",
+          "answer": "113 ₹ crore",
+          "reference_answer": "₹113 crore",
+          "answer_correct": true,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            256
+          ],
+          "errors": []
+        },
+        {
+          "question_id": "TATA066",
+          "answer": "439 ₹ crore",
+          "reference_answer": "₹439 crore",
+          "answer_correct": true,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            256
+          ],
+          "errors": []
+        },
+        {
+          "question_id": "TATA067",
+          "answer": "6,462 ₹ crore",
+          "reference_answer": "₹6,462 crore",
+          "answer_correct": true,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            256
+          ],
+          "errors": []
+        },
+        {
+          "question_id": "TATA068",
+          "answer": "6,323 ₹ crore",
+          "reference_answer": "₹6,323 crore",
+          "answer_correct": true,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            256
+          ],
+          "errors": []
+        },
+        {
+          "question_id": "TATA069",
+          "answer": null,
+          "reference_answer": "₹5,565 crore",
+          "answer_correct": false,
+          "citation_correct": false,
+          "abstention_correct": false,
+          "returned_chunk_ids": [],
+          "errors": [
+            "incorrect_answer",
+            "abstention_failure"
+          ]
+        },
+        {
+          "question_id": "TATA070",
+          "answer": null,
+          "reference_answer": "₹8,341 crore",
+          "answer_correct": false,
+          "citation_correct": false,
+          "abstention_correct": false,
+          "returned_chunk_ids": [],
+          "errors": [
+            "incorrect_answer",
+            "abstention_failure"
+          ]
+        },
+        {
+          "question_id": "TATA071",
+          "answer": null,
+          "reference_answer": "₹34,611 crore",
+          "answer_correct": false,
+          "citation_correct": false,
+          "abstention_correct": false,
+          "returned_chunk_ids": [],
+          "errors": [
+            "incorrect_answer",
+            "abstention_failure"
+          ]
+        },
+        {
+          "question_id": "TATA072",
+          "answer": null,
+          "reference_answer": "₹38,130 crore",
+          "answer_correct": false,
+          "citation_correct": false,
+          "abstention_correct": false,
+          "returned_chunk_ids": [],
+          "errors": [
+            "incorrect_answer",
+            "abstention_failure"
+          ]
+        },
+        {
+          "question_id": "TATA073",
+          "answer": null,
+          "reference_answer": "Decrease of ₹3,884 crore (FY25 minus FY24 = -3,884 crore)",
+          "answer_correct": false,
+          "citation_correct": true,
+          "abstention_correct": false,
+          "returned_chunk_ids": [
+            239
+          ],
+          "errors": [
+            "incorrect_answer",
+            "abstention_failure"
+          ]
+        },
+        {
+          "question_id": "TATA074",
+          "answer": null,
+          "reference_answer": "Increase of ₹5,679 crore (FY25 minus FY24 = 5,679 crore)",
+          "answer_correct": false,
+          "citation_correct": true,
+          "abstention_correct": false,
+          "returned_chunk_ids": [
+            239
+          ],
+          "errors": [
+            "incorrect_answer",
+            "abstention_failure"
+          ]
+        },
+        {
+          "question_id": "TATA075",
+          "answer": null,
+          "reference_answer": "Decrease of ₹4,024 crore (FY25 minus FY24 = -4,024 crore)",
+          "answer_correct": false,
+          "citation_correct": true,
+          "abstention_correct": false,
+          "returned_chunk_ids": [
+            240
+          ],
+          "errors": [
+            "incorrect_answer",
+            "abstention_failure"
+          ]
+        },
+        {
+          "question_id": "TATA076",
+          "answer": null,
+          "reference_answer": "Increase of ₹8,662 crore (FY25 minus FY24 = 8,662 crore)",
+          "answer_correct": false,
+          "citation_correct": true,
+          "abstention_correct": false,
+          "returned_chunk_ids": [
+            240
+          ],
+          "errors": [
+            "incorrect_answer",
+            "abstention_failure"
+          ]
+        },
+        {
+          "question_id": "TATA077",
+          "answer": null,
+          "reference_answer": "Increase of ₹140 crore (FY25 minus FY24 = 140 crore)",
+          "answer_correct": false,
+          "citation_correct": true,
+          "abstention_correct": false,
+          "returned_chunk_ids": [
+            241
+          ],
+          "errors": [
+            "incorrect_answer",
+            "abstention_failure"
+          ]
+        },
+        {
+          "question_id": "TATA078",
+          "answer": null,
+          "reference_answer": "Decrease of ₹2,983 crore (FY25 minus FY24 = -2,983 crore)",
+          "answer_correct": false,
+          "citation_correct": true,
+          "abstention_correct": false,
+          "returned_chunk_ids": [
+            241
+          ],
+          "errors": [
+            "incorrect_answer",
+            "abstention_failure"
+          ]
+        },
+        {
+          "question_id": "TATA079",
+          "answer": null,
+          "reference_answer": "Increase of ₹1,646 crore (FY25 minus FY24 = 1,646 crore)",
+          "answer_correct": false,
+          "citation_correct": true,
+          "abstention_correct": false,
+          "returned_chunk_ids": [
+            242
+          ],
+          "errors": [
+            "incorrect_answer",
+            "abstention_failure"
+          ]
+        },
+        {
+          "question_id": "TATA080",
+          "answer": null,
+          "reference_answer": "Increase of ₹552 crore (FY25 minus FY24 = 552 crore)",
+          "answer_correct": false,
+          "citation_correct": true,
+          "abstention_correct": false,
+          "returned_chunk_ids": [
+            242
+          ],
+          "errors": [
+            "incorrect_answer",
+            "abstention_failure"
+          ]
+        },
+        {
+          "question_id": "TATA081",
+          "answer": null,
+          "reference_answer": "Decrease of ₹584 crore (FY25 minus FY24 = -584 crore)",
+          "answer_correct": false,
+          "citation_correct": true,
+          "abstention_correct": false,
+          "returned_chunk_ids": [
+            245
+          ],
+          "errors": [
+            "incorrect_answer",
+            "abstention_failure"
+          ]
+        },
+        {
+          "question_id": "TATA082",
+          "answer": null,
+          "reference_answer": "Decrease of ₹2,643 crore (FY25 minus FY24 = -2,643 crore)",
+          "answer_correct": false,
+          "citation_correct": true,
+          "abstention_correct": false,
+          "returned_chunk_ids": [
+            245
+          ],
+          "errors": [
+            "incorrect_answer",
+            "abstention_failure"
+          ]
+        },
+        {
+          "question_id": "TATA083",
+          "answer": null,
+          "reference_answer": "Increase of ₹2,635 crore (FY25 minus FY24 = 2,635 crore)",
+          "answer_correct": false,
+          "citation_correct": true,
+          "abstention_correct": false,
+          "returned_chunk_ids": [
+            249
+          ],
+          "errors": [
+            "incorrect_answer",
+            "abstention_failure"
+          ]
+        },
+        {
+          "question_id": "TATA084",
+          "answer": null,
+          "reference_answer": "Increase of ₹4,962 crore (FY25 minus FY24 = 4,962 crore)",
+          "answer_correct": false,
+          "citation_correct": true,
+          "abstention_correct": false,
+          "returned_chunk_ids": [
+            249
+          ],
+          "errors": [
+            "incorrect_answer",
+            "abstention_failure"
+          ]
+        },
+        {
+          "question_id": "TATA085",
+          "answer": null,
+          "reference_answer": "Decrease of ₹499 crore (FY25 minus FY24 = -499 crore)",
+          "answer_correct": false,
+          "citation_correct": true,
+          "abstention_correct": false,
+          "returned_chunk_ids": [
+            251
+          ],
+          "errors": [
+            "incorrect_answer",
+            "abstention_failure"
+          ]
+        },
+        {
+          "question_id": "TATA086",
+          "answer": null,
+          "reference_answer": "Increase of ₹5,351 crore (FY25 minus FY24 = 5,351 crore)",
+          "answer_correct": false,
+          "citation_correct": true,
+          "abstention_correct": false,
+          "returned_chunk_ids": [
+            251
+          ],
+          "errors": [
+            "incorrect_answer",
+            "abstention_failure"
+          ]
+        },
+        {
+          "question_id": "TATA087",
+          "answer": null,
+          "reference_answer": "Decrease of ₹2,450 crore (FY25 minus FY24 = -2,450 crore)",
+          "answer_correct": false,
+          "citation_correct": true,
+          "abstention_correct": false,
+          "returned_chunk_ids": [
+            255
+          ],
+          "errors": [
+            "incorrect_answer",
+            "abstention_failure"
+          ]
+        },
+        {
+          "question_id": "TATA088",
+          "answer": null,
+          "reference_answer": "Decrease of ₹3,658 crore (FY25 minus FY24 = -3,658 crore)",
+          "answer_correct": false,
+          "citation_correct": true,
+          "abstention_correct": false,
+          "returned_chunk_ids": [
+            255
+          ],
+          "errors": [
+            "incorrect_answer",
+            "abstention_failure"
+          ]
+        },
+        {
+          "question_id": "TATA089",
+          "answer": null,
+          "reference_answer": "Decrease of ₹2,776 crore (FY25 minus FY24 = -2,776 crore)",
+          "answer_correct": false,
+          "citation_correct": false,
+          "abstention_correct": false,
+          "returned_chunk_ids": [],
+          "errors": [
+            "incorrect_answer",
+            "abstention_failure"
+          ]
+        },
+        {
+          "question_id": "TATA090",
+          "answer": null,
+          "reference_answer": "Decrease of ₹3,519 crore (FY25 minus FY24 = -3,519 crore)",
+          "answer_correct": false,
+          "citation_correct": false,
+          "abstention_correct": false,
+          "returned_chunk_ids": [],
+          "errors": [
+            "incorrect_answer",
+            "abstention_failure"
+          ]
+        },
+        {
+          "question_id": "TATA091",
+          "answer": null,
+          "reference_answer": "+1.31%",
+          "answer_correct": false,
+          "citation_correct": false,
+          "abstention_correct": false,
+          "returned_chunk_ids": [],
+          "errors": [
+            "retrieval_miss",
+            "incorrect_answer",
+            "abstention_failure"
+          ]
+        },
+        {
+          "question_id": "TATA092",
+          "answer": null,
+          "reference_answer": "-5.30%",
+          "answer_correct": false,
+          "citation_correct": false,
+          "abstention_correct": false,
+          "returned_chunk_ids": [],
+          "errors": [
+            "retrieval_miss",
+            "incorrect_answer",
+            "abstention_failure"
+          ]
+        },
+        {
+          "question_id": "TATA093",
+          "answer": null,
+          "reference_answer": "-4.33%",
+          "answer_correct": false,
+          "citation_correct": false,
+          "abstention_correct": false,
+          "returned_chunk_ids": [],
+          "errors": [
+            "retrieval_miss",
+            "incorrect_answer",
+            "abstention_failure"
+          ]
+        },
+        {
+          "question_id": "TATA094",
+          "answer": null,
+          "reference_answer": "+18.82%",
+          "answer_correct": false,
+          "citation_correct": false,
+          "abstention_correct": false,
+          "returned_chunk_ids": [],
+          "errors": [
+            "retrieval_miss",
+            "incorrect_answer",
+            "abstention_failure"
+          ]
+        },
+        {
+          "question_id": "TATA095",
+          "answer": null,
+          "reference_answer": "-34.59%",
+          "answer_correct": false,
+          "citation_correct": true,
+          "abstention_correct": false,
+          "returned_chunk_ids": [
+            245
+          ],
+          "errors": [
+            "incorrect_answer",
+            "abstention_failure"
+          ]
+        },
+        {
+          "question_id": "TATA096",
+          "answer": null,
+          "reference_answer": "-11.50%",
+          "answer_correct": false,
+          "citation_correct": false,
+          "abstention_correct": false,
+          "returned_chunk_ids": [],
+          "errors": [
+            "retrieval_miss",
+            "incorrect_answer",
+            "abstention_failure"
+          ]
+        },
+        {
+          "question_id": "TATA097",
+          "answer": null,
+          "reference_answer": "Consolidated was higher by ₹370,276 crore",
+          "answer_correct": false,
+          "citation_correct": true,
+          "abstention_correct": false,
+          "returned_chunk_ids": [
+            239
+          ],
+          "errors": [
+            "incorrect_answer",
+            "abstention_failure"
+          ]
+        },
+        {
+          "question_id": "TATA098",
+          "answer": null,
+          "reference_answer": "Consolidated was higher by ₹360,713 crore",
+          "answer_correct": false,
+          "citation_correct": true,
+          "abstention_correct": false,
+          "returned_chunk_ids": [
+            239
+          ],
+          "errors": [
+            "incorrect_answer",
+            "abstention_failure"
+          ]
+        },
+        {
+          "question_id": "TATA099",
+          "answer": null,
+          "reference_answer": "Consolidated was higher by ₹313,543 crore",
+          "answer_correct": false,
+          "citation_correct": true,
+          "abstention_correct": false,
+          "returned_chunk_ids": [
+            240
+          ],
+          "errors": [
+            "incorrect_answer",
+            "abstention_failure"
+          ]
+        },
+        {
+          "question_id": "TATA100",
+          "answer": null,
+          "reference_answer": "Consolidated was higher by ₹300,857 crore",
+          "answer_correct": false,
+          "citation_correct": true,
+          "abstention_correct": false,
+          "returned_chunk_ids": [
+            240
+          ],
+          "errors": [
+            "incorrect_answer",
+            "abstention_failure"
+          ]
+        },
+        {
+          "question_id": "TATA101",
+          "answer": null,
+          "reference_answer": "13.13%",
+          "answer_correct": false,
+          "citation_correct": false,
+          "abstention_correct": false,
+          "returned_chunk_ids": [],
+          "errors": [
+            "retrieval_miss",
+            "incorrect_answer",
+            "abstention_failure"
+          ]
+        },
+        {
+          "question_id": "TATA102",
+          "answer": null,
+          "reference_answer": "12.24%",
+          "answer_correct": false,
+          "citation_correct": false,
+          "abstention_correct": false,
+          "returned_chunk_ids": [],
+          "errors": [
+            "retrieval_miss",
+            "incorrect_answer",
+            "abstention_failure"
+          ]
+        },
+        {
+          "question_id": "TATA103",
+          "answer": null,
+          "reference_answer": "14.98%",
+          "answer_correct": false,
+          "citation_correct": false,
+          "abstention_correct": false,
+          "returned_chunk_ids": [],
+          "errors": [
+            "retrieval_miss",
+            "incorrect_answer",
+            "abstention_failure"
+          ]
+        },
+        {
+          "question_id": "TATA104",
+          "answer": null,
+          "reference_answer": "15.86%",
+          "answer_correct": false,
+          "citation_correct": false,
+          "abstention_correct": false,
+          "returned_chunk_ids": [],
+          "errors": [
+            "retrieval_miss",
+            "incorrect_answer",
+            "abstention_failure"
+          ]
+        },
+        {
+          "question_id": "TATA105",
+          "answer": null,
+          "reference_answer": null,
+          "answer_correct": true,
+          "citation_correct": false,
+          "abstention_correct": true,
+          "returned_chunk_ids": [],
+          "errors": []
+        },
+        {
+          "question_id": "TATA106",
+          "answer": null,
+          "reference_answer": null,
+          "answer_correct": true,
+          "citation_correct": false,
+          "abstention_correct": true,
+          "returned_chunk_ids": [],
+          "errors": []
+        },
+        {
+          "question_id": "TATA107",
+          "answer": null,
+          "reference_answer": null,
+          "answer_correct": true,
+          "citation_correct": false,
+          "abstention_correct": true,
+          "returned_chunk_ids": [],
+          "errors": []
+        },
+        {
+          "question_id": "TATA108",
+          "answer": null,
+          "reference_answer": null,
+          "answer_correct": true,
+          "citation_correct": false,
+          "abstention_correct": true,
+          "returned_chunk_ids": [],
+          "errors": []
+        },
+        {
+          "question_id": "TATA109",
+          "answer": null,
+          "reference_answer": null,
+          "answer_correct": true,
+          "citation_correct": false,
+          "abstention_correct": true,
+          "returned_chunk_ids": [],
+          "errors": []
+        },
+        {
+          "question_id": "TATA110",
+          "answer": null,
+          "reference_answer": null,
+          "answer_correct": true,
+          "citation_correct": false,
+          "abstention_correct": true,
+          "returned_chunk_ids": [],
+          "errors": []
+        },
+        {
+          "question_id": "TATA111",
+          "answer": null,
+          "reference_answer": null,
+          "answer_correct": true,
+          "citation_correct": false,
+          "abstention_correct": true,
+          "returned_chunk_ids": [],
+          "errors": []
+        },
+        {
+          "question_id": "TATA112",
+          "answer": null,
+          "reference_answer": null,
+          "answer_correct": true,
+          "citation_correct": false,
+          "abstention_correct": true,
+          "returned_chunk_ids": [],
+          "errors": []
+        },
+        {
+          "question_id": "TATA113",
+          "answer": null,
+          "reference_answer": null,
+          "answer_correct": true,
+          "citation_correct": false,
+          "abstention_correct": true,
+          "returned_chunk_ids": [],
+          "errors": []
+        },
+        {
+          "question_id": "TATA114",
+          "answer": null,
+          "reference_answer": null,
+          "answer_correct": true,
+          "citation_correct": false,
+          "abstention_correct": true,
+          "returned_chunk_ids": [],
+          "errors": []
+        },
+        {
+          "question_id": "TATA115",
+          "answer": null,
+          "reference_answer": null,
+          "answer_correct": true,
+          "citation_correct": false,
+          "abstention_correct": true,
+          "returned_chunk_ids": [],
+          "errors": []
+        },
+        {
+          "question_id": "TATA116",
+          "answer": null,
+          "reference_answer": null,
+          "answer_correct": true,
+          "citation_correct": false,
+          "abstention_correct": true,
+          "returned_chunk_ids": [],
+          "errors": []
+        },
+        {
+          "question_id": "TATA117",
+          "answer": null,
+          "reference_answer": null,
+          "answer_correct": true,
+          "citation_correct": false,
+          "abstention_correct": true,
+          "returned_chunk_ids": [],
+          "errors": []
+        },
+        {
+          "question_id": "TATA118",
+          "answer": null,
+          "reference_answer": null,
+          "answer_correct": true,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            237
+          ],
+          "errors": []
+        },
+        {
+          "question_id": "TATA119",
+          "answer": null,
+          "reference_answer": null,
+          "answer_correct": true,
+          "citation_correct": false,
+          "abstention_correct": true,
+          "returned_chunk_ids": [],
+          "errors": []
+        },
+        {
+          "question_id": "TATA120",
+          "answer": "65,848 ₹ crore",
+          "reference_answer": null,
+          "answer_correct": false,
+          "citation_correct": true,
+          "abstention_correct": false,
+          "returned_chunk_ids": [
+            241
+          ],
+          "errors": [
+            "abstention_failure"
+          ]
+        },
+        {
+          "question_id": "TATA121",
+          "answer": null,
+          "reference_answer": null,
+          "answer_correct": true,
+          "citation_correct": false,
+          "abstention_correct": true,
+          "returned_chunk_ids": [],
+          "errors": []
+        },
+        {
+          "question_id": "TATA122",
+          "answer": null,
+          "reference_answer": null,
+          "answer_correct": true,
+          "citation_correct": false,
+          "abstention_correct": true,
+          "returned_chunk_ids": [],
+          "errors": []
+        },
+        {
+          "question_id": "TATA123",
+          "answer": null,
+          "reference_answer": null,
+          "answer_correct": true,
+          "citation_correct": false,
+          "abstention_correct": true,
+          "returned_chunk_ids": [],
+          "errors": []
+        },
+        {
+          "question_id": "TATA124",
+          "answer": null,
+          "reference_answer": null,
+          "answer_correct": true,
+          "citation_correct": false,
+          "abstention_correct": true,
+          "returned_chunk_ids": [],
+          "errors": []
+        },
+        {
+          "question_id": "TATA125",
+          "answer": null,
+          "reference_answer": null,
+          "answer_correct": true,
+          "citation_correct": false,
+          "abstention_correct": true,
+          "returned_chunk_ids": [],
+          "errors": []
+        },
+        {
+          "question_id": "TATA126",
+          "answer": null,
+          "reference_answer": null,
+          "answer_correct": true,
+          "citation_correct": false,
+          "abstention_correct": true,
+          "returned_chunk_ids": [],
+          "errors": []
+        },
+        {
+          "question_id": "TATA127",
+          "answer": null,
+          "reference_answer": null,
+          "answer_correct": true,
+          "citation_correct": false,
+          "abstention_correct": true,
+          "returned_chunk_ids": [],
+          "errors": []
+        },
+        {
+          "question_id": "TATA128",
+          "answer": null,
+          "reference_answer": null,
+          "answer_correct": true,
+          "citation_correct": false,
+          "abstention_correct": true,
+          "returned_chunk_ids": [],
+          "errors": []
+        }
+      ]
+    },
+    "tfidf": {
+      "retrieval": {
+        "denominator": 104,
+        "hit_at_5": {
+          "count": 92,
+          "percent": 88.46153846153847
+        },
+        "mrr": 0.6309294871794873
+      },
+      "answer_correctness": {
+        "count": 57,
+        "denominator": 104,
+        "percent": 54.80769230769231
+      },
+      "citation_accuracy": {
+        "count": 89,
+        "denominator": 104,
+        "percent": 85.57692307692308
+      },
+      "abstention_accuracy": {
+        "count": 23,
+        "denominator": 24,
+        "percent": 95.83333333333333
+      },
+      "median_cpu_inference_latency_ms": 15.625,
+      "error_counts": {
+        "retrieval_miss": 12,
+        "incorrect_answer": 47,
+        "wrong_citation": 0,
+        "abstention_failure": 39
+      },
+      "details": [
+        {
+          "question_id": "TATA001",
+          "answer": "69,419 ₹ crore",
+          "reference_answer": "₹69,419 crore",
+          "answer_correct": true,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            239
+          ],
+          "errors": []
+        },
+        {
+          "question_id": "TATA002",
+          "answer": "73,303 ₹ crore",
+          "reference_answer": "₹73,303 crore",
+          "answer_correct": true,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            239
+          ],
+          "errors": []
+        },
+        {
+          "question_id": "TATA003",
+          "answer": null,
+          "reference_answer": "₹439,695 crore",
+          "answer_correct": false,
+          "citation_correct": false,
+          "abstention_correct": false,
+          "returned_chunk_ids": [],
+          "errors": [
+            "retrieval_miss",
+            "incorrect_answer",
+            "abstention_failure"
+          ]
+        },
+        {
+          "question_id": "TATA004",
+          "answer": "434,016 ₹ crore",
+          "reference_answer": "₹434,016 crore",
+          "answer_correct": true,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            239
+          ],
+          "errors": []
+        },
+        {
+          "question_id": "TATA005",
+          "answer": "60,304 ₹ crore",
+          "reference_answer": "₹60,304 crore",
+          "answer_correct": true,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            240
+          ],
+          "errors": []
+        },
+        {
+          "question_id": "TATA006",
+          "answer": "64,328 ₹ crore",
+          "reference_answer": "₹64,328 crore",
+          "answer_correct": true,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            240
+          ],
+          "errors": []
+        },
+        {
+          "question_id": "TATA007",
+          "answer": null,
+          "reference_answer": "₹373,847 crore",
+          "answer_correct": false,
+          "citation_correct": false,
+          "abstention_correct": false,
+          "returned_chunk_ids": [],
+          "errors": [
+            "retrieval_miss",
+            "incorrect_answer",
+            "abstention_failure"
+          ]
+        },
+        {
+          "question_id": "TATA008",
+          "answer": "365,185 ₹ crore",
+          "reference_answer": "₹365,185 crore",
+          "answer_correct": true,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            240
+          ],
+          "errors": []
+        },
+        {
+          "question_id": "TATA009",
+          "answer": "9,115 ₹ crore",
+          "reference_answer": "₹9,115 crore",
+          "answer_correct": true,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            241
+          ],
+          "errors": []
+        },
+        {
+          "question_id": "TATA010",
+          "answer": "8,975 ₹ crore",
+          "reference_answer": "₹8,975 crore",
+          "answer_correct": true,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            241
+          ],
+          "errors": []
+        },
+        {
+          "question_id": "TATA011",
+          "answer": "65,848 ₹ crore",
+          "reference_answer": "₹65,848 crore",
+          "answer_correct": true,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            241
+          ],
+          "errors": []
+        },
+        {
+          "question_id": "TATA012",
+          "answer": "68,831 ₹ crore",
+          "reference_answer": "₹68,831 crore",
+          "answer_correct": true,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            241
+          ],
+          "errors": []
+        },
+        {
+          "question_id": "TATA013",
+          "answer": "2,796 ₹ crore",
+          "reference_answer": "₹2,796 crore",
+          "answer_correct": true,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            242
+          ],
+          "errors": []
+        },
+        {
+          "question_id": "TATA014",
+          "answer": "1,150 ₹ crore",
+          "reference_answer": "₹1,150 crore",
+          "answer_correct": true,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            242
+          ],
+          "errors": []
+        },
+        {
+          "question_id": "TATA015",
+          "answer": "6,244 ₹ crore",
+          "reference_answer": "₹6,244 crore",
+          "answer_correct": true,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            242
+          ],
+          "errors": []
+        },
+        {
+          "question_id": "TATA016",
+          "answer": "5,692 ₹ crore",
+          "reference_answer": "₹5,692 crore",
+          "answer_correct": true,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            242
+          ],
+          "errors": []
+        },
+        {
+          "question_id": "TATA017",
+          "answer": null,
+          "reference_answer": "₹11,911 crore",
+          "answer_correct": false,
+          "citation_correct": false,
+          "abstention_correct": false,
+          "returned_chunk_ids": [],
+          "errors": [
+            "incorrect_answer",
+            "abstention_failure"
+          ]
+        },
+        {
+          "question_id": "TATA018",
+          "answer": null,
+          "reference_answer": "₹10,125 crore",
+          "answer_correct": false,
+          "citation_correct": false,
+          "abstention_correct": false,
+          "returned_chunk_ids": [],
+          "errors": [
+            "incorrect_answer",
+            "abstention_failure"
+          ]
+        },
+        {
+          "question_id": "TATA019",
+          "answer": null,
+          "reference_answer": "₹72,092 crore",
+          "answer_correct": false,
+          "citation_correct": false,
+          "abstention_correct": false,
+          "returned_chunk_ids": [],
+          "errors": [
+            "incorrect_answer",
+            "abstention_failure"
+          ]
+        },
+        {
+          "question_id": "TATA020",
+          "answer": null,
+          "reference_answer": "₹74,523 crore",
+          "answer_correct": false,
+          "citation_correct": false,
+          "abstention_correct": false,
+          "returned_chunk_ids": [],
+          "errors": [
+            "incorrect_answer",
+            "abstention_failure"
+          ]
+        },
+        {
+          "question_id": "TATA021",
+          "answer": "287 ₹ crore",
+          "reference_answer": "₹287 crore",
+          "answer_correct": true,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            244
+          ],
+          "errors": []
+        },
+        {
+          "question_id": "TATA022",
+          "answer": "700 ₹ crore",
+          "reference_answer": "₹700 crore",
+          "answer_correct": true,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            244
+          ],
+          "errors": []
+        },
+        {
+          "question_id": "TATA023",
+          "answer": "1,122 ₹ crore",
+          "reference_answer": "₹1,122 crore",
+          "answer_correct": true,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            245
+          ],
+          "errors": []
+        },
+        {
+          "question_id": "TATA024",
+          "answer": "1,706 ₹ crore",
+          "reference_answer": "₹1,706 crore",
+          "answer_correct": true,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            245
+          ],
+          "errors": []
+        },
+        {
+          "question_id": "TATA025",
+          "answer": "4,999 ₹ crore",
+          "reference_answer": "₹4,999 crore",
+          "answer_correct": true,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            245
+          ],
+          "errors": []
+        },
+        {
+          "question_id": "TATA026",
+          "answer": "7,642 ₹ crore",
+          "reference_answer": "₹7,642 crore",
+          "answer_correct": true,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            245
+          ],
+          "errors": []
+        },
+        {
+          "question_id": "TATA027",
+          "answer": "10,789 ₹ crore",
+          "reference_answer": "₹10,789 crore",
+          "answer_correct": true,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            246
+          ],
+          "errors": []
+        },
+        {
+          "question_id": "TATA028",
+          "answer": "8,419 ₹ crore",
+          "reference_answer": "₹8,419 crore",
+          "answer_correct": true,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            246
+          ],
+          "errors": []
+        },
+        {
+          "question_id": "TATA029",
+          "answer": "67,380 ₹ crore",
+          "reference_answer": "₹67,380 crore",
+          "answer_correct": true,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            246
+          ],
+          "errors": []
+        },
+        {
+          "question_id": "TATA030",
+          "answer": "67,581 ₹ crore",
+          "reference_answer": "₹67,581 crore",
+          "answer_correct": true,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            246
+          ],
+          "errors": []
+        },
+        {
+          "question_id": "TATA031",
+          "answer": "3,041 ₹ crore",
+          "reference_answer": "₹3,041 crore",
+          "answer_correct": true,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            247
+          ],
+          "errors": []
+        },
+        {
+          "question_id": "TATA032",
+          "answer": "3,122 ₹ crore",
+          "reference_answer": "₹3,122 crore",
+          "answer_correct": true,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            247
+          ],
+          "errors": []
+        },
+        {
+          "question_id": "TATA033",
+          "answer": "33,972 ₹ crore",
+          "reference_answer": "₹33,972 crore",
+          "answer_correct": true,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            247
+          ],
+          "errors": []
+        },
+        {
+          "question_id": "TATA034",
+          "answer": "38,198 ₹ crore",
+          "reference_answer": "₹38,198 crore",
+          "answer_correct": true,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            247
+          ],
+          "errors": []
+        },
+        {
+          "question_id": "TATA035",
+          "answer": "71 ₹ crore",
+          "reference_answer": "₹71 crore",
+          "answer_correct": true,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            248
+          ],
+          "errors": []
+        },
+        {
+          "question_id": "TATA036",
+          "answer": "255 ₹ crore",
+          "reference_answer": "₹255 crore",
+          "answer_correct": true,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            248
+          ],
+          "errors": []
+        },
+        {
+          "question_id": "TATA037",
+          "answer": "(922) ₹ crore",
+          "reference_answer": "₹922 crore, shown as (922) in the table",
+          "answer_correct": false,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            248
+          ],
+          "errors": [
+            "incorrect_answer"
+          ]
+        },
+        {
+          "question_id": "TATA038",
+          "answer": "15 ₹ crore",
+          "reference_answer": "₹15 crore",
+          "answer_correct": true,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            248
+          ],
+          "errors": []
+        },
+        {
+          "question_id": "TATA039",
+          "answer": "7,677 ₹ crore",
+          "reference_answer": "₹7,677 crore",
+          "answer_correct": true,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            249
+          ],
+          "errors": []
+        },
+        {
+          "question_id": "TATA040",
+          "answer": "5,042 ₹ crore",
+          "reference_answer": "₹5,042 crore",
+          "answer_correct": true,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            249
+          ],
+          "errors": []
+        },
+        {
+          "question_id": "TATA041",
+          "answer": "34,330 ₹ crore",
+          "reference_answer": "₹34,330 crore",
+          "answer_correct": true,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            249
+          ],
+          "errors": []
+        },
+        {
+          "question_id": "TATA042",
+          "answer": "29,368 ₹ crore",
+          "reference_answer": "₹29,368 crore",
+          "answer_correct": true,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            249
+          ],
+          "errors": []
+        },
+        {
+          "question_id": "TATA043",
+          "answer": "325 ₹ crore",
+          "reference_answer": "₹325 crore",
+          "answer_correct": true,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            250
+          ],
+          "errors": []
+        },
+        {
+          "question_id": "TATA044",
+          "answer": "(2,809) ₹ crore",
+          "reference_answer": "₹2,809 crore, shown as (2,809) in the table",
+          "answer_correct": false,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            250
+          ],
+          "errors": [
+            "incorrect_answer"
+          ]
+        },
+        {
+          "question_id": "TATA045",
+          "answer": "550 ₹ crore",
+          "reference_answer": "₹550 crore",
+          "answer_correct": true,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            250
+          ],
+          "errors": []
+        },
+        {
+          "question_id": "TATA046",
+          "answer": "939 ₹ crore",
+          "reference_answer": "₹939 crore",
+          "answer_correct": true,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            250
+          ],
+          "errors": []
+        },
+        {
+          "question_id": "TATA047",
+          "answer": "7,352 ₹ crore",
+          "reference_answer": "₹7,352 crore",
+          "answer_correct": true,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            251
+          ],
+          "errors": []
+        },
+        {
+          "question_id": "TATA048",
+          "answer": "7,851 ₹ crore",
+          "reference_answer": "₹7,851 crore",
+          "answer_correct": true,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            251
+          ],
+          "errors": []
+        },
+        {
+          "question_id": "TATA049",
+          "answer": "33,780 ₹ crore",
+          "reference_answer": "₹33,780 crore",
+          "answer_correct": true,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            251
+          ],
+          "errors": []
+        },
+        {
+          "question_id": "TATA050",
+          "answer": "28,429 ₹ crore",
+          "reference_answer": "₹28,429 crore",
+          "answer_correct": true,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            251
+          ],
+          "errors": []
+        },
+        {
+          "question_id": "TATA051",
+          "answer": "1,900 ₹ crore",
+          "reference_answer": "₹1,900 crore",
+          "answer_correct": true,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            252
+          ],
+          "errors": []
+        },
+        {
+          "question_id": "TATA052",
+          "answer": "(51) ₹ crore",
+          "reference_answer": "₹51 crore, shown as (51) in the table",
+          "answer_correct": false,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            252
+          ],
+          "errors": [
+            "incorrect_answer"
+          ]
+        },
+        {
+          "question_id": "TATA053",
+          "answer": "10,502 ₹ crore",
+          "reference_answer": "₹10,502 crore",
+          "answer_correct": true,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            252
+          ],
+          "errors": []
+        },
+        {
+          "question_id": "TATA054",
+          "answer": "(4,024) ₹ crore",
+          "reference_answer": "₹4,024 crore, shown as (4,024) in the table",
+          "answer_correct": false,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            252
+          ],
+          "errors": [
+            "incorrect_answer"
+          ]
+        },
+        {
+          "question_id": "TATA055",
+          "answer": "5,452 ₹ crore",
+          "reference_answer": "₹5,452 crore",
+          "answer_correct": true,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            253
+          ],
+          "errors": []
+        },
+        {
+          "question_id": "TATA056",
+          "answer": "7,902 ₹ crore",
+          "reference_answer": "₹7,902 crore",
+          "answer_correct": true,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            253
+          ],
+          "errors": []
+        },
+        {
+          "question_id": "TATA057",
+          "answer": "23,278 ₹ crore",
+          "reference_answer": "₹23,278 crore",
+          "answer_correct": true,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            253
+          ],
+          "errors": []
+        },
+        {
+          "question_id": "TATA058",
+          "answer": "32,453 ₹ crore",
+          "reference_answer": "₹32,453 crore",
+          "answer_correct": true,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            253
+          ],
+          "errors": []
+        },
+        {
+          "question_id": "TATA059",
+          "answer": "4,871 ₹ crore",
+          "reference_answer": "₹4,871 crore",
+          "answer_correct": true,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            254
+          ],
+          "errors": []
+        },
+        {
+          "question_id": "TATA060",
+          "answer": "(646) ₹ crore",
+          "reference_answer": "₹646 crore, shown as (646) in the table",
+          "answer_correct": false,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            254
+          ],
+          "errors": [
+            "incorrect_answer"
+          ]
+        },
+        {
+          "question_id": "TATA061",
+          "answer": "5,452 ₹ crore",
+          "reference_answer": "₹5,452 crore",
+          "answer_correct": true,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            255
+          ],
+          "errors": []
+        },
+        {
+          "question_id": "TATA062",
+          "answer": "7,902 ₹ crore",
+          "reference_answer": "₹7,902 crore",
+          "answer_correct": true,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            255
+          ],
+          "errors": []
+        },
+        {
+          "question_id": "TATA063",
+          "answer": "28,149 ₹ crore",
+          "reference_answer": "₹28,149 crore",
+          "answer_correct": true,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            255
+          ],
+          "errors": []
+        },
+        {
+          "question_id": "TATA064",
+          "answer": "31,807 ₹ crore",
+          "reference_answer": "₹31,807 crore",
+          "answer_correct": true,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            255
+          ],
+          "errors": []
+        },
+        {
+          "question_id": "TATA065",
+          "answer": "113 ₹ crore",
+          "reference_answer": "₹113 crore",
+          "answer_correct": true,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            256
+          ],
+          "errors": []
+        },
+        {
+          "question_id": "TATA066",
+          "answer": "439 ₹ crore",
+          "reference_answer": "₹439 crore",
+          "answer_correct": true,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            256
+          ],
+          "errors": []
+        },
+        {
+          "question_id": "TATA067",
+          "answer": "6,462 ₹ crore",
+          "reference_answer": "₹6,462 crore",
+          "answer_correct": true,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            256
+          ],
+          "errors": []
+        },
+        {
+          "question_id": "TATA068",
+          "answer": "6,323 ₹ crore",
+          "reference_answer": "₹6,323 crore",
+          "answer_correct": true,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            256
+          ],
+          "errors": []
+        },
+        {
+          "question_id": "TATA069",
+          "answer": null,
+          "reference_answer": "₹5,565 crore",
+          "answer_correct": false,
+          "citation_correct": false,
+          "abstention_correct": false,
+          "returned_chunk_ids": [],
+          "errors": [
+            "incorrect_answer",
+            "abstention_failure"
+          ]
+        },
+        {
+          "question_id": "TATA070",
+          "answer": null,
+          "reference_answer": "₹8,341 crore",
+          "answer_correct": false,
+          "citation_correct": false,
+          "abstention_correct": false,
+          "returned_chunk_ids": [],
+          "errors": [
+            "incorrect_answer",
+            "abstention_failure"
+          ]
+        },
+        {
+          "question_id": "TATA071",
+          "answer": null,
+          "reference_answer": "₹34,611 crore",
+          "answer_correct": false,
+          "citation_correct": false,
+          "abstention_correct": false,
+          "returned_chunk_ids": [],
+          "errors": [
+            "incorrect_answer",
+            "abstention_failure"
+          ]
+        },
+        {
+          "question_id": "TATA072",
+          "answer": null,
+          "reference_answer": "₹38,130 crore",
+          "answer_correct": false,
+          "citation_correct": false,
+          "abstention_correct": false,
+          "returned_chunk_ids": [],
+          "errors": [
+            "incorrect_answer",
+            "abstention_failure"
+          ]
+        },
+        {
+          "question_id": "TATA073",
+          "answer": null,
+          "reference_answer": "Decrease of ₹3,884 crore (FY25 minus FY24 = -3,884 crore)",
+          "answer_correct": false,
+          "citation_correct": true,
+          "abstention_correct": false,
+          "returned_chunk_ids": [
+            239
+          ],
+          "errors": [
+            "incorrect_answer",
+            "abstention_failure"
+          ]
+        },
+        {
+          "question_id": "TATA074",
+          "answer": null,
+          "reference_answer": "Increase of ₹5,679 crore (FY25 minus FY24 = 5,679 crore)",
+          "answer_correct": false,
+          "citation_correct": true,
+          "abstention_correct": false,
+          "returned_chunk_ids": [
+            239
+          ],
+          "errors": [
+            "incorrect_answer",
+            "abstention_failure"
+          ]
+        },
+        {
+          "question_id": "TATA075",
+          "answer": null,
+          "reference_answer": "Decrease of ₹4,024 crore (FY25 minus FY24 = -4,024 crore)",
+          "answer_correct": false,
+          "citation_correct": true,
+          "abstention_correct": false,
+          "returned_chunk_ids": [
+            240
+          ],
+          "errors": [
+            "incorrect_answer",
+            "abstention_failure"
+          ]
+        },
+        {
+          "question_id": "TATA076",
+          "answer": null,
+          "reference_answer": "Increase of ₹8,662 crore (FY25 minus FY24 = 8,662 crore)",
+          "answer_correct": false,
+          "citation_correct": true,
+          "abstention_correct": false,
+          "returned_chunk_ids": [
+            240
+          ],
+          "errors": [
+            "incorrect_answer",
+            "abstention_failure"
+          ]
+        },
+        {
+          "question_id": "TATA077",
+          "answer": null,
+          "reference_answer": "Increase of ₹140 crore (FY25 minus FY24 = 140 crore)",
+          "answer_correct": false,
+          "citation_correct": true,
+          "abstention_correct": false,
+          "returned_chunk_ids": [
+            241
+          ],
+          "errors": [
+            "incorrect_answer",
+            "abstention_failure"
+          ]
+        },
+        {
+          "question_id": "TATA078",
+          "answer": null,
+          "reference_answer": "Decrease of ₹2,983 crore (FY25 minus FY24 = -2,983 crore)",
+          "answer_correct": false,
+          "citation_correct": true,
+          "abstention_correct": false,
+          "returned_chunk_ids": [
+            241
+          ],
+          "errors": [
+            "incorrect_answer",
+            "abstention_failure"
+          ]
+        },
+        {
+          "question_id": "TATA079",
+          "answer": null,
+          "reference_answer": "Increase of ₹1,646 crore (FY25 minus FY24 = 1,646 crore)",
+          "answer_correct": false,
+          "citation_correct": true,
+          "abstention_correct": false,
+          "returned_chunk_ids": [
+            242
+          ],
+          "errors": [
+            "incorrect_answer",
+            "abstention_failure"
+          ]
+        },
+        {
+          "question_id": "TATA080",
+          "answer": null,
+          "reference_answer": "Increase of ₹552 crore (FY25 minus FY24 = 552 crore)",
+          "answer_correct": false,
+          "citation_correct": true,
+          "abstention_correct": false,
+          "returned_chunk_ids": [
+            242
+          ],
+          "errors": [
+            "incorrect_answer",
+            "abstention_failure"
+          ]
+        },
+        {
+          "question_id": "TATA081",
+          "answer": null,
+          "reference_answer": "Decrease of ₹584 crore (FY25 minus FY24 = -584 crore)",
+          "answer_correct": false,
+          "citation_correct": true,
+          "abstention_correct": false,
+          "returned_chunk_ids": [
+            245
+          ],
+          "errors": [
+            "incorrect_answer",
+            "abstention_failure"
+          ]
+        },
+        {
+          "question_id": "TATA082",
+          "answer": null,
+          "reference_answer": "Decrease of ₹2,643 crore (FY25 minus FY24 = -2,643 crore)",
+          "answer_correct": false,
+          "citation_correct": true,
+          "abstention_correct": false,
+          "returned_chunk_ids": [
+            245
+          ],
+          "errors": [
+            "incorrect_answer",
+            "abstention_failure"
+          ]
+        },
+        {
+          "question_id": "TATA083",
+          "answer": null,
+          "reference_answer": "Increase of ₹2,635 crore (FY25 minus FY24 = 2,635 crore)",
+          "answer_correct": false,
+          "citation_correct": true,
+          "abstention_correct": false,
+          "returned_chunk_ids": [
+            249
+          ],
+          "errors": [
+            "incorrect_answer",
+            "abstention_failure"
+          ]
+        },
+        {
+          "question_id": "TATA084",
+          "answer": null,
+          "reference_answer": "Increase of ₹4,962 crore (FY25 minus FY24 = 4,962 crore)",
+          "answer_correct": false,
+          "citation_correct": true,
+          "abstention_correct": false,
+          "returned_chunk_ids": [
+            249
+          ],
+          "errors": [
+            "incorrect_answer",
+            "abstention_failure"
+          ]
+        },
+        {
+          "question_id": "TATA085",
+          "answer": null,
+          "reference_answer": "Decrease of ₹499 crore (FY25 minus FY24 = -499 crore)",
+          "answer_correct": false,
+          "citation_correct": true,
+          "abstention_correct": false,
+          "returned_chunk_ids": [
+            251
+          ],
+          "errors": [
+            "incorrect_answer",
+            "abstention_failure"
+          ]
+        },
+        {
+          "question_id": "TATA086",
+          "answer": null,
+          "reference_answer": "Increase of ₹5,351 crore (FY25 minus FY24 = 5,351 crore)",
+          "answer_correct": false,
+          "citation_correct": true,
+          "abstention_correct": false,
+          "returned_chunk_ids": [
+            251
+          ],
+          "errors": [
+            "incorrect_answer",
+            "abstention_failure"
+          ]
+        },
+        {
+          "question_id": "TATA087",
+          "answer": null,
+          "reference_answer": "Decrease of ₹2,450 crore (FY25 minus FY24 = -2,450 crore)",
+          "answer_correct": false,
+          "citation_correct": true,
+          "abstention_correct": false,
+          "returned_chunk_ids": [
+            255
+          ],
+          "errors": [
+            "incorrect_answer",
+            "abstention_failure"
+          ]
+        },
+        {
+          "question_id": "TATA088",
+          "answer": null,
+          "reference_answer": "Decrease of ₹3,658 crore (FY25 minus FY24 = -3,658 crore)",
+          "answer_correct": false,
+          "citation_correct": true,
+          "abstention_correct": false,
+          "returned_chunk_ids": [
+            255
+          ],
+          "errors": [
+            "incorrect_answer",
+            "abstention_failure"
+          ]
+        },
+        {
+          "question_id": "TATA089",
+          "answer": null,
+          "reference_answer": "Decrease of ₹2,776 crore (FY25 minus FY24 = -2,776 crore)",
+          "answer_correct": false,
+          "citation_correct": false,
+          "abstention_correct": false,
+          "returned_chunk_ids": [],
+          "errors": [
+            "incorrect_answer",
+            "abstention_failure"
+          ]
+        },
+        {
+          "question_id": "TATA090",
+          "answer": null,
+          "reference_answer": "Decrease of ₹3,519 crore (FY25 minus FY24 = -3,519 crore)",
+          "answer_correct": false,
+          "citation_correct": false,
+          "abstention_correct": false,
+          "returned_chunk_ids": [],
+          "errors": [
+            "incorrect_answer",
+            "abstention_failure"
+          ]
+        },
+        {
+          "question_id": "TATA091",
+          "answer": null,
+          "reference_answer": "+1.31%",
+          "answer_correct": false,
+          "citation_correct": true,
+          "abstention_correct": false,
+          "returned_chunk_ids": [
+            238
+          ],
+          "errors": [
+            "retrieval_miss",
+            "incorrect_answer",
+            "abstention_failure"
+          ]
+        },
+        {
+          "question_id": "TATA092",
+          "answer": null,
+          "reference_answer": "-5.30%",
+          "answer_correct": false,
+          "citation_correct": true,
+          "abstention_correct": false,
+          "returned_chunk_ids": [
+            238
+          ],
+          "errors": [
+            "retrieval_miss",
+            "incorrect_answer",
+            "abstention_failure"
+          ]
+        },
+        {
+          "question_id": "TATA093",
+          "answer": null,
+          "reference_answer": "-4.33%",
+          "answer_correct": false,
+          "citation_correct": true,
+          "abstention_correct": false,
+          "returned_chunk_ids": [
+            238
+          ],
+          "errors": [
+            "retrieval_miss",
+            "incorrect_answer",
+            "abstention_failure"
+          ]
+        },
+        {
+          "question_id": "TATA094",
+          "answer": null,
+          "reference_answer": "+18.82%",
+          "answer_correct": false,
+          "citation_correct": true,
+          "abstention_correct": false,
+          "returned_chunk_ids": [
+            238
+          ],
+          "errors": [
+            "retrieval_miss",
+            "incorrect_answer",
+            "abstention_failure"
+          ]
+        },
+        {
+          "question_id": "TATA095",
+          "answer": null,
+          "reference_answer": "-34.59%",
+          "answer_correct": false,
+          "citation_correct": true,
+          "abstention_correct": false,
+          "returned_chunk_ids": [
+            238
+          ],
+          "errors": [
+            "retrieval_miss",
+            "incorrect_answer",
+            "abstention_failure"
+          ]
+        },
+        {
+          "question_id": "TATA096",
+          "answer": null,
+          "reference_answer": "-11.50%",
+          "answer_correct": false,
+          "citation_correct": true,
+          "abstention_correct": false,
+          "returned_chunk_ids": [
+            238
+          ],
+          "errors": [
+            "retrieval_miss",
+            "incorrect_answer",
+            "abstention_failure"
+          ]
+        },
+        {
+          "question_id": "TATA097",
+          "answer": "439,695 ₹ crore",
+          "reference_answer": "Consolidated was higher by ₹370,276 crore",
+          "answer_correct": false,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            239
+          ],
+          "errors": [
+            "incorrect_answer"
+          ]
+        },
+        {
+          "question_id": "TATA098",
+          "answer": "434,016 ₹ crore",
+          "reference_answer": "Consolidated was higher by ₹360,713 crore",
+          "answer_correct": false,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            239
+          ],
+          "errors": [
+            "incorrect_answer"
+          ]
+        },
+        {
+          "question_id": "TATA099",
+          "answer": "373,847 ₹ crore",
+          "reference_answer": "Consolidated was higher by ₹313,543 crore",
+          "answer_correct": false,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            240
+          ],
+          "errors": [
+            "incorrect_answer"
+          ]
+        },
+        {
+          "question_id": "TATA100",
+          "answer": "365,185 ₹ crore",
+          "reference_answer": "Consolidated was higher by ₹300,857 crore",
+          "answer_correct": false,
+          "citation_correct": true,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            240
+          ],
+          "errors": [
+            "incorrect_answer"
+          ]
+        },
+        {
+          "question_id": "TATA101",
+          "answer": null,
+          "reference_answer": "13.13%",
+          "answer_correct": false,
+          "citation_correct": false,
+          "abstention_correct": false,
+          "returned_chunk_ids": [
+            1794
+          ],
+          "errors": [
+            "retrieval_miss",
+            "incorrect_answer",
+            "abstention_failure"
+          ]
+        },
+        {
+          "question_id": "TATA102",
+          "answer": null,
+          "reference_answer": "12.24%",
+          "answer_correct": false,
+          "citation_correct": false,
+          "abstention_correct": false,
+          "returned_chunk_ids": [
+            1794
+          ],
+          "errors": [
+            "retrieval_miss",
+            "incorrect_answer",
+            "abstention_failure"
+          ]
+        },
+        {
+          "question_id": "TATA103",
+          "answer": null,
+          "reference_answer": "14.98%",
+          "answer_correct": false,
+          "citation_correct": false,
+          "abstention_correct": false,
+          "returned_chunk_ids": [
+            655
+          ],
+          "errors": [
+            "retrieval_miss",
+            "incorrect_answer",
+            "abstention_failure"
+          ]
+        },
+        {
+          "question_id": "TATA104",
+          "answer": null,
+          "reference_answer": "15.86%",
+          "answer_correct": false,
+          "citation_correct": true,
+          "abstention_correct": false,
+          "returned_chunk_ids": [
+            237
+          ],
+          "errors": [
+            "retrieval_miss",
+            "incorrect_answer",
+            "abstention_failure"
+          ]
+        },
+        {
+          "question_id": "TATA105",
+          "answer": null,
+          "reference_answer": null,
+          "answer_correct": true,
+          "citation_correct": false,
+          "abstention_correct": true,
+          "returned_chunk_ids": [],
+          "errors": []
+        },
+        {
+          "question_id": "TATA106",
+          "answer": null,
+          "reference_answer": null,
+          "answer_correct": true,
+          "citation_correct": false,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            1699
+          ],
+          "errors": []
+        },
+        {
+          "question_id": "TATA107",
+          "answer": null,
+          "reference_answer": null,
+          "answer_correct": true,
+          "citation_correct": false,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            1699
+          ],
+          "errors": []
+        },
+        {
+          "question_id": "TATA108",
+          "answer": null,
+          "reference_answer": null,
+          "answer_correct": true,
+          "citation_correct": false,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            699
+          ],
+          "errors": []
+        },
+        {
+          "question_id": "TATA109",
+          "answer": null,
+          "reference_answer": null,
+          "answer_correct": true,
+          "citation_correct": false,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            1561
+          ],
+          "errors": []
+        },
+        {
+          "question_id": "TATA110",
+          "answer": null,
+          "reference_answer": null,
+          "answer_correct": true,
+          "citation_correct": false,
+          "abstention_correct": true,
+          "returned_chunk_ids": [],
+          "errors": []
+        },
+        {
+          "question_id": "TATA111",
+          "answer": null,
+          "reference_answer": null,
+          "answer_correct": true,
+          "citation_correct": false,
+          "abstention_correct": true,
+          "returned_chunk_ids": [],
+          "errors": []
+        },
+        {
+          "question_id": "TATA112",
+          "answer": null,
+          "reference_answer": null,
+          "answer_correct": true,
+          "citation_correct": false,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            574
+          ],
+          "errors": []
+        },
+        {
+          "question_id": "TATA113",
+          "answer": null,
+          "reference_answer": null,
+          "answer_correct": true,
+          "citation_correct": false,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            718
+          ],
+          "errors": []
+        },
+        {
+          "question_id": "TATA114",
+          "answer": null,
+          "reference_answer": null,
+          "answer_correct": true,
+          "citation_correct": false,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            786
+          ],
+          "errors": []
+        },
+        {
+          "question_id": "TATA115",
+          "answer": null,
+          "reference_answer": null,
+          "answer_correct": true,
+          "citation_correct": false,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            260
+          ],
+          "errors": []
+        },
+        {
+          "question_id": "TATA116",
+          "answer": null,
+          "reference_answer": null,
+          "answer_correct": true,
+          "citation_correct": false,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            260
+          ],
+          "errors": []
+        },
+        {
+          "question_id": "TATA117",
+          "answer": null,
+          "reference_answer": null,
+          "answer_correct": true,
+          "citation_correct": false,
+          "abstention_correct": true,
+          "returned_chunk_ids": [],
+          "errors": []
+        },
+        {
+          "question_id": "TATA118",
+          "answer": null,
+          "reference_answer": null,
+          "answer_correct": true,
+          "citation_correct": false,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            290
+          ],
+          "errors": []
+        },
+        {
+          "question_id": "TATA119",
+          "answer": null,
+          "reference_answer": null,
+          "answer_correct": true,
+          "citation_correct": false,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            869
+          ],
+          "errors": []
+        },
+        {
+          "question_id": "TATA120",
+          "answer": "65,848 ₹ crore",
+          "reference_answer": null,
+          "answer_correct": false,
+          "citation_correct": true,
+          "abstention_correct": false,
+          "returned_chunk_ids": [
+            241
+          ],
+          "errors": [
+            "abstention_failure"
+          ]
+        },
+        {
+          "question_id": "TATA121",
+          "answer": null,
+          "reference_answer": null,
+          "answer_correct": true,
+          "citation_correct": false,
+          "abstention_correct": true,
+          "returned_chunk_ids": [],
+          "errors": []
+        },
+        {
+          "question_id": "TATA122",
+          "answer": null,
+          "reference_answer": null,
+          "answer_correct": true,
+          "citation_correct": false,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            718
+          ],
+          "errors": []
+        },
+        {
+          "question_id": "TATA123",
+          "answer": null,
+          "reference_answer": null,
+          "answer_correct": true,
+          "citation_correct": false,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            684
+          ],
+          "errors": []
+        },
+        {
+          "question_id": "TATA124",
+          "answer": null,
+          "reference_answer": null,
+          "answer_correct": true,
+          "citation_correct": false,
+          "abstention_correct": true,
+          "returned_chunk_ids": [],
+          "errors": []
+        },
+        {
+          "question_id": "TATA125",
+          "answer": null,
+          "reference_answer": null,
+          "answer_correct": true,
+          "citation_correct": false,
+          "abstention_correct": true,
+          "returned_chunk_ids": [],
+          "errors": []
+        },
+        {
+          "question_id": "TATA126",
+          "answer": null,
+          "reference_answer": null,
+          "answer_correct": true,
+          "citation_correct": false,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            302
+          ],
+          "errors": []
+        },
+        {
+          "question_id": "TATA127",
+          "answer": null,
+          "reference_answer": null,
+          "answer_correct": true,
+          "citation_correct": false,
+          "abstention_correct": true,
+          "returned_chunk_ids": [
+            873
+          ],
+          "errors": []
+        },
+        {
+          "question_id": "TATA128",
+          "answer": null,
+          "reference_answer": null,
+          "answer_correct": true,
+          "citation_correct": false,
+          "abstention_correct": true,
+          "returned_chunk_ids": [],
+          "errors": []
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,3042 @@
+{
+  "dataset_name": "Tata Motors FY25 Financial RAG Benchmark — Hard Set",
+  "version": "2.0",
+  "purpose": "128-question challenging benchmark for retrieval, answer correctness, citation grounding, abstention and latency evaluation.",
+  "source": {
+    "title": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+    "url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+    "scope": "Financial Highlights table on printed page 150; selected key performance highlights on printed page 18 for source background. Units on page 150 are ₹ crore.",
+    "source_note": "Keep standalone and consolidated scopes distinct. Preserve negative values shown in parentheses. Derived questions require calculation from the cited table values. The annual report PDF must be ingested as the actual corpus."
+  },
+  "dataset_counts": {
+    "total": 128,
+    "answerable": 104,
+    "unanswerable": 24
+  },
+  "evaluation_notes": [
+    "This is a challenging benchmark with direct table lookups and multi-step calculations.",
+    "Relevant chunk IDs are intentionally empty and must be mapped against the exact chunks produced by the current FinVis ingestion pipeline. Never fabricate chunk IDs.",
+    "The reference answers for derived questions are calculated from the cited values; the calculation is stored per question.",
+    "Unanswerable items target facts not reported in the source report; verify against the complete PDF before scoring abstention.",
+    "Score retrieval only on answerable items. Score abstention accuracy on the 24 unanswerable items. Report counts and denominators alongside percentages.",
+    "Do not tune the system to these reference answers or hardcode question IDs."
+  ],
+  "questions": [
+    {
+      "question_id": "TATA001",
+      "question": "What was revenue from operations for standalone Tata Motors in FY25?",
+      "answerable": true,
+      "reference_answer": "₹69,419 crore",
+      "answer_type": "numeric_financial_value",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": 150,
+      "evidence_id": "tata_fy25_financial_highlights_p150",
+      "relevant_chunk_ids": [
+        239
+      ],
+      "relevant_evidence_text": "Revenue from operations — Standalone FY25: 69,419 (₹ crore)",
+      "evidence_row": "Revenue from operations — Standalone FY25: 69,419 (₹ crore)",
+      "unanswerable_reason": null,
+      "citation_ground_truth": {
+        "document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+        "printed_page": 150
+      },
+      "mapped_chunk_ids": [
+        239
+      ]
+    },
+    {
+      "question_id": "TATA002",
+      "question": "What was revenue from operations for standalone Tata Motors in FY24?",
+      "answerable": true,
+      "reference_answer": "₹73,303 crore",
+      "answer_type": "numeric_financial_value",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": 150,
+      "evidence_id": "tata_fy25_financial_highlights_p150",
+      "relevant_chunk_ids": [
+        239
+      ],
+      "relevant_evidence_text": "Revenue from operations — Standalone FY24: 73,303 (₹ crore)",
+      "evidence_row": "Revenue from operations — Standalone FY24: 73,303 (₹ crore)",
+      "unanswerable_reason": null,
+      "citation_ground_truth": {
+        "document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+        "printed_page": 150
+      },
+      "mapped_chunk_ids": [
+        239
+      ]
+    },
+    {
+      "question_id": "TATA003",
+      "question": "What was revenue from operations for consolidated Tata Motors in FY25?",
+      "answerable": true,
+      "reference_answer": "₹439,695 crore",
+      "answer_type": "numeric_financial_value",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": 150,
+      "evidence_id": "tata_fy25_financial_highlights_p150",
+      "relevant_chunk_ids": [
+        239
+      ],
+      "relevant_evidence_text": "Revenue from operations — Consolidated FY25: 439,695 (₹ crore)",
+      "evidence_row": "Revenue from operations — Consolidated FY25: 439,695 (₹ crore)",
+      "unanswerable_reason": null,
+      "citation_ground_truth": {
+        "document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+        "printed_page": 150
+      },
+      "mapped_chunk_ids": [
+        239
+      ]
+    },
+    {
+      "question_id": "TATA004",
+      "question": "What was revenue from operations for consolidated Tata Motors in FY24?",
+      "answerable": true,
+      "reference_answer": "₹434,016 crore",
+      "answer_type": "numeric_financial_value",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": 150,
+      "evidence_id": "tata_fy25_financial_highlights_p150",
+      "relevant_chunk_ids": [
+        239
+      ],
+      "relevant_evidence_text": "Revenue from operations — Consolidated FY24: 434,016 (₹ crore)",
+      "evidence_row": "Revenue from operations — Consolidated FY24: 434,016 (₹ crore)",
+      "unanswerable_reason": null,
+      "citation_ground_truth": {
+        "document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+        "printed_page": 150
+      },
+      "mapped_chunk_ids": [
+        239
+      ]
+    },
+    {
+      "question_id": "TATA005",
+      "question": "What was total expenditure for standalone Tata Motors in FY25?",
+      "answerable": true,
+      "reference_answer": "₹60,304 crore",
+      "answer_type": "numeric_financial_value",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": 150,
+      "evidence_id": "tata_fy25_financial_highlights_p150",
+      "relevant_chunk_ids": [
+        240
+      ],
+      "relevant_evidence_text": "Total expenditure — Standalone FY25: 60,304 (₹ crore)",
+      "evidence_row": "Total expenditure — Standalone FY25: 60,304 (₹ crore)",
+      "unanswerable_reason": null,
+      "citation_ground_truth": {
+        "document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+        "printed_page": 150
+      },
+      "mapped_chunk_ids": [
+        240
+      ]
+    },
+    {
+      "question_id": "TATA006",
+      "question": "What was total expenditure for standalone Tata Motors in FY24?",
+      "answerable": true,
+      "reference_answer": "₹64,328 crore",
+      "answer_type": "numeric_financial_value",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": 150,
+      "evidence_id": "tata_fy25_financial_highlights_p150",
+      "relevant_chunk_ids": [
+        240
+      ],
+      "relevant_evidence_text": "Total expenditure — Standalone FY24: 64,328 (₹ crore)",
+      "evidence_row": "Total expenditure — Standalone FY24: 64,328 (₹ crore)",
+      "unanswerable_reason": null,
+      "citation_ground_truth": {
+        "document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+        "printed_page": 150
+      },
+      "mapped_chunk_ids": [
+        240
+      ]
+    },
+    {
+      "question_id": "TATA007",
+      "question": "What was total expenditure for consolidated Tata Motors in FY25?",
+      "answerable": true,
+      "reference_answer": "₹373,847 crore",
+      "answer_type": "numeric_financial_value",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": 150,
+      "evidence_id": "tata_fy25_financial_highlights_p150",
+      "relevant_chunk_ids": [
+        240
+      ],
+      "relevant_evidence_text": "Total expenditure — Consolidated FY25: 373,847 (₹ crore)",
+      "evidence_row": "Total expenditure — Consolidated FY25: 373,847 (₹ crore)",
+      "unanswerable_reason": null,
+      "citation_ground_truth": {
+        "document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+        "printed_page": 150
+      },
+      "mapped_chunk_ids": [
+        240
+      ]
+    },
+    {
+      "question_id": "TATA008",
+      "question": "What was total expenditure for consolidated Tata Motors in FY24?",
+      "answerable": true,
+      "reference_answer": "₹365,185 crore",
+      "answer_type": "numeric_financial_value",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": 150,
+      "evidence_id": "tata_fy25_financial_highlights_p150",
+      "relevant_chunk_ids": [
+        240
+      ],
+      "relevant_evidence_text": "Total expenditure — Consolidated FY24: 365,185 (₹ crore)",
+      "evidence_row": "Total expenditure — Consolidated FY24: 365,185 (₹ crore)",
+      "unanswerable_reason": null,
+      "citation_ground_truth": {
+        "document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+        "printed_page": 150
+      },
+      "mapped_chunk_ids": [
+        240
+      ]
+    },
+    {
+      "question_id": "TATA009",
+      "question": "What was operating profit for standalone Tata Motors in FY25?",
+      "answerable": true,
+      "reference_answer": "₹9,115 crore",
+      "answer_type": "numeric_financial_value",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": 150,
+      "evidence_id": "tata_fy25_financial_highlights_p150",
+      "relevant_chunk_ids": [
+        241
+      ],
+      "relevant_evidence_text": "Operating profit — Standalone FY25: 9,115 (₹ crore)",
+      "evidence_row": "Operating profit — Standalone FY25: 9,115 (₹ crore)",
+      "unanswerable_reason": null,
+      "citation_ground_truth": {
+        "document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+        "printed_page": 150
+      },
+      "mapped_chunk_ids": [
+        241
+      ]
+    },
+    {
+      "question_id": "TATA010",
+      "question": "What was operating profit for standalone Tata Motors in FY24?",
+      "answerable": true,
+      "reference_answer": "₹8,975 crore",
+      "answer_type": "numeric_financial_value",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": 150,
+      "evidence_id": "tata_fy25_financial_highlights_p150",
+      "relevant_chunk_ids": [
+        241
+      ],
+      "relevant_evidence_text": "Operating profit — Standalone FY24: 8,975 (₹ crore)",
+      "evidence_row": "Operating profit — Standalone FY24: 8,975 (₹ crore)",
+      "unanswerable_reason": null,
+      "citation_ground_truth": {
+        "document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+        "printed_page": 150
+      },
+      "mapped_chunk_ids": [
+        241
+      ]
+    },
+    {
+      "question_id": "TATA011",
+      "question": "What was operating profit for consolidated Tata Motors in FY25?",
+      "answerable": true,
+      "reference_answer": "₹65,848 crore",
+      "answer_type": "numeric_financial_value",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": 150,
+      "evidence_id": "tata_fy25_financial_highlights_p150",
+      "relevant_chunk_ids": [
+        241
+      ],
+      "relevant_evidence_text": "Operating profit — Consolidated FY25: 65,848 (₹ crore)",
+      "evidence_row": "Operating profit — Consolidated FY25: 65,848 (₹ crore)",
+      "unanswerable_reason": null,
+      "citation_ground_truth": {
+        "document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+        "printed_page": 150
+      },
+      "mapped_chunk_ids": [
+        241
+      ]
+    },
+    {
+      "question_id": "TATA012",
+      "question": "What was operating profit for consolidated Tata Motors in FY24?",
+      "answerable": true,
+      "reference_answer": "₹68,831 crore",
+      "answer_type": "numeric_financial_value",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": 150,
+      "evidence_id": "tata_fy25_financial_highlights_p150",
+      "relevant_chunk_ids": [
+        241
+      ],
+      "relevant_evidence_text": "Operating profit — Consolidated FY24: 68,831 (₹ crore)",
+      "evidence_row": "Operating profit — Consolidated FY24: 68,831 (₹ crore)",
+      "unanswerable_reason": null,
+      "citation_ground_truth": {
+        "document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+        "printed_page": 150
+      },
+      "mapped_chunk_ids": [
+        241
+      ]
+    },
+    {
+      "question_id": "TATA013",
+      "question": "What was other income for standalone Tata Motors in FY25?",
+      "answerable": true,
+      "reference_answer": "₹2,796 crore",
+      "answer_type": "numeric_financial_value",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": 150,
+      "evidence_id": "tata_fy25_financial_highlights_p150",
+      "relevant_chunk_ids": [
+        242
+      ],
+      "relevant_evidence_text": "Other income — Standalone FY25: 2,796 (₹ crore)",
+      "evidence_row": "Other income — Standalone FY25: 2,796 (₹ crore)",
+      "unanswerable_reason": null,
+      "citation_ground_truth": {
+        "document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+        "printed_page": 150
+      },
+      "mapped_chunk_ids": [
+        242
+      ]
+    },
+    {
+      "question_id": "TATA014",
+      "question": "What was other income for standalone Tata Motors in FY24?",
+      "answerable": true,
+      "reference_answer": "₹1,150 crore",
+      "answer_type": "numeric_financial_value",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": 150,
+      "evidence_id": "tata_fy25_financial_highlights_p150",
+      "relevant_chunk_ids": [
+        242
+      ],
+      "relevant_evidence_text": "Other income — Standalone FY24: 1,150 (₹ crore)",
+      "evidence_row": "Other income — Standalone FY24: 1,150 (₹ crore)",
+      "unanswerable_reason": null,
+      "citation_ground_truth": {
+        "document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+        "printed_page": 150
+      },
+      "mapped_chunk_ids": [
+        242
+      ]
+    },
+    {
+      "question_id": "TATA015",
+      "question": "What was other income for consolidated Tata Motors in FY25?",
+      "answerable": true,
+      "reference_answer": "₹6,244 crore",
+      "answer_type": "numeric_financial_value",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": 150,
+      "evidence_id": "tata_fy25_financial_highlights_p150",
+      "relevant_chunk_ids": [
+        242
+      ],
+      "relevant_evidence_text": "Other income — Consolidated FY25: 6,244 (₹ crore)",
+      "evidence_row": "Other income — Consolidated FY25: 6,244 (₹ crore)",
+      "unanswerable_reason": null,
+      "citation_ground_truth": {
+        "document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+        "printed_page": 150
+      },
+      "mapped_chunk_ids": [
+        242
+      ]
+    },
+    {
+      "question_id": "TATA016",
+      "question": "What was other income for consolidated Tata Motors in FY24?",
+      "answerable": true,
+      "reference_answer": "₹5,692 crore",
+      "answer_type": "numeric_financial_value",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": 150,
+      "evidence_id": "tata_fy25_financial_highlights_p150",
+      "relevant_chunk_ids": [
+        242
+      ],
+      "relevant_evidence_text": "Other income — Consolidated FY24: 5,692 (₹ crore)",
+      "evidence_row": "Other income — Consolidated FY24: 5,692 (₹ crore)",
+      "unanswerable_reason": null,
+      "citation_ground_truth": {
+        "document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+        "printed_page": 150
+      },
+      "mapped_chunk_ids": [
+        242
+      ]
+    },
+    {
+      "question_id": "TATA017",
+      "question": "What was profit before share of profit in equity accounted investees, interest, foreign exchange, depreciation, amortization, exceptional item and tax for standalone Tata Motors in FY25?",
+      "answerable": true,
+      "reference_answer": "₹11,911 crore",
+      "answer_type": "numeric_financial_value",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": 150,
+      "evidence_id": "tata_fy25_financial_highlights_p150",
+      "relevant_chunk_ids": [
+        243
+      ],
+      "relevant_evidence_text": "Profit before share of profit in equity accounted investees, interest, foreign exchange, depreciation, amortization, exceptional item and tax — Standalone FY25: 11,911 (₹ crore)",
+      "evidence_row": "Profit before share of profit in equity accounted investees, interest, foreign exchange, depreciation, amortization, exceptional item and tax — Standalone FY25: 11,911 (₹ crore)",
+      "unanswerable_reason": null,
+      "citation_ground_truth": {
+        "document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+        "printed_page": 150
+      },
+      "mapped_chunk_ids": [
+        243
+      ]
+    },
+    {
+      "question_id": "TATA018",
+      "question": "What was profit before share of profit in equity accounted investees, interest, foreign exchange, depreciation, amortization, exceptional item and tax for standalone Tata Motors in FY24?",
+      "answerable": true,
+      "reference_answer": "₹10,125 crore",
+      "answer_type": "numeric_financial_value",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": 150,
+      "evidence_id": "tata_fy25_financial_highlights_p150",
+      "relevant_chunk_ids": [
+        243
+      ],
+      "relevant_evidence_text": "Profit before share of profit in equity accounted investees, interest, foreign exchange, depreciation, amortization, exceptional item and tax — Standalone FY24: 10,125 (₹ crore)",
+      "evidence_row": "Profit before share of profit in equity accounted investees, interest, foreign exchange, depreciation, amortization, exceptional item and tax — Standalone FY24: 10,125 (₹ crore)",
+      "unanswerable_reason": null,
+      "citation_ground_truth": {
+        "document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+        "printed_page": 150
+      },
+      "mapped_chunk_ids": [
+        243
+      ]
+    },
+    {
+      "question_id": "TATA019",
+      "question": "What was profit before share of profit in equity accounted investees, interest, foreign exchange, depreciation, amortization, exceptional item and tax for consolidated Tata Motors in FY25?",
+      "answerable": true,
+      "reference_answer": "₹72,092 crore",
+      "answer_type": "numeric_financial_value",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": 150,
+      "evidence_id": "tata_fy25_financial_highlights_p150",
+      "relevant_chunk_ids": [
+        243
+      ],
+      "relevant_evidence_text": "Profit before share of profit in equity accounted investees, interest, foreign exchange, depreciation, amortization, exceptional item and tax — Consolidated FY25: 72,092 (₹ crore)",
+      "evidence_row": "Profit before share of profit in equity accounted investees, interest, foreign exchange, depreciation, amortization, exceptional item and tax — Consolidated FY25: 72,092 (₹ crore)",
+      "unanswerable_reason": null,
+      "citation_ground_truth": {
+        "document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+        "printed_page": 150
+      },
+      "mapped_chunk_ids": [
+        243
+      ]
+    },
+    {
+      "question_id": "TATA020",
+      "question": "What was profit before share of profit in equity accounted investees, interest, foreign exchange, depreciation, amortization, exceptional item and tax for consolidated Tata Motors in FY24?",
+      "answerable": true,
+      "reference_answer": "₹74,523 crore",
+      "answer_type": "numeric_financial_value",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": 150,
+      "evidence_id": "tata_fy25_financial_highlights_p150",
+      "relevant_chunk_ids": [
+        243
+      ],
+      "relevant_evidence_text": "Profit before share of profit in equity accounted investees, interest, foreign exchange, depreciation, amortization, exceptional item and tax — Consolidated FY24: 74,523 (₹ crore)",
+      "evidence_row": "Profit before share of profit in equity accounted investees, interest, foreign exchange, depreciation, amortization, exceptional item and tax — Consolidated FY24: 74,523 (₹ crore)",
+      "unanswerable_reason": null,
+      "citation_ground_truth": {
+        "document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+        "printed_page": 150
+      },
+      "mapped_chunk_ids": [
+        243
+      ]
+    },
+    {
+      "question_id": "TATA021",
+      "question": "What was share of profit in equity accounted investees (net) for consolidated Tata Motors in FY25?",
+      "answerable": true,
+      "reference_answer": "₹287 crore",
+      "answer_type": "numeric_financial_value",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": 150,
+      "evidence_id": "tata_fy25_financial_highlights_p150",
+      "relevant_chunk_ids": [
+        244
+      ],
+      "relevant_evidence_text": "Share of profit in equity accounted investees (net) — Consolidated FY25: 287 (₹ crore)",
+      "evidence_row": "Share of profit in equity accounted investees (net) — Consolidated FY25: 287 (₹ crore)",
+      "unanswerable_reason": null,
+      "citation_ground_truth": {
+        "document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+        "printed_page": 150
+      },
+      "mapped_chunk_ids": [
+        244
+      ]
+    },
+    {
+      "question_id": "TATA022",
+      "question": "What was share of profit in equity accounted investees (net) for consolidated Tata Motors in FY24?",
+      "answerable": true,
+      "reference_answer": "₹700 crore",
+      "answer_type": "numeric_financial_value",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": 150,
+      "evidence_id": "tata_fy25_financial_highlights_p150",
+      "relevant_chunk_ids": [
+        244
+      ],
+      "relevant_evidence_text": "Share of profit in equity accounted investees (net) — Consolidated FY24: 700 (₹ crore)",
+      "evidence_row": "Share of profit in equity accounted investees (net) — Consolidated FY24: 700 (₹ crore)",
+      "unanswerable_reason": null,
+      "citation_ground_truth": {
+        "document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+        "printed_page": 150
+      },
+      "mapped_chunk_ids": [
+        244
+      ]
+    },
+    {
+      "question_id": "TATA023",
+      "question": "What was finance cost for standalone Tata Motors in FY25?",
+      "answerable": true,
+      "reference_answer": "₹1,122 crore",
+      "answer_type": "numeric_financial_value",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": 150,
+      "evidence_id": "tata_fy25_financial_highlights_p150",
+      "relevant_chunk_ids": [
+        245,
+        2222
+      ],
+      "relevant_evidence_text": "Finance cost — Standalone FY25: 1,122 (₹ crore)",
+      "evidence_row": "Finance cost — Standalone FY25: 1,122 (₹ crore)",
+      "unanswerable_reason": null,
+      "citation_ground_truth": {
+        "document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+        "printed_page": 150
+      },
+      "mapped_chunk_ids": [
+        245,
+        2222
+      ]
+    },
+    {
+      "question_id": "TATA024",
+      "question": "What was finance cost for standalone Tata Motors in FY24?",
+      "answerable": true,
+      "reference_answer": "₹1,706 crore",
+      "answer_type": "numeric_financial_value",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": 150,
+      "evidence_id": "tata_fy25_financial_highlights_p150",
+      "relevant_chunk_ids": [
+        245
+      ],
+      "relevant_evidence_text": "Finance cost — Standalone FY24: 1,706 (₹ crore)",
+      "evidence_row": "Finance cost — Standalone FY24: 1,706 (₹ crore)",
+      "unanswerable_reason": null,
+      "citation_ground_truth": {
+        "document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+        "printed_page": 150
+      },
+      "mapped_chunk_ids": [
+        245
+      ]
+    },
+    {
+      "question_id": "TATA025",
+      "question": "What was finance cost for consolidated Tata Motors in FY25?",
+      "answerable": true,
+      "reference_answer": "₹4,999 crore",
+      "answer_type": "numeric_financial_value",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": 150,
+      "evidence_id": "tata_fy25_financial_highlights_p150",
+      "relevant_chunk_ids": [
+        245
+      ],
+      "relevant_evidence_text": "Finance cost — Consolidated FY25: 4,999 (₹ crore)",
+      "evidence_row": "Finance cost — Consolidated FY25: 4,999 (₹ crore)",
+      "unanswerable_reason": null,
+      "citation_ground_truth": {
+        "document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+        "printed_page": 150
+      },
+      "mapped_chunk_ids": [
+        245
+      ]
+    },
+    {
+      "question_id": "TATA026",
+      "question": "What was finance cost for consolidated Tata Motors in FY24?",
+      "answerable": true,
+      "reference_answer": "₹7,642 crore",
+      "answer_type": "numeric_financial_value",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": 150,
+      "evidence_id": "tata_fy25_financial_highlights_p150",
+      "relevant_chunk_ids": [
+        245
+      ],
+      "relevant_evidence_text": "Finance cost — Consolidated FY24: 7,642 (₹ crore)",
+      "evidence_row": "Finance cost — Consolidated FY24: 7,642 (₹ crore)",
+      "unanswerable_reason": null,
+      "citation_ground_truth": {
+        "document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+        "printed_page": 150
+      },
+      "mapped_chunk_ids": [
+        245
+      ]
+    },
+    {
+      "question_id": "TATA027",
+      "question": "What was profit before depreciation, amortization, exceptional item, foreign exchange and tax for standalone Tata Motors in FY25?",
+      "answerable": true,
+      "reference_answer": "₹10,789 crore",
+      "answer_type": "numeric_financial_value",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": 150,
+      "evidence_id": "tata_fy25_financial_highlights_p150",
+      "relevant_chunk_ids": [
+        246
+      ],
+      "relevant_evidence_text": "Profit before depreciation, amortization, exceptional item, foreign exchange and tax — Standalone FY25: 10,789 (₹ crore)",
+      "evidence_row": "Profit before depreciation, amortization, exceptional item, foreign exchange and tax — Standalone FY25: 10,789 (₹ crore)",
+      "unanswerable_reason": null,
+      "citation_ground_truth": {
+        "document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+        "printed_page": 150
+      },
+      "mapped_chunk_ids": [
+        246
+      ]
+    },
+    {
+      "question_id": "TATA028",
+      "question": "What was profit before depreciation, amortization, exceptional item, foreign exchange and tax for standalone Tata Motors in FY24?",
+      "answerable": true,
+      "reference_answer": "₹8,419 crore",
+      "answer_type": "numeric_financial_value",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": 150,
+      "evidence_id": "tata_fy25_financial_highlights_p150",
+      "relevant_chunk_ids": [
+        246
+      ],
+      "relevant_evidence_text": "Profit before depreciation, amortization, exceptional item, foreign exchange and tax — Standalone FY24: 8,419 (₹ crore)",
+      "evidence_row": "Profit before depreciation, amortization, exceptional item, foreign exchange and tax — Standalone FY24: 8,419 (₹ crore)",
+      "unanswerable_reason": null,
+      "citation_ground_truth": {
+        "document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+        "printed_page": 150
+      },
+      "mapped_chunk_ids": [
+        246
+      ]
+    },
+    {
+      "question_id": "TATA029",
+      "question": "What was profit before depreciation, amortization, exceptional item, foreign exchange and tax for consolidated Tata Motors in FY25?",
+      "answerable": true,
+      "reference_answer": "₹67,380 crore",
+      "answer_type": "numeric_financial_value",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": 150,
+      "evidence_id": "tata_fy25_financial_highlights_p150",
+      "relevant_chunk_ids": [
+        246
+      ],
+      "relevant_evidence_text": "Profit before depreciation, amortization, exceptional item, foreign exchange and tax — Consolidated FY25: 67,380 (₹ crore)",
+      "evidence_row": "Profit before depreciation, amortization, exceptional item, foreign exchange and tax — Consolidated FY25: 67,380 (₹ crore)",
+      "unanswerable_reason": null,
+      "citation_ground_truth": {
+        "document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+        "printed_page": 150
+      },
+      "mapped_chunk_ids": [
+        246
+      ]
+    },
+    {
+      "question_id": "TATA030",
+      "question": "What was profit before depreciation, amortization, exceptional item, foreign exchange and tax for consolidated Tata Motors in FY24?",
+      "answerable": true,
+      "reference_answer": "₹67,581 crore",
+      "answer_type": "numeric_financial_value",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": 150,
+      "evidence_id": "tata_fy25_financial_highlights_p150",
+      "relevant_chunk_ids": [
+        246
+      ],
+      "relevant_evidence_text": "Profit before depreciation, amortization, exceptional item, foreign exchange and tax — Consolidated FY24: 67,581 (₹ crore)",
+      "evidence_row": "Profit before depreciation, amortization, exceptional item, foreign exchange and tax — Consolidated FY24: 67,581 (₹ crore)",
+      "unanswerable_reason": null,
+      "citation_ground_truth": {
+        "document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+        "printed_page": 150
+      },
+      "mapped_chunk_ids": [
+        246
+      ]
+    },
+    {
+      "question_id": "TATA031",
+      "question": "What was depreciation, amortization and product development/engineering expenses for standalone Tata Motors in FY25?",
+      "answerable": true,
+      "reference_answer": "₹3,041 crore",
+      "answer_type": "numeric_financial_value",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": 150,
+      "evidence_id": "tata_fy25_financial_highlights_p150",
+      "relevant_chunk_ids": [
+        247
+      ],
+      "relevant_evidence_text": "Depreciation, amortization and product development/engineering expenses — Standalone FY25: 3,041 (₹ crore)",
+      "evidence_row": "Depreciation, amortization and product development/engineering expenses — Standalone FY25: 3,041 (₹ crore)",
+      "unanswerable_reason": null,
+      "citation_ground_truth": {
+        "document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+        "printed_page": 150
+      },
+      "mapped_chunk_ids": [
+        247
+      ]
+    },
+    {
+      "question_id": "TATA032",
+      "question": "What was depreciation, amortization and product development/engineering expenses for standalone Tata Motors in FY24?",
+      "answerable": true,
+      "reference_answer": "₹3,122 crore",
+      "answer_type": "numeric_financial_value",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": 150,
+      "evidence_id": "tata_fy25_financial_highlights_p150",
+      "relevant_chunk_ids": [
+        247
+      ],
+      "relevant_evidence_text": "Depreciation, amortization and product development/engineering expenses — Standalone FY24: 3,122 (₹ crore)",
+      "evidence_row": "Depreciation, amortization and product development/engineering expenses — Standalone FY24: 3,122 (₹ crore)",
+      "unanswerable_reason": null,
+      "citation_ground_truth": {
+        "document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+        "printed_page": 150
+      },
+      "mapped_chunk_ids": [
+        247
+      ]
+    },
+    {
+      "question_id": "TATA033",
+      "question": "What was depreciation, amortization and product development/engineering expenses for consolidated Tata Motors in FY25?",
+      "answerable": true,
+      "reference_answer": "₹33,972 crore",
+      "answer_type": "numeric_financial_value",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": 150,
+      "evidence_id": "tata_fy25_financial_highlights_p150",
+      "relevant_chunk_ids": [
+        247
+      ],
+      "relevant_evidence_text": "Depreciation, amortization and product development/engineering expenses — Consolidated FY25: 33,972 (₹ crore)",
+      "evidence_row": "Depreciation, amortization and product development/engineering expenses — Consolidated FY25: 33,972 (₹ crore)",
+      "unanswerable_reason": null,
+      "citation_ground_truth": {
+        "document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+        "printed_page": 150
+      },
+      "mapped_chunk_ids": [
+        247
+      ]
+    },
+    {
+      "question_id": "TATA034",
+      "question": "What was depreciation, amortization and product development/engineering expenses for consolidated Tata Motors in FY24?",
+      "answerable": true,
+      "reference_answer": "₹38,198 crore",
+      "answer_type": "numeric_financial_value",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": 150,
+      "evidence_id": "tata_fy25_financial_highlights_p150",
+      "relevant_chunk_ids": [
+        247
+      ],
+      "relevant_evidence_text": "Depreciation, amortization and product development/engineering expenses — Consolidated FY24: 38,198 (₹ crore)",
+      "evidence_row": "Depreciation, amortization and product development/engineering expenses — Consolidated FY24: 38,198 (₹ crore)",
+      "unanswerable_reason": null,
+      "citation_ground_truth": {
+        "document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+        "printed_page": 150
+      },
+      "mapped_chunk_ids": [
+        247
+      ]
+    },
+    {
+      "question_id": "TATA035",
+      "question": "What was foreign exchange (gain)/loss (net) for standalone Tata Motors in FY25?",
+      "answerable": true,
+      "reference_answer": "₹71 crore",
+      "answer_type": "numeric_financial_value",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": 150,
+      "evidence_id": "tata_fy25_financial_highlights_p150",
+      "relevant_chunk_ids": [
+        248,
+        2018,
+        2088
+      ],
+      "relevant_evidence_text": "Foreign exchange (gain)/loss (net) — Standalone FY25: 71 (₹ crore)",
+      "evidence_row": "Foreign exchange (gain)/loss (net) — Standalone FY25: 71 (₹ crore)",
+      "unanswerable_reason": null,
+      "citation_ground_truth": {
+        "document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+        "printed_page": 150
+      },
+      "mapped_chunk_ids": [
+        248,
+        2018,
+        2088
+      ]
+    },
+    {
+      "question_id": "TATA036",
+      "question": "What was foreign exchange (gain)/loss (net) for standalone Tata Motors in FY24?",
+      "answerable": true,
+      "reference_answer": "₹255 crore",
+      "answer_type": "numeric_financial_value",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": 150,
+      "evidence_id": "tata_fy25_financial_highlights_p150",
+      "relevant_chunk_ids": [
+        248
+      ],
+      "relevant_evidence_text": "Foreign exchange (gain)/loss (net) — Standalone FY24: 255 (₹ crore)",
+      "evidence_row": "Foreign exchange (gain)/loss (net) — Standalone FY24: 255 (₹ crore)",
+      "unanswerable_reason": null,
+      "citation_ground_truth": {
+        "document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+        "printed_page": 150
+      },
+      "mapped_chunk_ids": [
+        248
+      ]
+    },
+    {
+      "question_id": "TATA037",
+      "question": "What was foreign exchange (gain)/loss (net) for consolidated Tata Motors in FY25?",
+      "answerable": true,
+      "reference_answer": "₹922 crore, shown as (922) in the table",
+      "answer_type": "numeric_financial_value",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": 150,
+      "evidence_id": "tata_fy25_financial_highlights_p150",
+      "relevant_chunk_ids": [
+        248
+      ],
+      "relevant_evidence_text": "Foreign exchange (gain)/loss (net) — Consolidated FY25: -922 (₹ crore)",
+      "evidence_row": "Foreign exchange (gain)/loss (net) — Consolidated FY25: -922 (₹ crore)",
+      "unanswerable_reason": null,
+      "citation_ground_truth": {
+        "document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+        "printed_page": 150
+      },
+      "mapped_chunk_ids": [
+        248
+      ]
+    },
+    {
+      "question_id": "TATA038",
+      "question": "What was foreign exchange (gain)/loss (net) for consolidated Tata Motors in FY24?",
+      "answerable": true,
+      "reference_answer": "₹15 crore",
+      "answer_type": "numeric_financial_value",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": 150,
+      "evidence_id": "tata_fy25_financial_highlights_p150",
+      "relevant_chunk_ids": [
+        248,
+        2019,
+        2026
+      ],
+      "relevant_evidence_text": "Foreign exchange (gain)/loss (net) — Consolidated FY24: 15 (₹ crore)",
+      "evidence_row": "Foreign exchange (gain)/loss (net) — Consolidated FY24: 15 (₹ crore)",
+      "unanswerable_reason": null,
+      "citation_ground_truth": {
+        "document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+        "printed_page": 150
+      },
+      "mapped_chunk_ids": [
+        248,
+        2019,
+        2026
+      ]
+    },
+    {
+      "question_id": "TATA039",
+      "question": "What was profit before exceptional items and tax for standalone Tata Motors in FY25?",
+      "answerable": true,
+      "reference_answer": "₹7,677 crore",
+      "answer_type": "numeric_financial_value",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": 150,
+      "evidence_id": "tata_fy25_financial_highlights_p150",
+      "relevant_chunk_ids": [
+        249
+      ],
+      "relevant_evidence_text": "Profit before exceptional items and tax — Standalone FY25: 7,677 (₹ crore)",
+      "evidence_row": "Profit before exceptional items and tax — Standalone FY25: 7,677 (₹ crore)",
+      "unanswerable_reason": null,
+      "citation_ground_truth": {
+        "document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+        "printed_page": 150
+      },
+      "mapped_chunk_ids": [
+        249
+      ]
+    },
+    {
+      "question_id": "TATA040",
+      "question": "What was profit before exceptional items and tax for standalone Tata Motors in FY24?",
+      "answerable": true,
+      "reference_answer": "₹5,042 crore",
+      "answer_type": "numeric_financial_value",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": 150,
+      "evidence_id": "tata_fy25_financial_highlights_p150",
+      "relevant_chunk_ids": [
+        249
+      ],
+      "relevant_evidence_text": "Profit before exceptional items and tax — Standalone FY24: 5,042 (₹ crore)",
+      "evidence_row": "Profit before exceptional items and tax — Standalone FY24: 5,042 (₹ crore)",
+      "unanswerable_reason": null,
+      "citation_ground_truth": {
+        "document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+        "printed_page": 150
+      },
+      "mapped_chunk_ids": [
+        249
+      ]
+    },
+    {
+      "question_id": "TATA041",
+      "question": "What was profit before exceptional items and tax for consolidated Tata Motors in FY25?",
+      "answerable": true,
+      "reference_answer": "₹34,330 crore",
+      "answer_type": "numeric_financial_value",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": 150,
+      "evidence_id": "tata_fy25_financial_highlights_p150",
+      "relevant_chunk_ids": [
+        249
+      ],
+      "relevant_evidence_text": "Profit before exceptional items and tax — Consolidated FY25: 34,330 (₹ crore)",
+      "evidence_row": "Profit before exceptional items and tax — Consolidated FY25: 34,330 (₹ crore)",
+      "unanswerable_reason": null,
+      "citation_ground_truth": {
+        "document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+        "printed_page": 150
+      },
+      "mapped_chunk_ids": [
+        249
+      ]
+    },
+    {
+      "question_id": "TATA042",
+      "question": "What was profit before exceptional items and tax for consolidated Tata Motors in FY24?",
+      "answerable": true,
+      "reference_answer": "₹29,368 crore",
+      "answer_type": "numeric_financial_value",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": 150,
+      "evidence_id": "tata_fy25_financial_highlights_p150",
+      "relevant_chunk_ids": [
+        249
+      ],
+      "relevant_evidence_text": "Profit before exceptional items and tax — Consolidated FY24: 29,368 (₹ crore)",
+      "evidence_row": "Profit before exceptional items and tax — Consolidated FY24: 29,368 (₹ crore)",
+      "unanswerable_reason": null,
+      "citation_ground_truth": {
+        "document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+        "printed_page": 150
+      },
+      "mapped_chunk_ids": [
+        249
+      ]
+    },
+    {
+      "question_id": "TATA043",
+      "question": "What was exceptional items — (gain)/loss (net) for standalone Tata Motors in FY25?",
+      "answerable": true,
+      "reference_answer": "₹325 crore",
+      "answer_type": "numeric_financial_value",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": 150,
+      "evidence_id": "tata_fy25_financial_highlights_p150",
+      "relevant_chunk_ids": [
+        250,
+        2252
+      ],
+      "relevant_evidence_text": "Exceptional items — (gain)/loss (net) — Standalone FY25: 325 (₹ crore)",
+      "evidence_row": "Exceptional items — (gain)/loss (net) — Standalone FY25: 325 (₹ crore)",
+      "unanswerable_reason": null,
+      "citation_ground_truth": {
+        "document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+        "printed_page": 150
+      },
+      "mapped_chunk_ids": [
+        250,
+        2252
+      ]
+    },
+    {
+      "question_id": "TATA044",
+      "question": "What was exceptional items — (gain)/loss (net) for standalone Tata Motors in FY24?",
+      "answerable": true,
+      "reference_answer": "₹2,809 crore, shown as (2,809) in the table",
+      "answer_type": "numeric_financial_value",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": 150,
+      "evidence_id": "tata_fy25_financial_highlights_p150",
+      "relevant_chunk_ids": [
+        250
+      ],
+      "relevant_evidence_text": "Exceptional items — (gain)/loss (net) — Standalone FY24: -2,809 (₹ crore)",
+      "evidence_row": "Exceptional items — (gain)/loss (net) — Standalone FY24: -2,809 (₹ crore)",
+      "unanswerable_reason": null,
+      "citation_ground_truth": {
+        "document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+        "printed_page": 150
+      },
+      "mapped_chunk_ids": [
+        250
+      ]
+    },
+    {
+      "question_id": "TATA045",
+      "question": "What was exceptional items — (gain)/loss (net) for consolidated Tata Motors in FY25?",
+      "answerable": true,
+      "reference_answer": "₹550 crore",
+      "answer_type": "numeric_financial_value",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": 150,
+      "evidence_id": "tata_fy25_financial_highlights_p150",
+      "relevant_chunk_ids": [
+        250,
+        1339
+      ],
+      "relevant_evidence_text": "Exceptional items — (gain)/loss (net) — Consolidated FY25: 550 (₹ crore)",
+      "evidence_row": "Exceptional items — (gain)/loss (net) — Consolidated FY25: 550 (₹ crore)",
+      "unanswerable_reason": null,
+      "citation_ground_truth": {
+        "document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+        "printed_page": 150
+      },
+      "mapped_chunk_ids": [
+        250,
+        1339
+      ]
+    },
+    {
+      "question_id": "TATA046",
+      "question": "What was exceptional items — (gain)/loss (net) for consolidated Tata Motors in FY24?",
+      "answerable": true,
+      "reference_answer": "₹939 crore",
+      "answer_type": "numeric_financial_value",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": 150,
+      "evidence_id": "tata_fy25_financial_highlights_p150",
+      "relevant_chunk_ids": [
+        250
+      ],
+      "relevant_evidence_text": "Exceptional items — (gain)/loss (net) — Consolidated FY24: 939 (₹ crore)",
+      "evidence_row": "Exceptional items — (gain)/loss (net) — Consolidated FY24: 939 (₹ crore)",
+      "unanswerable_reason": null,
+      "citation_ground_truth": {
+        "document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+        "printed_page": 150
+      },
+      "mapped_chunk_ids": [
+        250
+      ]
+    },
+    {
+      "question_id": "TATA047",
+      "question": "What was profit before tax for standalone Tata Motors in FY25?",
+      "answerable": true,
+      "reference_answer": "₹7,352 crore",
+      "answer_type": "numeric_financial_value",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": 150,
+      "evidence_id": "tata_fy25_financial_highlights_p150",
+      "relevant_chunk_ids": [
+        251
+      ],
+      "relevant_evidence_text": "Profit before tax — Standalone FY25: 7,352 (₹ crore)",
+      "evidence_row": "Profit before tax — Standalone FY25: 7,352 (₹ crore)",
+      "unanswerable_reason": null,
+      "citation_ground_truth": {
+        "document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+        "printed_page": 150
+      },
+      "mapped_chunk_ids": [
+        251
+      ]
+    },
+    {
+      "question_id": "TATA048",
+      "question": "What was profit before tax for standalone Tata Motors in FY24?",
+      "answerable": true,
+      "reference_answer": "₹7,851 crore",
+      "answer_type": "numeric_financial_value",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": 150,
+      "evidence_id": "tata_fy25_financial_highlights_p150",
+      "relevant_chunk_ids": [
+        251
+      ],
+      "relevant_evidence_text": "Profit before tax — Standalone FY24: 7,851 (₹ crore)",
+      "evidence_row": "Profit before tax — Standalone FY24: 7,851 (₹ crore)",
+      "unanswerable_reason": null,
+      "citation_ground_truth": {
+        "document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+        "printed_page": 150
+      },
+      "mapped_chunk_ids": [
+        251
+      ]
+    },
+    {
+      "question_id": "TATA049",
+      "question": "What was profit before tax for consolidated Tata Motors in FY25?",
+      "answerable": true,
+      "reference_answer": "₹33,780 crore",
+      "answer_type": "numeric_financial_value",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": 150,
+      "evidence_id": "tata_fy25_financial_highlights_p150",
+      "relevant_chunk_ids": [
+        251
+      ],
+      "relevant_evidence_text": "Profit before tax — Consolidated FY25: 33,780 (₹ crore)",
+      "evidence_row": "Profit before tax — Consolidated FY25: 33,780 (₹ crore)",
+      "unanswerable_reason": null,
+      "citation_ground_truth": {
+        "document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+        "printed_page": 150
+      },
+      "mapped_chunk_ids": [
+        251
+      ]
+    },
+    {
+      "question_id": "TATA050",
+      "question": "What was profit before tax for consolidated Tata Motors in FY24?",
+      "answerable": true,
+      "reference_answer": "₹28,429 crore",
+      "answer_type": "numeric_financial_value",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": 150,
+      "evidence_id": "tata_fy25_financial_highlights_p150",
+      "relevant_chunk_ids": [
+        251
+      ],
+      "relevant_evidence_text": "Profit before tax — Consolidated FY24: 28,429 (₹ crore)",
+      "evidence_row": "Profit before tax — Consolidated FY24: 28,429 (₹ crore)",
+      "unanswerable_reason": null,
+      "citation_ground_truth": {
+        "document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+        "printed_page": 150
+      },
+      "mapped_chunk_ids": [
+        251
+      ]
+    },
+    {
+      "question_id": "TATA051",
+      "question": "What was tax expenses/(credit), net for standalone Tata Motors in FY25?",
+      "answerable": true,
+      "reference_answer": "₹1,900 crore",
+      "answer_type": "numeric_financial_value",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": 150,
+      "evidence_id": "tata_fy25_financial_highlights_p150",
+      "relevant_chunk_ids": [
+        252
+      ],
+      "relevant_evidence_text": "Tax expenses/(credit), net — Standalone FY25: 1,900 (₹ crore)",
+      "evidence_row": "Tax expenses/(credit), net — Standalone FY25: 1,900 (₹ crore)",
+      "unanswerable_reason": null,
+      "citation_ground_truth": {
+        "document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+        "printed_page": 150
+      },
+      "mapped_chunk_ids": [
+        252
+      ]
+    },
+    {
+      "question_id": "TATA052",
+      "question": "What was tax expenses/(credit), net for standalone Tata Motors in FY24?",
+      "answerable": true,
+      "reference_answer": "₹51 crore, shown as (51) in the table",
+      "answer_type": "numeric_financial_value",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": 150,
+      "evidence_id": "tata_fy25_financial_highlights_p150",
+      "relevant_chunk_ids": [
+        252
+      ],
+      "relevant_evidence_text": "Tax expenses/(credit), net — Standalone FY24: -51 (₹ crore)",
+      "evidence_row": "Tax expenses/(credit), net — Standalone FY24: -51 (₹ crore)",
+      "unanswerable_reason": null,
+      "citation_ground_truth": {
+        "document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+        "printed_page": 150
+      },
+      "mapped_chunk_ids": [
+        252
+      ]
+    },
+    {
+      "question_id": "TATA053",
+      "question": "What was tax expenses/(credit), net for consolidated Tata Motors in FY25?",
+      "answerable": true,
+      "reference_answer": "₹10,502 crore",
+      "answer_type": "numeric_financial_value",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": 150,
+      "evidence_id": "tata_fy25_financial_highlights_p150",
+      "relevant_chunk_ids": [
+        252
+      ],
+      "relevant_evidence_text": "Tax expenses/(credit), net — Consolidated FY25: 10,502 (₹ crore)",
+      "evidence_row": "Tax expenses/(credit), net — Consolidated FY25: 10,502 (₹ crore)",
+      "unanswerable_reason": null,
+      "citation_ground_truth": {
+        "document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+        "printed_page": 150
+      },
+      "mapped_chunk_ids": [
+        252
+      ]
+    },
+    {
+      "question_id": "TATA054",
+      "question": "What was tax expenses/(credit), net for consolidated Tata Motors in FY24?",
+      "answerable": true,
+      "reference_answer": "₹4,024 crore, shown as (4,024) in the table",
+      "answer_type": "numeric_financial_value",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": 150,
+      "evidence_id": "tata_fy25_financial_highlights_p150",
+      "relevant_chunk_ids": [
+        252
+      ],
+      "relevant_evidence_text": "Tax expenses/(credit), net — Consolidated FY24: -4,024 (₹ crore)",
+      "evidence_row": "Tax expenses/(credit), net — Consolidated FY24: -4,024 (₹ crore)",
+      "unanswerable_reason": null,
+      "citation_ground_truth": {
+        "document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+        "printed_page": 150
+      },
+      "mapped_chunk_ids": [
+        252
+      ]
+    },
+    {
+      "question_id": "TATA055",
+      "question": "What was profit after tax from continuing operations for standalone Tata Motors in FY25?",
+      "answerable": true,
+      "reference_answer": "₹5,452 crore",
+      "answer_type": "numeric_financial_value",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": 150,
+      "evidence_id": "tata_fy25_financial_highlights_p150",
+      "relevant_chunk_ids": [
+        253,
+        1904,
+        1905
+      ],
+      "relevant_evidence_text": "Profit after tax from continuing operations — Standalone FY25: 5,452 (₹ crore)",
+      "evidence_row": "Profit after tax from continuing operations — Standalone FY25: 5,452 (₹ crore)",
+      "unanswerable_reason": null,
+      "citation_ground_truth": {
+        "document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+        "printed_page": 150
+      },
+      "mapped_chunk_ids": [
+        253,
+        1904,
+        1905
+      ]
+    },
+    {
+      "question_id": "TATA056",
+      "question": "What was profit after tax from continuing operations for standalone Tata Motors in FY24?",
+      "answerable": true,
+      "reference_answer": "₹7,902 crore",
+      "answer_type": "numeric_financial_value",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": 150,
+      "evidence_id": "tata_fy25_financial_highlights_p150",
+      "relevant_chunk_ids": [
+        253
+      ],
+      "relevant_evidence_text": "Profit after tax from continuing operations — Standalone FY24: 7,902 (₹ crore)",
+      "evidence_row": "Profit after tax from continuing operations — Standalone FY24: 7,902 (₹ crore)",
+      "unanswerable_reason": null,
+      "citation_ground_truth": {
+        "document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+        "printed_page": 150
+      },
+      "mapped_chunk_ids": [
+        253
+      ]
+    },
+    {
+      "question_id": "TATA057",
+      "question": "What was profit after tax from continuing operations for consolidated Tata Motors in FY25?",
+      "answerable": true,
+      "reference_answer": "₹23,278 crore",
+      "answer_type": "numeric_financial_value",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": 150,
+      "evidence_id": "tata_fy25_financial_highlights_p150",
+      "relevant_chunk_ids": [
+        253
+      ],
+      "relevant_evidence_text": "Profit after tax from continuing operations — Consolidated FY25: 23,278 (₹ crore)",
+      "evidence_row": "Profit after tax from continuing operations — Consolidated FY25: 23,278 (₹ crore)",
+      "unanswerable_reason": null,
+      "citation_ground_truth": {
+        "document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+        "printed_page": 150
+      },
+      "mapped_chunk_ids": [
+        253
+      ]
+    },
+    {
+      "question_id": "TATA058",
+      "question": "What was profit after tax from continuing operations for consolidated Tata Motors in FY24?",
+      "answerable": true,
+      "reference_answer": "₹32,453 crore",
+      "answer_type": "numeric_financial_value",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": 150,
+      "evidence_id": "tata_fy25_financial_highlights_p150",
+      "relevant_chunk_ids": [
+        253
+      ],
+      "relevant_evidence_text": "Profit after tax from continuing operations — Consolidated FY24: 32,453 (₹ crore)",
+      "evidence_row": "Profit after tax from continuing operations — Consolidated FY24: 32,453 (₹ crore)",
+      "unanswerable_reason": null,
+      "citation_ground_truth": {
+        "document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+        "printed_page": 150
+      },
+      "mapped_chunk_ids": [
+        253
+      ]
+    },
+    {
+      "question_id": "TATA059",
+      "question": "What was profit after tax from discontinued operation for consolidated Tata Motors in FY25?",
+      "answerable": true,
+      "reference_answer": "₹4,871 crore",
+      "answer_type": "numeric_financial_value",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": 150,
+      "evidence_id": "tata_fy25_financial_highlights_p150",
+      "relevant_chunk_ids": [
+        254
+      ],
+      "relevant_evidence_text": "Profit after tax from discontinued operation — Consolidated FY25: 4,871 (₹ crore)",
+      "evidence_row": "Profit after tax from discontinued operation — Consolidated FY25: 4,871 (₹ crore)",
+      "unanswerable_reason": null,
+      "citation_ground_truth": {
+        "document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+        "printed_page": 150
+      },
+      "mapped_chunk_ids": [
+        254
+      ]
+    },
+    {
+      "question_id": "TATA060",
+      "question": "What was profit after tax from discontinued operation for consolidated Tata Motors in FY24?",
+      "answerable": true,
+      "reference_answer": "₹646 crore, shown as (646) in the table",
+      "answer_type": "numeric_financial_value",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": 150,
+      "evidence_id": "tata_fy25_financial_highlights_p150",
+      "relevant_chunk_ids": [
+        254
+      ],
+      "relevant_evidence_text": "Profit after tax from discontinued operation — Consolidated FY24: -646 (₹ crore)",
+      "evidence_row": "Profit after tax from discontinued operation — Consolidated FY24: -646 (₹ crore)",
+      "unanswerable_reason": null,
+      "citation_ground_truth": {
+        "document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+        "printed_page": 150
+      },
+      "mapped_chunk_ids": [
+        254
+      ]
+    },
+    {
+      "question_id": "TATA061",
+      "question": "What was profit for the year for standalone Tata Motors in FY25?",
+      "answerable": true,
+      "reference_answer": "₹5,452 crore",
+      "answer_type": "numeric_financial_value",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": 150,
+      "evidence_id": "tata_fy25_financial_highlights_p150",
+      "relevant_chunk_ids": [
+        255,
+        1904,
+        1905
+      ],
+      "relevant_evidence_text": "Profit for the year — Standalone FY25: 5,452 (₹ crore)",
+      "evidence_row": "Profit for the year — Standalone FY25: 5,452 (₹ crore)",
+      "unanswerable_reason": null,
+      "citation_ground_truth": {
+        "document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+        "printed_page": 150
+      },
+      "mapped_chunk_ids": [
+        255,
+        1904,
+        1905
+      ]
+    },
+    {
+      "question_id": "TATA062",
+      "question": "What was profit for the year for standalone Tata Motors in FY24?",
+      "answerable": true,
+      "reference_answer": "₹7,902 crore",
+      "answer_type": "numeric_financial_value",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": 150,
+      "evidence_id": "tata_fy25_financial_highlights_p150",
+      "relevant_chunk_ids": [
+        255
+      ],
+      "relevant_evidence_text": "Profit for the year — Standalone FY24: 7,902 (₹ crore)",
+      "evidence_row": "Profit for the year — Standalone FY24: 7,902 (₹ crore)",
+      "unanswerable_reason": null,
+      "citation_ground_truth": {
+        "document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+        "printed_page": 150
+      },
+      "mapped_chunk_ids": [
+        255
+      ]
+    },
+    {
+      "question_id": "TATA063",
+      "question": "What was profit for the year for consolidated Tata Motors in FY25?",
+      "answerable": true,
+      "reference_answer": "₹28,149 crore",
+      "answer_type": "numeric_financial_value",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": 150,
+      "evidence_id": "tata_fy25_financial_highlights_p150",
+      "relevant_chunk_ids": [
+        255,
+        702,
+        972,
+        973
+      ],
+      "relevant_evidence_text": "Profit for the year — Consolidated FY25: 28,149 (₹ crore)",
+      "evidence_row": "Profit for the year — Consolidated FY25: 28,149 (₹ crore)",
+      "unanswerable_reason": null,
+      "citation_ground_truth": {
+        "document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+        "printed_page": 150
+      },
+      "mapped_chunk_ids": [
+        255,
+        702,
+        972,
+        973
+      ]
+    },
+    {
+      "question_id": "TATA064",
+      "question": "What was profit for the year for consolidated Tata Motors in FY24?",
+      "answerable": true,
+      "reference_answer": "₹31,807 crore",
+      "answer_type": "numeric_financial_value",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": 150,
+      "evidence_id": "tata_fy25_financial_highlights_p150",
+      "relevant_chunk_ids": [
+        255,
+        702
+      ],
+      "relevant_evidence_text": "Profit for the year — Consolidated FY24: 31,807 (₹ crore)",
+      "evidence_row": "Profit for the year — Consolidated FY24: 31,807 (₹ crore)",
+      "unanswerable_reason": null,
+      "citation_ground_truth": {
+        "document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+        "printed_page": 150
+      },
+      "mapped_chunk_ids": [
+        255,
+        702
+      ]
+    },
+    {
+      "question_id": "TATA065",
+      "question": "What was other comprehensive income for standalone Tata Motors in FY25?",
+      "answerable": true,
+      "reference_answer": "₹113 crore",
+      "answer_type": "numeric_financial_value",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": 150,
+      "evidence_id": "tata_fy25_financial_highlights_p150",
+      "relevant_chunk_ids": [
+        256
+      ],
+      "relevant_evidence_text": "Other comprehensive income — Standalone FY25: 113 (₹ crore)",
+      "evidence_row": "Other comprehensive income — Standalone FY25: 113 (₹ crore)",
+      "unanswerable_reason": null,
+      "citation_ground_truth": {
+        "document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+        "printed_page": 150
+      },
+      "mapped_chunk_ids": [
+        256
+      ]
+    },
+    {
+      "question_id": "TATA066",
+      "question": "What was other comprehensive income for standalone Tata Motors in FY24?",
+      "answerable": true,
+      "reference_answer": "₹439 crore",
+      "answer_type": "numeric_financial_value",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": 150,
+      "evidence_id": "tata_fy25_financial_highlights_p150",
+      "relevant_chunk_ids": [
+        256
+      ],
+      "relevant_evidence_text": "Other comprehensive income — Standalone FY24: 439 (₹ crore)",
+      "evidence_row": "Other comprehensive income — Standalone FY24: 439 (₹ crore)",
+      "unanswerable_reason": null,
+      "citation_ground_truth": {
+        "document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+        "printed_page": 150
+      },
+      "mapped_chunk_ids": [
+        256
+      ]
+    },
+    {
+      "question_id": "TATA067",
+      "question": "What was other comprehensive income for consolidated Tata Motors in FY25?",
+      "answerable": true,
+      "reference_answer": "₹6,462 crore",
+      "answer_type": "numeric_financial_value",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": 150,
+      "evidence_id": "tata_fy25_financial_highlights_p150",
+      "relevant_chunk_ids": [
+        256
+      ],
+      "relevant_evidence_text": "Other comprehensive income — Consolidated FY25: 6,462 (₹ crore)",
+      "evidence_row": "Other comprehensive income — Consolidated FY25: 6,462 (₹ crore)",
+      "unanswerable_reason": null,
+      "citation_ground_truth": {
+        "document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+        "printed_page": 150
+      },
+      "mapped_chunk_ids": [
+        256
+      ]
+    },
+    {
+      "question_id": "TATA068",
+      "question": "What was other comprehensive income for consolidated Tata Motors in FY24?",
+      "answerable": true,
+      "reference_answer": "₹6,323 crore",
+      "answer_type": "numeric_financial_value",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": 150,
+      "evidence_id": "tata_fy25_financial_highlights_p150",
+      "relevant_chunk_ids": [
+        256
+      ],
+      "relevant_evidence_text": "Other comprehensive income — Consolidated FY24: 6,323 (₹ crore)",
+      "evidence_row": "Other comprehensive income — Consolidated FY24: 6,323 (₹ crore)",
+      "unanswerable_reason": null,
+      "citation_ground_truth": {
+        "document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+        "printed_page": 150
+      },
+      "mapped_chunk_ids": [
+        256
+      ]
+    },
+    {
+      "question_id": "TATA069",
+      "question": "What was total comprehensive income for the year for standalone Tata Motors in FY25?",
+      "answerable": true,
+      "reference_answer": "₹5,565 crore",
+      "answer_type": "numeric_financial_value",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": 150,
+      "evidence_id": "tata_fy25_financial_highlights_p150",
+      "relevant_chunk_ids": [
+        257,
+        1904,
+        1905
+      ],
+      "relevant_evidence_text": "Total comprehensive income for the year — Standalone FY25: 5,565 (₹ crore)",
+      "evidence_row": "Total comprehensive income for the year — Standalone FY25: 5,565 (₹ crore)",
+      "unanswerable_reason": null,
+      "citation_ground_truth": {
+        "document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+        "printed_page": 150
+      },
+      "mapped_chunk_ids": [
+        257,
+        1904,
+        1905
+      ]
+    },
+    {
+      "question_id": "TATA070",
+      "question": "What was total comprehensive income for the year for standalone Tata Motors in FY24?",
+      "answerable": true,
+      "reference_answer": "₹8,341 crore",
+      "answer_type": "numeric_financial_value",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": 150,
+      "evidence_id": "tata_fy25_financial_highlights_p150",
+      "relevant_chunk_ids": [
+        257
+      ],
+      "relevant_evidence_text": "Total comprehensive income for the year — Standalone FY24: 8,341 (₹ crore)",
+      "evidence_row": "Total comprehensive income for the year — Standalone FY24: 8,341 (₹ crore)",
+      "unanswerable_reason": null,
+      "citation_ground_truth": {
+        "document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+        "printed_page": 150
+      },
+      "mapped_chunk_ids": [
+        257
+      ]
+    },
+    {
+      "question_id": "TATA071",
+      "question": "What was total comprehensive income for the year for consolidated Tata Motors in FY25?",
+      "answerable": true,
+      "reference_answer": "₹34,611 crore",
+      "answer_type": "numeric_financial_value",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": 150,
+      "evidence_id": "tata_fy25_financial_highlights_p150",
+      "relevant_chunk_ids": [
+        257,
+        962,
+        972,
+        973,
+        1765
+      ],
+      "relevant_evidence_text": "Total comprehensive income for the year — Consolidated FY25: 34,611 (₹ crore)",
+      "evidence_row": "Total comprehensive income for the year — Consolidated FY25: 34,611 (₹ crore)",
+      "unanswerable_reason": null,
+      "citation_ground_truth": {
+        "document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+        "printed_page": 150
+      },
+      "mapped_chunk_ids": [
+        257,
+        962,
+        972,
+        973,
+        1765
+      ]
+    },
+    {
+      "question_id": "TATA072",
+      "question": "What was total comprehensive income for the year for consolidated Tata Motors in FY24?",
+      "answerable": true,
+      "reference_answer": "₹38,130 crore",
+      "answer_type": "numeric_financial_value",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": 150,
+      "evidence_id": "tata_fy25_financial_highlights_p150",
+      "relevant_chunk_ids": [
+        257
+      ],
+      "relevant_evidence_text": "Total comprehensive income for the year — Consolidated FY24: 38,130 (₹ crore)",
+      "evidence_row": "Total comprehensive income for the year — Consolidated FY24: 38,130 (₹ crore)",
+      "unanswerable_reason": null,
+      "citation_ground_truth": {
+        "document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+        "printed_page": 150
+      },
+      "mapped_chunk_ids": [
+        257
+      ]
+    },
+    {
+      "question_id": "TATA073",
+      "question": "By how many ₹ crore did standalone revenue from operations change from FY24 to FY25?",
+      "answerable": true,
+      "reference_answer": "Decrease of ₹3,884 crore (FY25 minus FY24 = -3,884 crore)",
+      "answer_type": "derived_financial_calculation",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": 150,
+      "evidence_id": "tata_fy25_financial_highlights_p150",
+      "relevant_chunk_ids": [
+        239
+      ],
+      "relevant_evidence_text": "Revenue from operations — Standalone FY25: 69,419; FY24: 73,303 (₹ crore)",
+      "evidence_row": "Revenue from operations — Standalone FY25: 69,419; FY24: 73,303 (₹ crore)",
+      "unanswerable_reason": null,
+      "citation_ground_truth": {
+        "document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+        "printed_page": 150
+      },
+      "calculation": "69,419 - (73,303) = -3,884",
+      "mapped_chunk_ids": [
+        239
+      ]
+    },
+    {
+      "question_id": "TATA074",
+      "question": "By how many ₹ crore did consolidated revenue from operations change from FY24 to FY25?",
+      "answerable": true,
+      "reference_answer": "Increase of ₹5,679 crore (FY25 minus FY24 = 5,679 crore)",
+      "answer_type": "derived_financial_calculation",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": 150,
+      "evidence_id": "tata_fy25_financial_highlights_p150",
+      "relevant_chunk_ids": [
+        239
+      ],
+      "relevant_evidence_text": "Revenue from operations — Consolidated FY25: 439,695; FY24: 434,016 (₹ crore)",
+      "evidence_row": "Revenue from operations — Consolidated FY25: 439,695; FY24: 434,016 (₹ crore)",
+      "unanswerable_reason": null,
+      "citation_ground_truth": {
+        "document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+        "printed_page": 150
+      },
+      "calculation": "439,695 - (434,016) = 5,679",
+      "mapped_chunk_ids": [
+        239
+      ]
+    },
+    {
+      "question_id": "TATA075",
+      "question": "By how many ₹ crore did standalone total expenditure change from FY24 to FY25?",
+      "answerable": true,
+      "reference_answer": "Decrease of ₹4,024 crore (FY25 minus FY24 = -4,024 crore)",
+      "answer_type": "derived_financial_calculation",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": 150,
+      "evidence_id": "tata_fy25_financial_highlights_p150",
+      "relevant_chunk_ids": [
+        240
+      ],
+      "relevant_evidence_text": "Total expenditure — Standalone FY25: 60,304; FY24: 64,328 (₹ crore)",
+      "evidence_row": "Total expenditure — Standalone FY25: 60,304; FY24: 64,328 (₹ crore)",
+      "unanswerable_reason": null,
+      "citation_ground_truth": {
+        "document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+        "printed_page": 150
+      },
+      "calculation": "60,304 - (64,328) = -4,024",
+      "mapped_chunk_ids": [
+        240
+      ]
+    },
+    {
+      "question_id": "TATA076",
+      "question": "By how many ₹ crore did consolidated total expenditure change from FY24 to FY25?",
+      "answerable": true,
+      "reference_answer": "Increase of ₹8,662 crore (FY25 minus FY24 = 8,662 crore)",
+      "answer_type": "derived_financial_calculation",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": 150,
+      "evidence_id": "tata_fy25_financial_highlights_p150",
+      "relevant_chunk_ids": [
+        240
+      ],
+      "relevant_evidence_text": "Total expenditure — Consolidated FY25: 373,847; FY24: 365,185 (₹ crore)",
+      "evidence_row": "Total expenditure — Consolidated FY25: 373,847; FY24: 365,185 (₹ crore)",
+      "unanswerable_reason": null,
+      "citation_ground_truth": {
+        "document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+        "printed_page": 150
+      },
+      "calculation": "373,847 - (365,185) = 8,662",
+      "mapped_chunk_ids": [
+        240
+      ]
+    },
+    {
+      "question_id": "TATA077",
+      "question": "By how many ₹ crore did standalone operating profit change from FY24 to FY25?",
+      "answerable": true,
+      "reference_answer": "Increase of ₹140 crore (FY25 minus FY24 = 140 crore)",
+      "answer_type": "derived_financial_calculation",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": 150,
+      "evidence_id": "tata_fy25_financial_highlights_p150",
+      "relevant_chunk_ids": [
+        241
+      ],
+      "relevant_evidence_text": "Operating profit — Standalone FY25: 9,115; FY24: 8,975 (₹ crore)",
+      "evidence_row": "Operating profit — Standalone FY25: 9,115; FY24: 8,975 (₹ crore)",
+      "unanswerable_reason": null,
+      "citation_ground_truth": {
+        "document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+        "printed_page": 150
+      },
+      "calculation": "9,115 - (8,975) = 140",
+      "mapped_chunk_ids": [
+        241
+      ]
+    },
+    {
+      "question_id": "TATA078",
+      "question": "By how many ₹ crore did consolidated operating profit change from FY24 to FY25?",
+      "answerable": true,
+      "reference_answer": "Decrease of ₹2,983 crore (FY25 minus FY24 = -2,983 crore)",
+      "answer_type": "derived_financial_calculation",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": 150,
+      "evidence_id": "tata_fy25_financial_highlights_p150",
+      "relevant_chunk_ids": [
+        241
+      ],
+      "relevant_evidence_text": "Operating profit — Consolidated FY25: 65,848; FY24: 68,831 (₹ crore)",
+      "evidence_row": "Operating profit — Consolidated FY25: 65,848; FY24: 68,831 (₹ crore)",
+      "unanswerable_reason": null,
+      "citation_ground_truth": {
+        "document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+        "printed_page": 150
+      },
+      "calculation": "65,848 - (68,831) = -2,983",
+      "mapped_chunk_ids": [
+        241
+      ]
+    },
+    {
+      "question_id": "TATA079",
+      "question": "By how many ₹ crore did standalone other income change from FY24 to FY25?",
+      "answerable": true,
+      "reference_answer": "Increase of ₹1,646 crore (FY25 minus FY24 = 1,646 crore)",
+      "answer_type": "derived_financial_calculation",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": 150,
+      "evidence_id": "tata_fy25_financial_highlights_p150",
+      "relevant_chunk_ids": [
+        242
+      ],
+      "relevant_evidence_text": "Other income — Standalone FY25: 2,796; FY24: 1,150 (₹ crore)",
+      "evidence_row": "Other income — Standalone FY25: 2,796; FY24: 1,150 (₹ crore)",
+      "unanswerable_reason": null,
+      "citation_ground_truth": {
+        "document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+        "printed_page": 150
+      },
+      "calculation": "2,796 - (1,150) = 1,646",
+      "mapped_chunk_ids": [
+        242
+      ]
+    },
+    {
+      "question_id": "TATA080",
+      "question": "By how many ₹ crore did consolidated other income change from FY24 to FY25?",
+      "answerable": true,
+      "reference_answer": "Increase of ₹552 crore (FY25 minus FY24 = 552 crore)",
+      "answer_type": "derived_financial_calculation",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": 150,
+      "evidence_id": "tata_fy25_financial_highlights_p150",
+      "relevant_chunk_ids": [
+        242
+      ],
+      "relevant_evidence_text": "Other income — Consolidated FY25: 6,244; FY24: 5,692 (₹ crore)",
+      "evidence_row": "Other income — Consolidated FY25: 6,244; FY24: 5,692 (₹ crore)",
+      "unanswerable_reason": null,
+      "citation_ground_truth": {
+        "document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+        "printed_page": 150
+      },
+      "calculation": "6,244 - (5,692) = 552",
+      "mapped_chunk_ids": [
+        242
+      ]
+    },
+    {
+      "question_id": "TATA081",
+      "question": "By how many ₹ crore did standalone finance cost change from FY24 to FY25?",
+      "answerable": true,
+      "reference_answer": "Decrease of ₹584 crore (FY25 minus FY24 = -584 crore)",
+      "answer_type": "derived_financial_calculation",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": 150,
+      "evidence_id": "tata_fy25_financial_highlights_p150",
+      "relevant_chunk_ids": [
+        245,
+        2222
+      ],
+      "relevant_evidence_text": "Finance cost — Standalone FY25: 1,122; FY24: 1,706 (₹ crore)",
+      "evidence_row": "Finance cost — Standalone FY25: 1,122; FY24: 1,706 (₹ crore)",
+      "unanswerable_reason": null,
+      "citation_ground_truth": {
+        "document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+        "printed_page": 150
+      },
+      "calculation": "1,122 - (1,706) = -584",
+      "mapped_chunk_ids": [
+        245,
+        2222
+      ]
+    },
+    {
+      "question_id": "TATA082",
+      "question": "By how many ₹ crore did consolidated finance cost change from FY24 to FY25?",
+      "answerable": true,
+      "reference_answer": "Decrease of ₹2,643 crore (FY25 minus FY24 = -2,643 crore)",
+      "answer_type": "derived_financial_calculation",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": 150,
+      "evidence_id": "tata_fy25_financial_highlights_p150",
+      "relevant_chunk_ids": [
+        245
+      ],
+      "relevant_evidence_text": "Finance cost — Consolidated FY25: 4,999; FY24: 7,642 (₹ crore)",
+      "evidence_row": "Finance cost — Consolidated FY25: 4,999; FY24: 7,642 (₹ crore)",
+      "unanswerable_reason": null,
+      "citation_ground_truth": {
+        "document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+        "printed_page": 150
+      },
+      "calculation": "4,999 - (7,642) = -2,643",
+      "mapped_chunk_ids": [
+        245
+      ]
+    },
+    {
+      "question_id": "TATA083",
+      "question": "By how many ₹ crore did standalone profit before exceptional items and tax change from FY24 to FY25?",
+      "answerable": true,
+      "reference_answer": "Increase of ₹2,635 crore (FY25 minus FY24 = 2,635 crore)",
+      "answer_type": "derived_financial_calculation",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": 150,
+      "evidence_id": "tata_fy25_financial_highlights_p150",
+      "relevant_chunk_ids": [
+        249
+      ],
+      "relevant_evidence_text": "Profit before exceptional items and tax — Standalone FY25: 7,677; FY24: 5,042 (₹ crore)",
+      "evidence_row": "Profit before exceptional items and tax — Standalone FY25: 7,677; FY24: 5,042 (₹ crore)",
+      "unanswerable_reason": null,
+      "citation_ground_truth": {
+        "document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+        "printed_page": 150
+      },
+      "calculation": "7,677 - (5,042) = 2,635",
+      "mapped_chunk_ids": [
+        249
+      ]
+    },
+    {
+      "question_id": "TATA084",
+      "question": "By how many ₹ crore did consolidated profit before exceptional items and tax change from FY24 to FY25?",
+      "answerable": true,
+      "reference_answer": "Increase of ₹4,962 crore (FY25 minus FY24 = 4,962 crore)",
+      "answer_type": "derived_financial_calculation",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": 150,
+      "evidence_id": "tata_fy25_financial_highlights_p150",
+      "relevant_chunk_ids": [
+        249
+      ],
+      "relevant_evidence_text": "Profit before exceptional items and tax — Consolidated FY25: 34,330; FY24: 29,368 (₹ crore)",
+      "evidence_row": "Profit before exceptional items and tax — Consolidated FY25: 34,330; FY24: 29,368 (₹ crore)",
+      "unanswerable_reason": null,
+      "citation_ground_truth": {
+        "document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+        "printed_page": 150
+      },
+      "calculation": "34,330 - (29,368) = 4,962",
+      "mapped_chunk_ids": [
+        249
+      ]
+    },
+    {
+      "question_id": "TATA085",
+      "question": "By how many ₹ crore did standalone profit before tax change from FY24 to FY25?",
+      "answerable": true,
+      "reference_answer": "Decrease of ₹499 crore (FY25 minus FY24 = -499 crore)",
+      "answer_type": "derived_financial_calculation",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": 150,
+      "evidence_id": "tata_fy25_financial_highlights_p150",
+      "relevant_chunk_ids": [
+        251
+      ],
+      "relevant_evidence_text": "Profit before tax — Standalone FY25: 7,352; FY24: 7,851 (₹ crore)",
+      "evidence_row": "Profit before tax — Standalone FY25: 7,352; FY24: 7,851 (₹ crore)",
+      "unanswerable_reason": null,
+      "citation_ground_truth": {
+        "document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+        "printed_page": 150
+      },
+      "calculation": "7,352 - (7,851) = -499",
+      "mapped_chunk_ids": [
+        251
+      ]
+    },
+    {
+      "question_id": "TATA086",
+      "question": "By how many ₹ crore did consolidated profit before tax change from FY24 to FY25?",
+      "answerable": true,
+      "reference_answer": "Increase of ₹5,351 crore (FY25 minus FY24 = 5,351 crore)",
+      "answer_type": "derived_financial_calculation",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": 150,
+      "evidence_id": "tata_fy25_financial_highlights_p150",
+      "relevant_chunk_ids": [
+        251
+      ],
+      "relevant_evidence_text": "Profit before tax — Consolidated FY25: 33,780; FY24: 28,429 (₹ crore)",
+      "evidence_row": "Profit before tax — Consolidated FY25: 33,780; FY24: 28,429 (₹ crore)",
+      "unanswerable_reason": null,
+      "citation_ground_truth": {
+        "document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+        "printed_page": 150
+      },
+      "calculation": "33,780 - (28,429) = 5,351",
+      "mapped_chunk_ids": [
+        251
+      ]
+    },
+    {
+      "question_id": "TATA087",
+      "question": "By how many ₹ crore did standalone profit for the year change from FY24 to FY25?",
+      "answerable": true,
+      "reference_answer": "Decrease of ₹2,450 crore (FY25 minus FY24 = -2,450 crore)",
+      "answer_type": "derived_financial_calculation",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": 150,
+      "evidence_id": "tata_fy25_financial_highlights_p150",
+      "relevant_chunk_ids": [
+        255,
+        1904,
+        1905
+      ],
+      "relevant_evidence_text": "Profit for the year — Standalone FY25: 5,452; FY24: 7,902 (₹ crore)",
+      "evidence_row": "Profit for the year — Standalone FY25: 5,452; FY24: 7,902 (₹ crore)",
+      "unanswerable_reason": null,
+      "citation_ground_truth": {
+        "document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+        "printed_page": 150
+      },
+      "calculation": "5,452 - (7,902) = -2,450",
+      "mapped_chunk_ids": [
+        255,
+        1904,
+        1905
+      ]
+    },
+    {
+      "question_id": "TATA088",
+      "question": "By how many ₹ crore did consolidated profit for the year change from FY24 to FY25?",
+      "answerable": true,
+      "reference_answer": "Decrease of ₹3,658 crore (FY25 minus FY24 = -3,658 crore)",
+      "answer_type": "derived_financial_calculation",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": 150,
+      "evidence_id": "tata_fy25_financial_highlights_p150",
+      "relevant_chunk_ids": [
+        255,
+        702,
+        972,
+        973
+      ],
+      "relevant_evidence_text": "Profit for the year — Consolidated FY25: 28,149; FY24: 31,807 (₹ crore)",
+      "evidence_row": "Profit for the year — Consolidated FY25: 28,149; FY24: 31,807 (₹ crore)",
+      "unanswerable_reason": null,
+      "citation_ground_truth": {
+        "document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+        "printed_page": 150
+      },
+      "calculation": "28,149 - (31,807) = -3,658",
+      "mapped_chunk_ids": [
+        255,
+        702,
+        972,
+        973
+      ]
+    },
+    {
+      "question_id": "TATA089",
+      "question": "By how many ₹ crore did standalone total comprehensive income for the year change from FY24 to FY25?",
+      "answerable": true,
+      "reference_answer": "Decrease of ₹2,776 crore (FY25 minus FY24 = -2,776 crore)",
+      "answer_type": "derived_financial_calculation",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": 150,
+      "evidence_id": "tata_fy25_financial_highlights_p150",
+      "relevant_chunk_ids": [
+        257,
+        1904,
+        1905
+      ],
+      "relevant_evidence_text": "Total comprehensive income for the year — Standalone FY25: 5,565; FY24: 8,341 (₹ crore)",
+      "evidence_row": "Total comprehensive income for the year — Standalone FY25: 5,565; FY24: 8,341 (₹ crore)",
+      "unanswerable_reason": null,
+      "citation_ground_truth": {
+        "document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+        "printed_page": 150
+      },
+      "calculation": "5,565 - (8,341) = -2,776",
+      "mapped_chunk_ids": [
+        257,
+        1904,
+        1905
+      ]
+    },
+    {
+      "question_id": "TATA090",
+      "question": "By how many ₹ crore did consolidated total comprehensive income for the year change from FY24 to FY25?",
+      "answerable": true,
+      "reference_answer": "Decrease of ₹3,519 crore (FY25 minus FY24 = -3,519 crore)",
+      "answer_type": "derived_financial_calculation",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": 150,
+      "evidence_id": "tata_fy25_financial_highlights_p150",
+      "relevant_chunk_ids": [
+        257,
+        962,
+        972,
+        973,
+        1765
+      ],
+      "relevant_evidence_text": "Total comprehensive income for the year — Consolidated FY25: 34,611; FY24: 38,130 (₹ crore)",
+      "evidence_row": "Total comprehensive income for the year — Consolidated FY25: 34,611; FY24: 38,130 (₹ crore)",
+      "unanswerable_reason": null,
+      "citation_ground_truth": {
+        "document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+        "printed_page": 150
+      },
+      "calculation": "34,611 - (38,130) = -3,519",
+      "mapped_chunk_ids": [
+        257,
+        962,
+        972,
+        973,
+        1765
+      ]
+    },
+    {
+      "question_id": "TATA091",
+      "question": "What was the percentage change in consolidated revenue from operations from FY24 to FY25, using FY24 as the base?",
+      "answerable": true,
+      "reference_answer": "+1.31%",
+      "answer_type": "derived_financial_calculation",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": 150,
+      "evidence_id": "tata_fy25_financial_highlights_p150",
+      "relevant_chunk_ids": [
+        239
+      ],
+      "relevant_evidence_text": "Revenue from operations — Consolidated FY25: 439,695; FY24: 434,016 (₹ crore)",
+      "evidence_row": "Revenue from operations — Consolidated FY25: 439,695; FY24: 434,016 (₹ crore)",
+      "unanswerable_reason": null,
+      "citation_ground_truth": {
+        "document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+        "printed_page": 150
+      },
+      "calculation": "((439,695 - 434,016) / 434,016) × 100 = 1.3085%",
+      "mapped_chunk_ids": [
+        239
+      ]
+    },
+    {
+      "question_id": "TATA092",
+      "question": "What was the percentage change in standalone revenue from operations from FY24 to FY25, using FY24 as the base?",
+      "answerable": true,
+      "reference_answer": "-5.30%",
+      "answer_type": "derived_financial_calculation",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": 150,
+      "evidence_id": "tata_fy25_financial_highlights_p150",
+      "relevant_chunk_ids": [
+        239
+      ],
+      "relevant_evidence_text": "Revenue from operations — Standalone FY25: 69,419; FY24: 73,303 (₹ crore)",
+      "evidence_row": "Revenue from operations — Standalone FY25: 69,419; FY24: 73,303 (₹ crore)",
+      "unanswerable_reason": null,
+      "citation_ground_truth": {
+        "document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+        "printed_page": 150
+      },
+      "calculation": "((69,419 - 73,303) / 73,303) × 100 = -5.2986%",
+      "mapped_chunk_ids": [
+        239
+      ]
+    },
+    {
+      "question_id": "TATA093",
+      "question": "What was the percentage change in consolidated operating profit from FY24 to FY25, using FY24 as the base?",
+      "answerable": true,
+      "reference_answer": "-4.33%",
+      "answer_type": "derived_financial_calculation",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": 150,
+      "evidence_id": "tata_fy25_financial_highlights_p150",
+      "relevant_chunk_ids": [
+        241
+      ],
+      "relevant_evidence_text": "Operating profit — Consolidated FY25: 65,848; FY24: 68,831 (₹ crore)",
+      "evidence_row": "Operating profit — Consolidated FY25: 65,848; FY24: 68,831 (₹ crore)",
+      "unanswerable_reason": null,
+      "citation_ground_truth": {
+        "document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+        "printed_page": 150
+      },
+      "calculation": "((65,848 - 68,831) / 68,831) × 100 = -4.3338%",
+      "mapped_chunk_ids": [
+        241
+      ]
+    },
+    {
+      "question_id": "TATA094",
+      "question": "What was the percentage change in consolidated profit before tax from FY24 to FY25, using FY24 as the base?",
+      "answerable": true,
+      "reference_answer": "+18.82%",
+      "answer_type": "derived_financial_calculation",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": 150,
+      "evidence_id": "tata_fy25_financial_highlights_p150",
+      "relevant_chunk_ids": [
+        251
+      ],
+      "relevant_evidence_text": "Profit before tax — Consolidated FY25: 33,780; FY24: 28,429 (₹ crore)",
+      "evidence_row": "Profit before tax — Consolidated FY25: 33,780; FY24: 28,429 (₹ crore)",
+      "unanswerable_reason": null,
+      "citation_ground_truth": {
+        "document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+        "printed_page": 150
+      },
+      "calculation": "((33,780 - 28,429) / 28,429) × 100 = 18.8223%",
+      "mapped_chunk_ids": [
+        251
+      ]
+    },
+    {
+      "question_id": "TATA095",
+      "question": "What was the percentage change in consolidated finance cost from FY24 to FY25, using FY24 as the base?",
+      "answerable": true,
+      "reference_answer": "-34.59%",
+      "answer_type": "derived_financial_calculation",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": 150,
+      "evidence_id": "tata_fy25_financial_highlights_p150",
+      "relevant_chunk_ids": [
+        245
+      ],
+      "relevant_evidence_text": "Finance cost — Consolidated FY25: 4,999; FY24: 7,642 (₹ crore)",
+      "evidence_row": "Finance cost — Consolidated FY25: 4,999; FY24: 7,642 (₹ crore)",
+      "unanswerable_reason": null,
+      "citation_ground_truth": {
+        "document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+        "printed_page": 150
+      },
+      "calculation": "((4,999 - 7,642) / 7,642) × 100 = -34.5852%",
+      "mapped_chunk_ids": [
+        245
+      ]
+    },
+    {
+      "question_id": "TATA096",
+      "question": "What was the percentage change in consolidated profit for the year from FY24 to FY25, using FY24 as the base?",
+      "answerable": true,
+      "reference_answer": "-11.50%",
+      "answer_type": "derived_financial_calculation",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": 150,
+      "evidence_id": "tata_fy25_financial_highlights_p150",
+      "relevant_chunk_ids": [
+        255,
+        702,
+        972,
+        973
+      ],
+      "relevant_evidence_text": "Profit for the year — Consolidated FY25: 28,149; FY24: 31,807 (₹ crore)",
+      "evidence_row": "Profit for the year — Consolidated FY25: 28,149; FY24: 31,807 (₹ crore)",
+      "unanswerable_reason": null,
+      "citation_ground_truth": {
+        "document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+        "printed_page": 150
+      },
+      "calculation": "((28,149 - 31,807) / 31,807) × 100 = -11.5006%",
+      "mapped_chunk_ids": [
+        255,
+        702,
+        972,
+        973
+      ]
+    },
+    {
+      "question_id": "TATA097",
+      "question": "In FY25, how much higher or lower was consolidated revenue from operations than standalone revenue from operations?",
+      "answerable": true,
+      "reference_answer": "Consolidated was higher by ₹370,276 crore",
+      "answer_type": "derived_financial_calculation",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": 150,
+      "evidence_id": "tata_fy25_financial_highlights_p150",
+      "relevant_chunk_ids": [
+        239
+      ],
+      "relevant_evidence_text": "Revenue from operations — Consolidated FY25: 439,695; Standalone FY25: 69,419 (₹ crore)",
+      "evidence_row": "Revenue from operations — Consolidated FY25: 439,695; Standalone FY25: 69,419 (₹ crore)",
+      "unanswerable_reason": null,
+      "citation_ground_truth": {
+        "document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+        "printed_page": 150
+      },
+      "calculation": "439,695 - 69,419 = 370,276",
+      "mapped_chunk_ids": [
+        239
+      ]
+    },
+    {
+      "question_id": "TATA098",
+      "question": "In FY24, how much higher or lower was consolidated revenue from operations than standalone revenue from operations?",
+      "answerable": true,
+      "reference_answer": "Consolidated was higher by ₹360,713 crore",
+      "answer_type": "derived_financial_calculation",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": 150,
+      "evidence_id": "tata_fy25_financial_highlights_p150",
+      "relevant_chunk_ids": [
+        239
+      ],
+      "relevant_evidence_text": "Revenue from operations — Consolidated FY24: 434,016; Standalone FY24: 73,303 (₹ crore)",
+      "evidence_row": "Revenue from operations — Consolidated FY24: 434,016; Standalone FY24: 73,303 (₹ crore)",
+      "unanswerable_reason": null,
+      "citation_ground_truth": {
+        "document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+        "printed_page": 150
+      },
+      "calculation": "434,016 - 73,303 = 360,713",
+      "mapped_chunk_ids": [
+        239
+      ]
+    },
+    {
+      "question_id": "TATA099",
+      "question": "In FY25, how much higher or lower was consolidated total expenditure than standalone total expenditure?",
+      "answerable": true,
+      "reference_answer": "Consolidated was higher by ₹313,543 crore",
+      "answer_type": "derived_financial_calculation",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": 150,
+      "evidence_id": "tata_fy25_financial_highlights_p150",
+      "relevant_chunk_ids": [
+        240
+      ],
+      "relevant_evidence_text": "Total expenditure — Consolidated FY25: 373,847; Standalone FY25: 60,304 (₹ crore)",
+      "evidence_row": "Total expenditure — Consolidated FY25: 373,847; Standalone FY25: 60,304 (₹ crore)",
+      "unanswerable_reason": null,
+      "citation_ground_truth": {
+        "document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+        "printed_page": 150
+      },
+      "calculation": "373,847 - 60,304 = 313,543",
+      "mapped_chunk_ids": [
+        240
+      ]
+    },
+    {
+      "question_id": "TATA100",
+      "question": "In FY24, how much higher or lower was consolidated total expenditure than standalone total expenditure?",
+      "answerable": true,
+      "reference_answer": "Consolidated was higher by ₹300,857 crore",
+      "answer_type": "derived_financial_calculation",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": 150,
+      "evidence_id": "tata_fy25_financial_highlights_p150",
+      "relevant_chunk_ids": [
+        240
+      ],
+      "relevant_evidence_text": "Total expenditure — Consolidated FY24: 365,185; Standalone FY24: 64,328 (₹ crore)",
+      "evidence_row": "Total expenditure — Consolidated FY24: 365,185; Standalone FY24: 64,328 (₹ crore)",
+      "unanswerable_reason": null,
+      "citation_ground_truth": {
+        "document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+        "printed_page": 150
+      },
+      "calculation": "365,185 - 64,328 = 300,857",
+      "mapped_chunk_ids": [
+        240
+      ]
+    },
+    {
+      "question_id": "TATA101",
+      "question": "Using the page 150 figures, what is standalone operating profit as a percentage of revenue from operations in FY25?",
+      "answerable": true,
+      "reference_answer": "13.13%",
+      "answer_type": "derived_financial_calculation",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": 150,
+      "evidence_id": "tata_fy25_financial_highlights_p150",
+      "relevant_chunk_ids": [
+        239,
+        241
+      ],
+      "relevant_evidence_text": "Revenue from operations — Standalone FY25: 69,419; Operating profit — Standalone FY25: 9,115 (₹ crore)",
+      "evidence_row": "Revenue from operations — Standalone FY25: 69,419; Operating profit — Standalone FY25: 9,115 (₹ crore)",
+      "unanswerable_reason": null,
+      "citation_ground_truth": {
+        "document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+        "printed_page": 150
+      },
+      "calculation": "(9,115 / 69,419) × 100 = 13.1304%",
+      "mapped_chunk_ids": [
+        239,
+        241
+      ]
+    },
+    {
+      "question_id": "TATA102",
+      "question": "Using the page 150 figures, what is standalone operating profit as a percentage of revenue from operations in FY24?",
+      "answerable": true,
+      "reference_answer": "12.24%",
+      "answer_type": "derived_financial_calculation",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": 150,
+      "evidence_id": "tata_fy25_financial_highlights_p150",
+      "relevant_chunk_ids": [
+        239,
+        241
+      ],
+      "relevant_evidence_text": "Revenue from operations — Standalone FY24: 73,303; Operating profit — Standalone FY24: 8,975 (₹ crore)",
+      "evidence_row": "Revenue from operations — Standalone FY24: 73,303; Operating profit — Standalone FY24: 8,975 (₹ crore)",
+      "unanswerable_reason": null,
+      "citation_ground_truth": {
+        "document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+        "printed_page": 150
+      },
+      "calculation": "(8,975 / 73,303) × 100 = 12.2437%",
+      "mapped_chunk_ids": [
+        239,
+        241
+      ]
+    },
+    {
+      "question_id": "TATA103",
+      "question": "Using the page 150 figures, what is consolidated operating profit as a percentage of revenue from operations in FY25?",
+      "answerable": true,
+      "reference_answer": "14.98%",
+      "answer_type": "derived_financial_calculation",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": 150,
+      "evidence_id": "tata_fy25_financial_highlights_p150",
+      "relevant_chunk_ids": [
+        239,
+        241
+      ],
+      "relevant_evidence_text": "Revenue from operations — Consolidated FY25: 439,695; Operating profit — Consolidated FY25: 65,848 (₹ crore)",
+      "evidence_row": "Revenue from operations — Consolidated FY25: 439,695; Operating profit — Consolidated FY25: 65,848 (₹ crore)",
+      "unanswerable_reason": null,
+      "citation_ground_truth": {
+        "document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+        "printed_page": 150
+      },
+      "calculation": "(65,848 / 439,695) × 100 = 14.9758%",
+      "mapped_chunk_ids": [
+        239,
+        241
+      ]
+    },
+    {
+      "question_id": "TATA104",
+      "question": "Using the page 150 figures, what is consolidated operating profit as a percentage of revenue from operations in FY24?",
+      "answerable": true,
+      "reference_answer": "15.86%",
+      "answer_type": "derived_financial_calculation",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": 150,
+      "evidence_id": "tata_fy25_financial_highlights_p150",
+      "relevant_chunk_ids": [
+        239,
+        241
+      ],
+      "relevant_evidence_text": "Revenue from operations — Consolidated FY24: 434,016; Operating profit — Consolidated FY24: 68,831 (₹ crore)",
+      "evidence_row": "Revenue from operations — Consolidated FY24: 434,016; Operating profit — Consolidated FY24: 68,831 (₹ crore)",
+      "unanswerable_reason": null,
+      "citation_ground_truth": {
+        "document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+        "printed_page": 150
+      },
+      "calculation": "(68,831 / 434,016) × 100 = 15.8591%",
+      "mapped_chunk_ids": [
+        239,
+        241
+      ]
+    },
+    {
+      "question_id": "TATA105",
+      "question": "What was Tata Motors’ consolidated revenue from operations in FY2026?",
+      "answerable": false,
+      "reference_answer": null,
+      "answer_type": "unanswerable",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": null,
+      "evidence_id": null,
+      "relevant_chunk_ids": [],
+      "relevant_evidence_text": null,
+      "evidence_row": null,
+      "unanswerable_reason": "FY2026 results are outside the FY2024–25 reporting period and are not provided by this report.",
+      "citation_ground_truth": null,
+      "mapped_chunk_ids": []
+    },
+    {
+      "question_id": "TATA106",
+      "question": "What was Tata Motors’ standalone revenue from operations for the quarter ended 30 June 2025?",
+      "answerable": false,
+      "reference_answer": null,
+      "answer_type": "unanswerable",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": null,
+      "evidence_id": null,
+      "relevant_chunk_ids": [],
+      "relevant_evidence_text": null,
+      "evidence_row": null,
+      "unanswerable_reason": "The report does not provide this specific FY2026 first-quarter standalone figure.",
+      "citation_ground_truth": null,
+      "mapped_chunk_ids": []
+    },
+    {
+      "question_id": "TATA107",
+      "question": "What was consolidated operating profit for the quarter ended 31 December 2024?",
+      "answerable": false,
+      "reference_answer": null,
+      "answer_type": "unanswerable",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": null,
+      "evidence_id": null,
+      "relevant_chunk_ids": [],
+      "relevant_evidence_text": null,
+      "evidence_row": null,
+      "unanswerable_reason": "The cited annual financial highlights report annual FY25/FY24 figures, not this quarterly figure.",
+      "citation_ground_truth": null,
+      "mapped_chunk_ids": []
+    },
+    {
+      "question_id": "TATA108",
+      "question": "What was Tata Motors’ exact closing share price on 31 March 2025?",
+      "answerable": false,
+      "reference_answer": null,
+      "answer_type": "unanswerable",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": null,
+      "evidence_id": null,
+      "relevant_chunk_ids": [],
+      "relevant_evidence_text": null,
+      "evidence_row": null,
+      "unanswerable_reason": "The cited financial highlights and key performance tables do not provide the exact daily closing share price.",
+      "citation_ground_truth": null,
+      "mapped_chunk_ids": []
+    },
+    {
+      "question_id": "TATA109",
+      "question": "What was the company’s intraday high share price on 31 March 2025?",
+      "answerable": false,
+      "reference_answer": null,
+      "answer_type": "unanswerable",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": null,
+      "evidence_id": null,
+      "relevant_chunk_ids": [],
+      "relevant_evidence_text": null,
+      "evidence_row": null,
+      "unanswerable_reason": "An intraday trading price is not stated in the annual-report evidence used for this benchmark.",
+      "citation_ground_truth": null,
+      "mapped_chunk_ids": []
+    },
+    {
+      "question_id": "TATA110",
+      "question": "What was Tata Motors’ market capitalisation at 3:00 p.m. IST on 31 March 2025?",
+      "answerable": false,
+      "reference_answer": null,
+      "answer_type": "unanswerable",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": null,
+      "evidence_id": null,
+      "relevant_chunk_ids": [],
+      "relevant_evidence_text": null,
+      "evidence_row": null,
+      "unanswerable_reason": "The exact intraday market capitalisation is not reported.",
+      "citation_ground_truth": null,
+      "mapped_chunk_ids": []
+    },
+    {
+      "question_id": "TATA111",
+      "question": "What was Tata Motors’ consolidated revenue from operations in each month of FY25?",
+      "answerable": false,
+      "reference_answer": null,
+      "answer_type": "unanswerable",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": null,
+      "evidence_id": null,
+      "relevant_chunk_ids": [],
+      "relevant_evidence_text": null,
+      "evidence_row": null,
+      "unanswerable_reason": "A month-by-month revenue series is not reported.",
+      "citation_ground_truth": null,
+      "mapped_chunk_ids": []
+    },
+    {
+      "question_id": "TATA112",
+      "question": "How many vehicles did Tata Motors sell in India in October 2024 alone?",
+      "answerable": false,
+      "reference_answer": null,
+      "answer_type": "unanswerable",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": null,
+      "evidence_id": null,
+      "relevant_chunk_ids": [],
+      "relevant_evidence_text": null,
+      "evidence_row": null,
+      "unanswerable_reason": "The cited annual-report highlights provide annual wholesale totals, not this exact monthly domestic-sales figure.",
+      "citation_ground_truth": null,
+      "mapped_chunk_ids": []
+    },
+    {
+      "question_id": "TATA113",
+      "question": "What was the exact number of Tata Motors passenger EVs delivered in Delhi in FY25?",
+      "answerable": false,
+      "reference_answer": null,
+      "answer_type": "unanswerable",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": null,
+      "evidence_id": null,
+      "relevant_chunk_ids": [],
+      "relevant_evidence_text": null,
+      "evidence_row": null,
+      "unanswerable_reason": "This city-level delivery count is not provided in the cited report evidence.",
+      "citation_ground_truth": null,
+      "mapped_chunk_ids": []
+    },
+    {
+      "question_id": "TATA114",
+      "question": "What was the average selling price per vehicle for Tata Motors in FY25?",
+      "answerable": false,
+      "reference_answer": null,
+      "answer_type": "unanswerable",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": null,
+      "evidence_id": null,
+      "relevant_chunk_ids": [],
+      "relevant_evidence_text": null,
+      "evidence_row": null,
+      "unanswerable_reason": "The exact company-wide average selling price per vehicle is not reported in the cited tables.",
+      "citation_ground_truth": null,
+      "mapped_chunk_ids": []
+    },
+    {
+      "question_id": "TATA115",
+      "question": "What was the consolidated gross profit for FY25 as a separately labelled line item in the page 150 table?",
+      "answerable": false,
+      "reference_answer": null,
+      "answer_type": "unanswerable",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": null,
+      "evidence_id": null,
+      "relevant_chunk_ids": [],
+      "relevant_evidence_text": null,
+      "evidence_row": null,
+      "unanswerable_reason": "The financial-highlights table does not contain a separately labelled gross-profit line item.",
+      "citation_ground_truth": null,
+      "mapped_chunk_ids": []
+    },
+    {
+      "question_id": "TATA116",
+      "question": "What was the consolidated EBITDA amount in ₹ crore for FY25 in the page 150 financial-highlights table?",
+      "answerable": false,
+      "reference_answer": null,
+      "answer_type": "unanswerable",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": null,
+      "evidence_id": null,
+      "relevant_chunk_ids": [],
+      "relevant_evidence_text": null,
+      "evidence_row": null,
+      "unanswerable_reason": "The cited page 150 table does not separately report an EBITDA amount; a margin is shown elsewhere in the report.",
+      "citation_ground_truth": null,
+      "mapped_chunk_ids": []
+    },
+    {
+      "question_id": "TATA117",
+      "question": "What was the standalone underlying EBITDA margin in FY25?",
+      "answerable": false,
+      "reference_answer": null,
+      "answer_type": "unanswerable",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": null,
+      "evidence_id": null,
+      "relevant_chunk_ids": [],
+      "relevant_evidence_text": null,
+      "evidence_row": null,
+      "unanswerable_reason": "The cited underlying EBITDA margin disclosure is consolidated, not standalone.",
+      "citation_ground_truth": null,
+      "mapped_chunk_ids": []
+    },
+    {
+      "question_id": "TATA118",
+      "question": "What was Tata Motors’ consolidated revenue guidance for FY26 issued by the board?",
+      "answerable": false,
+      "reference_answer": null,
+      "answer_type": "unanswerable",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": null,
+      "evidence_id": null,
+      "relevant_chunk_ids": [],
+      "relevant_evidence_text": null,
+      "evidence_row": null,
+      "unanswerable_reason": "The report does not provide a board-approved FY26 revenue guidance figure.",
+      "citation_ground_truth": null,
+      "mapped_chunk_ids": []
+    },
+    {
+      "question_id": "TATA119",
+      "question": "What was the exact FY25 revenue of Mahindra & Mahindra in the same accounting scope?",
+      "answerable": false,
+      "reference_answer": null,
+      "answer_type": "unanswerable",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": null,
+      "evidence_id": null,
+      "relevant_chunk_ids": [],
+      "relevant_evidence_text": null,
+      "evidence_row": null,
+      "unanswerable_reason": "A competitor’s exact comparable revenue is not supplied by this Tata Motors report.",
+      "citation_ground_truth": null,
+      "mapped_chunk_ids": []
+    },
+    {
+      "question_id": "TATA120",
+      "question": "What was Toyota Motor Corporation’s consolidated operating profit in FY25 in ₹ crore?",
+      "answerable": false,
+      "reference_answer": null,
+      "answer_type": "unanswerable",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": null,
+      "evidence_id": null,
+      "relevant_chunk_ids": [],
+      "relevant_evidence_text": null,
+      "evidence_row": null,
+      "unanswerable_reason": "Toyota’s operating profit is not reported in the Tata Motors annual report.",
+      "citation_ground_truth": null,
+      "mapped_chunk_ids": []
+    },
+    {
+      "question_id": "TATA121",
+      "question": "How much revenue did Tata Motors earn from each individual dealership in FY25?",
+      "answerable": false,
+      "reference_answer": null,
+      "answer_type": "unanswerable",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": null,
+      "evidence_id": null,
+      "relevant_chunk_ids": [],
+      "relevant_evidence_text": null,
+      "evidence_row": null,
+      "unanswerable_reason": "Dealership-level revenue is not disclosed in the cited annual report.",
+      "citation_ground_truth": null,
+      "mapped_chunk_ids": []
+    },
+    {
+      "question_id": "TATA122",
+      "question": "What was the FY25 operating profit of Tata Motors’ Pune plant alone?",
+      "answerable": false,
+      "reference_answer": null,
+      "answer_type": "unanswerable",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": null,
+      "evidence_id": null,
+      "relevant_chunk_ids": [],
+      "relevant_evidence_text": null,
+      "evidence_row": null,
+      "unanswerable_reason": "Plant-level operating profit is not provided.",
+      "citation_ground_truth": null,
+      "mapped_chunk_ids": []
+    },
+    {
+      "question_id": "TATA123",
+      "question": "What was the exact FY25 consolidated revenue attributable only to sales in Brazil?",
+      "answerable": false,
+      "reference_answer": null,
+      "answer_type": "unanswerable",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": null,
+      "evidence_id": null,
+      "relevant_chunk_ids": [],
+      "relevant_evidence_text": null,
+      "evidence_row": null,
+      "unanswerable_reason": "This exact country-specific revenue amount is not provided in the cited evidence.",
+      "citation_ground_truth": null,
+      "mapped_chunk_ids": []
+    },
+    {
+      "question_id": "TATA124",
+      "question": "What was Tata Motors’ consolidated finance cost in FY26?",
+      "answerable": false,
+      "reference_answer": null,
+      "answer_type": "unanswerable",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": null,
+      "evidence_id": null,
+      "relevant_chunk_ids": [],
+      "relevant_evidence_text": null,
+      "evidence_row": null,
+      "unanswerable_reason": "FY26 annual finance cost is outside the FY25 annual report’s reporting period.",
+      "citation_ground_truth": null,
+      "mapped_chunk_ids": []
+    },
+    {
+      "question_id": "TATA125",
+      "question": "How many Tata Motors employees resigned on 17 February 2025?",
+      "answerable": false,
+      "reference_answer": null,
+      "answer_type": "unanswerable",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": null,
+      "evidence_id": null,
+      "relevant_chunk_ids": [],
+      "relevant_evidence_text": null,
+      "evidence_row": null,
+      "unanswerable_reason": "A single-day resignation count is not reported.",
+      "citation_ground_truth": null,
+      "mapped_chunk_ids": []
+    },
+    {
+      "question_id": "TATA126",
+      "question": "What was the median annual salary of Tata Motors employees in India in FY25?",
+      "answerable": false,
+      "reference_answer": null,
+      "answer_type": "unanswerable",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": null,
+      "evidence_id": null,
+      "relevant_chunk_ids": [],
+      "relevant_evidence_text": null,
+      "evidence_row": null,
+      "unanswerable_reason": "The exact median annual employee salary is not provided by the cited financial tables.",
+      "citation_ground_truth": null,
+      "mapped_chunk_ids": []
+    },
+    {
+      "question_id": "TATA127",
+      "question": "What was the exact amount of cash paid to every supplier individually during FY25?",
+      "answerable": false,
+      "reference_answer": null,
+      "answer_type": "unanswerable",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": null,
+      "evidence_id": null,
+      "relevant_chunk_ids": [],
+      "relevant_evidence_text": null,
+      "evidence_row": null,
+      "unanswerable_reason": "Supplier-by-supplier cash payments are not disclosed.",
+      "citation_ground_truth": null,
+      "mapped_chunk_ids": []
+    },
+    {
+      "question_id": "TATA128",
+      "question": "What is Tata Motors’ audited consolidated revenue for FY27?",
+      "answerable": false,
+      "reference_answer": null,
+      "answer_type": "unanswerable",
+      "source_document": "Tata Motors Limited, 80th Integrated Annual Report 2024–25",
+      "source_url": "https://www.tatamotors.com/wp-content/uploads/2024/05/tata-motor-IAR-2024-25.pdf",
+      "printed_page": null,
+      "evidence_id": null,
+      "relevant_chunk_ids": [],
+      "relevant_evidence_text": null,
+      "evidence_row": null,
+      "unanswerable_reason": "FY27 is a future reporting period relative to this FY25 annual report and no audited FY27 revenue is supplied.",
+      "citation_ground_truth": null,
+      "mapped_chunk_ids": []
+    }
+  ]
+}

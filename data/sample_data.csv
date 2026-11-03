@@ -1,0 +1,3 @@
+question,reference_answer,expected_page,unanswerable
+What was the reported revenue?,,,true
+Which reporting period is covered?,,,true

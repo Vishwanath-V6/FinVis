@@ -1,0 +1,266 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+2 0 obj
+<< /Length 136 >>
+stream
+BT
+/F1 18 Tf
+72 750 Td
+(Financial RAG Research Assistant) Tj
+/F1 10 Tf
+0 -30 Td
+(Implementation report | 20 October 2026) Tj
+0 -15 Td
+ET
+endstream
+endobj
+3 0 obj
+<< /Type /Page /Parent 20 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R >> >> /Contents 2 0 R >>
+endobj
+4 0 obj
+<< /Length 602 >>
+stream
+BT
+/F1 18 Tf
+72 750 Td
+(Executive summary) Tj
+/F1 10 Tf
+0 -30 Td
+(This capstone implements a local, evidence-first financial document question-answering) Tj
+0 -15 Td
+(pipeline. PyMuPDF extracts page text; conservative normalization preserves financial) Tj
+0 -15 Td
+(notation; word chunks retain document, filename, page, and chunk metadata; a sentence-) Tj
+0 -15 Td
+(transformer creates normalized vectors; FAISS inner-product search performs cosine-style) Tj
+0 -15 Td
+(semantic retrieval; and an extractive transformer answers only from retrieved evidence with) Tj
+0 -15 Td
+(citations.) Tj
+0 -15 Td
+ET
+endstream
+endobj
+5 0 obj
+<< /Type /Page /Parent 20 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R >> >> /Contents 4 0 R >>
+endobj
+6 0 obj
+<< /Length 495 >>
+stream
+BT
+/F1 18 Tf
+72 750 Td
+(Architecture) Tj
+/F1 10 Tf
+0 -30 Td
+(The reusable modules are src/preprocessing.py, src/model_utils.py, src/retrieval.py,) Tj
+0 -15 Td
+(src/inference.py, and src/evaluation.py. app.py and api.py call the same pipeline rather) Tj
+0 -15 Td
+(than duplicating business logic. Retrieval indexes are persisted as index.faiss and) Tj
+0 -15 Td
+(chunks.json under models/saved_model when explicitly saved. Notebook examples call the) Tj
+0 -15 Td
+(modules directly.) Tj
+0 -15 Td
+ET
+endstream
+endobj
+7 0 obj
+<< /Type /Page /Parent 20 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R >> >> /Contents 6 0 R >>
+endobj
+8 0 obj
+<< /Length 560 >>
+stream
+BT
+/F1 18 Tf
+72 750 Td
+(Preprocessing) Tj
+/F1 10 Tf
+0 -30 Td
+(Extraction is page-wise with one-based numbering and document identity. Missing, non-PDF,) Tj
+0 -15 Td
+(encrypted, empty, and unreadable files raise explicit errors. Cleaning normalizes Unicode,) Tj
+0 -15 Td
+(whitespace, common ligatures, and conservative line-break hyphenation. Chunking validates) Tj
+0 -15 Td
+(positive size and strictly smaller overlap, slices words rather than characters, retains) Tj
+0 -15 Td
+(empty-page numbering, and records exact word and character counts.) Tj
+0 -15 Td
+ET
+endstream
+endobj
+9 0 obj
+<< /Type /Page /Parent 20 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R >> >> /Contents 8 0 R >>
+endobj
+10 0 obj
+<< /Length 617 >>
+stream
+BT
+/F1 18 Tf
+72 750 Td
+(Retrieval and answering) Tj
+/F1 10 Tf
+0 -30 Td
+(The default embedding model is sentence-transformers/all-MiniLM-L6-v2. Encodings are) Tj
+0 -15 Td
+(float32, finite, and normalized. IndexFlatIP therefore implements cosine similarity. Search) Tj
+0 -15 Td
+(results carry the original chunk record and score. The QA model is distilbert-base-uncased-) Tj
+0 -15 Td
+(distilled-squad; answer logits are restricted to context tokens, and responses include) Tj
+0 -15 Td
+(answer text, evidence, page, chunk, document, and score. Empty or weak evidence produces an) Tj
+0 -15 Td
+(abstention.) Tj
+0 -15 Td
+ET
+endstream
+endobj
+11 0 obj
+<< /Type /Page /Parent 20 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R >> >> /Contents 10 0 R >>
+endobj
+12 0 obj
+<< /Length 737 >>
+stream
+BT
+/F1 18 Tf
+72 750 Td
+(Measured verification) Tj
+/F1 10 Tf
+0 -30 Td
+(A generated one-page PDF containing a financial value was processed successfully. The test) Tj
+0 -15 Td
+(produced one page and one chunk, built a 384-dimensional embedding, searched FAISS, and) Tj
+0 -15 Td
+(returned the expected page and chunk. The index was saved, reloaded, and queried again with) Tj
+0 -15 Td
+(matching source text. Preprocessing assertions covered ligatures, line-wrap repair,) Tj
+0 -15 Td
+(whitespace, exact overlap, counts, page metadata, empty pages, and invalid parameters. All) Tj
+0 -15 Td
+(four notebooks are valid nbformat 4 JSON and their code cells compile. Python compileall) Tj
+0 -15 Td
+(passed for source, app, and API.) Tj
+0 -15 Td
+ET
+endstream
+endobj
+13 0 obj
+<< /Type /Page /Parent 20 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R >> >> /Contents 12 0 R >>
+endobj
+14 0 obj
+<< /Length 667 >>
+stream
+BT
+/F1 18 Tf
+72 750 Td
+(Evaluation and limitations) Tj
+/F1 10 Tf
+0 -30 Td
+(No genuine financial filing or labeled question set was present in the repository, so no) Tj
+0 -15 Td
+(benchmark score is claimed. data/sample_data.csv intentionally contains unanswerable) Tj
+0 -15 Td
+(placeholders rather than fabricated facts. Evaluation helpers support Recall@k, Precision@k,) Tj
+0 -15 Td
+(MRR, exact match, grounding, abstention, and latency once real cases are supplied. OCR is) Tj
+0 -15 Td
+(not bundled; scanned PDFs fail clearly and require an external OCR pipeline. Tables and) Tj
+0 -15 Td
+(multi-column extraction remain dependent on PyMuPDF ordering.) Tj
+0 -15 Td
+ET
+endstream
+endobj
+15 0 obj
+<< /Type /Page /Parent 20 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R >> >> /Contents 14 0 R >>
+endobj
+16 0 obj
+<< /Length 668 >>
+stream
+BT
+/F1 18 Tf
+72 750 Td
+(Deployment notes) Tj
+/F1 10 Tf
+0 -30 Td
+(Install requirements in a Python environment with compatible binary wheels. The current) Tj
+0 -15 Td
+(validation environment is Python 3.14 and already contained the core ML stack; optional) Tj
+0 -15 Td
+(FastAPI, Streamlit, and ReportLab packages were unavailable during validation because pip) Tj
+0 -15 Td
+(resolver backtracking selected incompatible source-build paths. The declared requirements) Tj
+0 -15 Td
+(use lower bounds to avoid forcing one unavailable wheel. First model use downloads Hugging) Tj
+0 -15 Td
+(Face weights; credentials and private documents must not be committed.) Tj
+0 -15 Td
+ET
+endstream
+endobj
+17 0 obj
+<< /Type /Page /Parent 20 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R >> >> /Contents 16 0 R >>
+endobj
+18 0 obj
+<< /Length 421 >>
+stream
+BT
+/F1 18 Tf
+72 750 Td
+(Future improvements) Tj
+/F1 10 Tf
+0 -30 Td
+(Add a real financial-filing corpus and manually reviewed evidence labels; add OCR behind an) Tj
+0 -15 Td
+(explicit optional extra; improve table-aware extraction; add a persistent multi-document) Tj
+0 -15 Td
+(service lifecycle; calibrate abstention thresholds on held-out data; and add automated) Tj
+0 -15 Td
+(citation entailment checks.) Tj
+0 -15 Td
+ET
+endstream
+endobj
+19 0 obj
+<< /Type /Page /Parent 20 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R >> >> /Contents 18 0 R >>
+endobj
+20 0 obj
+<< /Type /Pages /Kids [3 0 R 5 0 R 7 0 R 9 0 R 11 0 R 13 0 R 15 0 R 17 0 R 19 0 R] /Count 9 >>
+endobj
+21 0 obj
+<< /Type /Catalog /Pages 20 0 R >>
+endobj
+xref
+0 22
+0000000000 65535 f 
+0000000009 00000 n 
+0000000079 00000 n 
+0000000266 00000 n 
+0000000393 00000 n 
+0000001046 00000 n 
+0000001173 00000 n 
+0000001719 00000 n 
+0000001846 00000 n 
+0000002457 00000 n 
+0000002584 00000 n 
+0000003253 00000 n 
+0000003382 00000 n 
+0000004171 00000 n 
+0000004300 00000 n 
+0000005019 00000 n 
+0000005148 00000 n 
+0000005868 00000 n 
+0000005997 00000 n 
+0000006470 00000 n 
+0000006599 00000 n 
+0000006710 00000 n 
+trailer
+<< /Size 22 /Root 21 0 R >>
+startxref
+6761
+%%EOF
