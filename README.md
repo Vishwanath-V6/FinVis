@@ -1,10 +1,10 @@
-# Financial RAG Research Assistant
+# FinVis — Financial Intelligence Dashboard
 
-A local, evidence-first research assistant for questions over financial PDFs. The
-pipeline extracts page text with PyMuPDF, cleans it conservatively, creates
-metadata-preserving word chunks, embeds them with a sentence-transformer, searches
-normalized vectors with FAISS inner product (cosine similarity), and extracts an
-answer from the retrieved evidence with source citations.
+FinVis is an evidence-first financial document workspace. It extracts page text
+and tables from financial PDFs, preserves page and chunk provenance, indexes the
+evidence with MiniLM and FAISS, and presents validated table values through a
+focused Streamlit dashboard. Question answering is available as a secondary
+evidence-cited workflow.
 
 ## Setup
 
@@ -46,6 +46,20 @@ Run Streamlit:
 ```powershell
 streamlit run app.py
 ```
+
+The dashboard provides:
+
+- **Overview** — extracted KPI cards and a validated financial profile.
+- **Financial Analysis** — metric/scope filters, period comparisons, Plotly trends,
+  and deterministic year-over-year calculations.
+- **Segment Analysis** — segment evidence only when supported by extracted tables.
+- **Evidence Explorer** — metric, period, unit, scope, page, table, and chunk
+  provenance with the original searchable evidence.
+- **Ask FinVis** — the existing retrieval-grounded QA flow.
+
+The initial workflow accepts a PDF and a natural-language analysis request. It
+does not fabricate missing metrics: empty or unsupported views explain why data
+is unavailable. OCR requires the external Tesseract installation described below.
 
 Run the API:
 
