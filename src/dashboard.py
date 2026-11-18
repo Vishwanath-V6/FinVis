@@ -3,12 +3,29 @@
 from __future__ import annotations
 
 import re
+import math
 from typing import Any, Iterable
 
 import pandas as pd
 
 
-_NUMBER_RE = re.compile(r"^\s*(?:[₹$€£]\s*)?(-?\(?\d[\d,]*(?:\.\d+)?\)?)\s*%?\s*$")
+_NUMBER_RE = re.compile(
+    r"^\s*(?:[₹$€£]\s*)?"
+    r"(-?(?:\(?\d[\d,]*(?:\.\d+)?\)?))"
+    r"\s*(%|crores?|lakhs?|million|millions|billion|billions)?\s*$",
+    re.IGNORECASE,
+)
+
+_SCALE_MULTIPLIERS = {
+    "lakh": 100_000,
+    "lakhs": 100_000,
+    "crore": 10_000_000,
+    "crores": 10_000_000,
+    "million": 1_000_000,
+    "millions": 1_000_000,
+    "billion": 1_000_000_000,
+    "billions": 1_000_000_000,
+}
 
 
 def parse_financial_value(value: Any) -> float | None:
@@ -21,11 +38,20 @@ def parse_financial_value(value: Any) -> float | None:
     text = match.group(1).replace(",", "").strip()
     negative = text.startswith("(") and text.endswith(")")
     text = text.strip("()")
+    if text.startswith("-"):
+        negative = True
+        text = text[1:]
+    scale = match.group(2).casefold() if match.group(2) else ""
     try:
         number = float(text)
     except ValueError:
         return None
-    return -number if negative else number
+    if not math.isfinite(number):
+        return None
+    result = -number if negative else number
+    if scale and scale != "%":
+        result *= _SCALE_MULTIPLIERS.get(scale, 1)
+    return result
 
 
 def financial_records(chunks: Iterable[dict[str, Any]]) -> pd.DataFrame:
@@ -111,9 +137,40 @@ def calculate_yoy(records: pd.DataFrame) -> pd.DataFrame:
     result = result.dropna(subset=["Year number"])
     result = result.sort_values(["Metric", "Scope", "Unit", "Year number"])
     result["Change"] = result.groupby(["Metric", "Scope", "Unit"])["Value"].diff()
-    result["Change %"] = (
-        result["Change"]
-        / result.groupby(["Metric", "Scope", "Unit"])["Value"].shift(1).abs()
-        * 100
-    )
+    prior_value = result.groupby(["Metric", "Scope", "Unit"])["Value"].shift(1)
+    result["Change %"] = (result["Change"] / prior_value.abs().replace(0, pd.NA)) * 100
     return result.dropna(subset=["Change"])
+
+
+def calculate_ratio(numerator: float | None, denominator: float | None) -> float | None:
+    """Return a percentage ratio, or None for missing or zero denominator values."""
+    if not isinstance(numerator, (int, float)) or not isinstance(denominator, (int, float)):
+        return None
+    if not math.isfinite(float(numerator)) or not math.isfinite(float(denominator)):
+        return None
+    if denominator == 0:
+        return None
+    return float(numerator) / float(denominator) * 100
+
+
+def profit_margin(records: pd.DataFrame, profit_metric: str, revenue_metric: str) -> pd.DataFrame:
+    """Calculate a profit margin only within matching year, scope, and unit."""
+    if records.empty:
+        return pd.DataFrame()
+    profits = records[records["Metric"].str.casefold().eq(profit_metric.casefold())]
+    revenues = records[records["Metric"].str.casefold().eq(revenue_metric.casefold())]
+    if profits.empty or revenues.empty:
+        return pd.DataFrame()
+    merged = profits.merge(
+        revenues,
+        on=["Year", "Scope", "Unit"],
+        suffixes=("_profit", "_revenue"),
+    )
+    if merged.empty:
+        return pd.DataFrame()
+    output = merged[["Year", "Scope", "Unit"]].copy()
+    output["Ratio %"] = [
+        calculate_ratio(profit, revenue)
+        for profit, revenue in zip(merged["Value_profit"], merged["Value_revenue"])
+    ]
+    return output.dropna(subset=["Ratio %"])

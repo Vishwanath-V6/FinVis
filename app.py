@@ -3,19 +3,21 @@
 from __future__ import annotations
 
 from pathlib import Path
-import tempfile
 from typing import Any
 
 import pandas as pd
 import streamlit as st
 
-from src.dashboard import add_families, calculate_yoy, financial_records
+from src.dashboard import add_families, calculate_ratio, calculate_yoy, financial_records, profit_margin
 from src.inference import answer_question, load_qa_model
-from src.preprocessing import PreprocessingError, chunk_pages, clean_pages, extract_text
-from src.retrieval import RetrievalIndex
+from src.ingestion import build_semantic_index, prepare_document
+from src.preprocessing import PreprocessingError
+from src.config import MAX_UPLOAD_BYTES
+from src.logging_utils import configure_logging
+
+configure_logging()
 
 
-MAX_UPLOAD_BYTES = 50 * 1024 * 1024
 
 st.set_page_config(page_title="FinVis", page_icon="F", layout="wide", initial_sidebar_state="expanded")
 
@@ -42,6 +44,8 @@ st.markdown(
 def _init_state() -> None:
     defaults = {
         "index": None,
+        "lexical_index": None,
+        "prepared": None,
         "chunks": [],
         "pages": [],
         "records": pd.DataFrame(),
@@ -75,17 +79,22 @@ def _index_upload(uploaded_file: Any, request: str) -> None:
     safe_name = Path(uploaded_file.name or "financial-report.pdf").name
     progress = st.status("Preparing your report...", expanded=True)
     try:
-        with tempfile.TemporaryDirectory() as directory:
-            path = Path(directory) / "upload.pdf"
-            path.write_bytes(content)
-            progress.write("Reading pages and extracting tables...")
-            pages = clean_pages(extract_text(path, document_id=safe_name, enable_ocr=True))
-            progress.write(f"Extracted {len(pages):,} pages. Creating evidence chunks...")
-            chunks = chunk_pages(pages)
-            progress.write(f"Created {len(chunks):,} chunks. Loading embeddings and building the index...")
-            index = RetrievalIndex().build(chunks)
+        prepared = prepare_document(
+            content,
+            safe_name,
+            request,
+            progress=progress.write,
+            build_semantic=False,
+        )
+        pages = prepared["pages"]
+        chunks = prepared["chunks"]
+        index = prepared["lexical_index"]
         progress.update(
-            label=f"Report ready: {len(chunks):,} evidence chunks indexed.",
+            label=(
+                f"Report ready from cache: {len(chunks):,} chunks."
+                if prepared["cache_hit"]
+                else f"Report ready: {len(chunks):,} targeted chunks indexed."
+            ),
             state="complete",
             expanded=False,
         )
@@ -94,6 +103,8 @@ def _index_upload(uploaded_file: Any, request: str) -> None:
         raise
     st.session_state.update(
         index=index,
+        lexical_index=index,
+        prepared=prepared,
         pages=pages,
         chunks=chunks,
         records=add_families(financial_records(chunks)),
@@ -154,7 +165,8 @@ def _overview(records: pd.DataFrame) -> None:
         cards = metrics[:4]
     columns = st.columns(min(4, len(cards)))
     for column, metric in zip(columns, cards):
-        latest = records[records["Metric"] == metric].iloc[-1]
+        metric_records = records[records["Metric"] == metric].copy()
+        latest = metric_records.sort_values("Year", kind="stable").iloc[-1]
         with column:
             _metric_card(metric, _format_value(latest["Value"], latest["Unit"]), f"{latest['Scope']} · {latest['Year']}")
     st.divider()
@@ -202,6 +214,28 @@ def _analysis(records: pd.DataFrame) -> None:
     if not yoy.empty:
         st.subheader("Period-over-period change")
         st.dataframe(yoy[["Year", "Scope", "Value", "Change", "Change %", "Unit"]], use_container_width=True, hide_index=True)
+    st.subheader("Available profit margins")
+    revenue_names = [
+        name for name in records["Metric"].unique()
+        if "revenue" in str(name).casefold() or "sales" in str(name).casefold()
+    ]
+    profit_names = [
+        name for name in records["Metric"].unique()
+        if "profit" in str(name).casefold()
+    ]
+    margin_frames = []
+    if revenue_names and profit_names:
+        for revenue_name in revenue_names[:2]:
+            for profit_name in profit_names[:3]:
+                margins = profit_margin(records, profit_name, revenue_name)
+                if not margins.empty:
+                    margins.insert(0, "Profit metric", profit_name)
+                    margins.insert(1, "Revenue metric", revenue_name)
+                    margin_frames.append(margins)
+    if margin_frames:
+        st.dataframe(pd.concat(margin_frames, ignore_index=True), use_container_width=True, hide_index=True)
+    else:
+        st.caption("No unambiguous matching revenue/profit values are available for margin calculation.")
 
 
 def _segments(records: pd.DataFrame) -> None:
@@ -248,6 +282,11 @@ def _ask() -> None:
     if st.button("Ask", type="primary") and question.strip():
         try:
             with st.spinner("Retrieving evidence..."):
+                if st.session_state.prepared is not None:
+                    st.session_state.index = build_semantic_index(
+                        st.session_state.prepared,
+                        progress=st.info,
+                    )
                 if st.session_state.qa is None:
                     st.session_state.qa = load_qa_model()
                 result = answer_question(question, st.session_state.index, *st.session_state.qa)

@@ -68,12 +68,14 @@ def extract_text(
                         text = ocr_text
                         ocr_used = True
                 tables = _extract_page_tables(page, doc_id, path.name, page_index + 1, text)
+                narrative = _narrative_text(page, tables, text)
                 pages.append(
                     {
                         "document_id": doc_id,
                         "source_filename": path.name,
                         "page_number": page_index + 1,
                         "text": text,
+                        "narrative_text": narrative,
                         "character_count": len(text),
                         "word_count": len(text.split()),
                         "ocr_used": ocr_used,
@@ -92,10 +94,30 @@ def extract_text(
     return pages
 
 
+_NUMERIC_CELL_RE = re.compile(r"^\(?-?[\d,]+(?:\.\d+)?\)?$")
+_MISSING_CELL = {"", "-", "–", "—", "na", "n.a.", "n.a", ".", "*"}
+_SCOPE_RE = re.compile(r"\b(standalone|consolidated)\b", re.IGNORECASE)
+_PERIOD_RE = re.compile(r"\bFY\s*[-/]?\s*(20\d{2}|\d{2})\b", re.IGNORECASE)
+_UNIT_RE = re.compile(
+    r"(₹|Rs\.?|INR|USD|EUR|GBP)\s*(?:in\s+)?(crore|crores|lakh|lakhs|million|billion)",
+    re.IGNORECASE,
+)
+
+
+def page_likely_has_table(page_text: str) -> bool:
+    """Skip expensive table detection on narrative pages with almost no figures."""
+    stripped = page_text.strip()
+    if len(stripped) < 40:
+        return True
+    return sum(character.isdigit() for character in stripped) >= 24
+
+
 def _extract_page_tables(
     page: Any, document_id: str, source_filename: str, page_number: int, page_text: str = ""
 ) -> list[dict[str, Any]]:
     """Extract tables into structured rows while retaining cell boundaries."""
+    if not page_likely_has_table(page_text):
+        return []
     finder = getattr(page, "find_tables", None)
     if finder is None:
         return []
@@ -112,20 +134,13 @@ def _extract_page_tables(
             continue
         if not rows or not all(isinstance(row, (list, tuple)) for row in rows):
             continue
-        normalized_rows = [
-            [
-                re.sub(r"\bafet\s+r\b", "after", cell.strip(), flags=re.IGNORECASE)
-                if isinstance(cell, str)
-                else ""
-                for cell in row
-            ]
-            for row in rows
-        ]
+        normalized_rows = [_normalise_table_row(row) for row in rows]
         if not any(cell for row in normalized_rows for cell in row):
             continue
         headers, data_rows, inferred = _repair_financial_table_headers(
             normalized_rows[0], normalized_rows[1:], page_text
         )
+        bbox = _table_bbox(table)
         unit = _infer_financial_unit(page_text)
         tables.append(
             {
@@ -137,42 +152,202 @@ def _extract_page_tables(
                 "rows": data_rows,
                 "unit": unit,
                 "header_inferred": inferred,
+                "reporting_period": " ".join(
+                    _unique_in_order(
+                        [f"FY{match.group(1)[-2:]}" for match in _PERIOD_RE.finditer(page_text)]
+                    )
+                ),
+                "bbox": bbox,
             }
         )
     return tables
 
 
+def _normalise_table_row(row: Any) -> list[str]:
+    cells: list[str] = []
+    previous = ""
+    for index, cell in enumerate(row):
+        text = cell.strip() if isinstance(cell, str) else ""
+        text = re.sub(r"\bafet\s+r\b", "after", text, flags=re.IGNORECASE)
+        # Forward-fill only empty header-like leading cells from merged labels.
+        if not text and index == 0 and previous:
+            text = previous
+        if text:
+            previous = text
+        cells.append(text)
+    return cells
+
+
+def _table_bbox(table: Any) -> list[float] | None:
+    bbox = getattr(table, "bbox", None)
+    if bbox is None:
+        return None
+    try:
+        return [float(value) for value in bbox]
+    except (TypeError, ValueError):
+        return None
+
+
+def _narrative_text(page: Any, tables: list[dict[str, Any]], fallback: str) -> str:
+    """Keep page prose for chunking without duplicating extracted table cells."""
+    boxes = [tuple(table["bbox"]) for table in tables if table.get("bbox")]
+    if not boxes or not hasattr(page, "get_text"):
+        return fallback
+    try:
+        blocks = page.get_text("blocks") or []
+    except Exception:
+        return fallback
+    parts: list[str] = []
+    for block in blocks:
+        if not isinstance(block, (list, tuple)) or len(block) < 5:
+            continue
+        x0, y0, x1, y1, text = block[:5]
+        if not isinstance(text, str) or not text.strip():
+            continue
+        region = (float(x0), float(y0), float(x1), float(y1))
+        if any(_boxes_overlap(region, box) for box in boxes):
+            continue
+        parts.append(text.strip())
+    return "\n".join(parts) if parts else fallback
+
+
+def _boxes_overlap(left: tuple[float, ...], right: tuple[float, ...], pad: float = 2.0) -> bool:
+    return not (
+        left[2] < right[0] - pad
+        or left[0] > right[2] + pad
+        or left[3] < right[1] - pad
+        or left[1] > right[3] + pad
+    )
+
+
+def _is_numeric_cell(cell: str) -> bool:
+    text = cell.strip().replace(" ", "")
+    if text.casefold() in _MISSING_CELL:
+        return False
+    return bool(_NUMERIC_CELL_RE.fullmatch(text))
+
+
+def _is_numeric_data_row(row: list[str]) -> bool:
+    values = [cell for cell in row[1:]]
+    if not values:
+        return False
+    numeric = sum(_is_numeric_cell(cell) for cell in values)
+    return numeric >= 2 and numeric / len(values) >= 0.5
+
+
+def _merge_header_rows(rows: list[list[str]]) -> list[str]:
+    width = max(len(row) for row in rows)
+    merged: list[str] = []
+    for column in range(width):
+        parts: list[str] = []
+        last = ""
+        for row in rows:
+            cell = row[column].strip() if column < len(row) and isinstance(row[column], str) else ""
+            if not cell:
+                cell = last
+            elif cell:
+                last = cell
+            if cell and cell not in parts:
+                parts.append(cell)
+        merged.append(" ".join(parts).strip())
+    if merged and not merged[0]:
+        merged[0] = "Particulars"
+    return merged
+
+
+def _unique_in_order(values: list[str]) -> list[str]:
+    seen: set[str] = set()
+    ordered: list[str] = []
+    for value in values:
+        key = value.casefold()
+        if key in seen:
+            continue
+        seen.add(key)
+        ordered.append(value)
+    return ordered
+
+
+def _reconstruct_headers_from_page(column_count: int, page_text: str, first_row: list[str]) -> list[str] | None:
+    if column_count < 2:
+        return None
+    metric = first_row[0] if first_row else ""
+    index = page_text.find(metric) if metric else -1
+    region = page_text[:index] if index > 0 else page_text[:2000]
+    scopes = _unique_in_order([match.group(1).title() for match in _SCOPE_RE.finditer(region)])
+    periods = _unique_in_order(
+        [f"FY{match.group(1)[-2:]}" for match in _PERIOD_RE.finditer(region)]
+    )
+    value_columns = column_count - 1
+    if len(scopes) >= 2 and len(periods) >= 2 and value_columns == len(scopes[:2]) * len(periods[:2]):
+        headers = ["Particulars"]
+        for scope in scopes[:2]:
+            for period in periods[:2]:
+                headers.append(f"{scope} {period}")
+        return headers
+    if not scopes and len(periods) == value_columns:
+        return ["Particulars", *periods]
+    if len(scopes) == value_columns and not periods:
+        return ["Particulars", *scopes]
+    if len(periods) == value_columns:
+        return ["Particulars", *periods]
+    return None
+
+
 def _repair_financial_table_headers(
     headers: list[str], rows: list[list[str]], page_text: str
 ) -> tuple[list[str], list[list[str]], bool]:
-    if not headers or not rows:
+    if not headers:
         return headers, rows, False
-    numeric_header_cells = sum(bool(re.fullmatch(r"[\d,().-]+", cell)) for cell in headers[1:])
-    if (
-        len(headers) == 5
-        and numeric_header_cells >= 3
-        and re.search(r"\bStandalone\b", page_text, re.IGNORECASE)
-        and re.search(r"\bConsolidated\b", page_text, re.IGNORECASE)
-        and re.search(r"\bFY25\b", page_text)
-        and re.search(r"\bFY24\b", page_text)
-    ):
-        return [
-            "Particulars",
-            "Standalone FY25",
-            "Standalone FY24",
-            "Consolidated FY25",
-            "Consolidated FY24",
-        ], [headers, *rows], True
+    all_rows = [headers, *rows]
+    data_index = next((index for index, row in enumerate(all_rows) if _is_numeric_data_row(row)), 0)
+    if data_index == 0 and _is_numeric_data_row(headers):
+        reconstructed = _reconstruct_headers_from_page(len(headers), page_text, headers)
+        if reconstructed and len(reconstructed) == len(headers):
+            return reconstructed, all_rows, True
+        numeric_header_cells = sum(_is_numeric_cell(cell) for cell in headers[1:])
+        if (
+            len(headers) == 5
+            and numeric_header_cells >= 3
+            and re.search(r"\bStandalone\b", page_text, re.IGNORECASE)
+            and re.search(r"\bConsolidated\b", page_text, re.IGNORECASE)
+            and re.search(r"\bFY25\b", page_text)
+            and re.search(r"\bFY24\b", page_text)
+        ):
+            return [
+                "Particulars",
+                "Standalone FY25",
+                "Standalone FY24",
+                "Consolidated FY25",
+                "Consolidated FY24",
+            ], all_rows, True
+        return headers, rows, False
+    if data_index > 0:
+        merged = _merge_header_rows(all_rows[:data_index])
+        if len(merged) != len(all_rows[data_index]):
+            width = len(all_rows[data_index])
+            merged = (merged + [""] * width)[:width]
+        return merged, all_rows[data_index:], data_index > 1
     return headers, rows, False
 
 
 def _infer_financial_unit(page_text: str) -> str:
-    match = re.search(
-        r"\((₹|Rs\.?)\s*in\s+(crore|crores|lakh|lakhs|million|billion)\)",
-        page_text,
-        re.IGNORECASE,
-    )
-    return f"{match.group(1)} {match.group(2)}" if match else ""
+    matches = [
+        (currency, scale.casefold())
+        for currency, scale in _UNIT_RE.findall(page_text)
+    ]
+    if not matches:
+        return ""
+    normalised = {
+        (
+            "₹" if currency in {"₹", "Rs", "Rs.", "INR"} or currency.casefold().startswith("rs") else currency,
+            "crore" if scale.startswith("crore") else "lakh" if scale.startswith("lakh") else scale,
+        )
+        for currency, scale in matches
+    }
+    if len(normalised) != 1:
+        return ""
+    currency, scale = next(iter(normalised))
+    return f"{currency} {scale}"
 
 
 def clean_text(text: str) -> str:
@@ -210,8 +385,10 @@ def clean_pages(pages: Iterable[dict[str, Any]]) -> list[dict[str, Any]]:
             raise PreprocessingError("page tables must be a list")
         text = clean_text(page["text"])
         record = dict(page)
+        narrative = page.get("narrative_text")
         record.update(
             text=text,
+            narrative_text=clean_text(narrative) if isinstance(narrative, str) else text,
             character_count=len(text),
             word_count=len(text.split()),
         )
@@ -237,6 +414,7 @@ def chunk_pages(
 
     chunks: list[dict[str, Any]] = []
     next_chunk_id = 0
+    seen_chunk_text: set[str] = set()
     for page in pages:
         if not isinstance(page, dict):
             raise TypeError("each page must be a dictionary")
@@ -249,6 +427,9 @@ def chunk_pages(
             raise PreprocessingError("each page requires a document_id")
         if not isinstance(page.get("source_filename"), str) or not page["source_filename"].strip():
             raise PreprocessingError("each page requires a source_filename")
+        raw_text = page.get("narrative_text", raw_text)
+        if not isinstance(raw_text, str):
+            raise PreprocessingError("page text must be a string")
         words = raw_text.split()
         if words:
             for start in range(0, len(words), chunk_size - overlap):
@@ -256,6 +437,10 @@ def chunk_pages(
                 if not chunk_words:
                     continue
                 chunk_text = " ".join(chunk_words)
+                text_key = re.sub(r"\s+", " ", chunk_text.casefold()).strip()
+                if text_key in seen_chunk_text:
+                    continue
+                seen_chunk_text.add(text_key)
                 chunks.append(
                     {
                         "document_id": page.get("document_id", "document"),
@@ -305,6 +490,7 @@ def chunk_pages(
                         "table_values": table_row["values"],
                         "table_unit": table.get("unit", ""),
                         "table_reporting_period": table.get("reporting_period", ""),
+                        "bbox": table.get("bbox"),
                     }
                 )
                 next_chunk_id += 1

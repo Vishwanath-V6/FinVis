@@ -1,0 +1,35 @@
+{
+  "pdf": "C:\\Users\\user\\Downloads\\tata-motors-IAR-2024-25.pdf",
+  "request": "revenue operating profit net profit debt",
+  "legacy_full_ingestion": {
+    "page_count": 590,
+    "chunk_count": 2638,
+    "table_chunk_count": 1507,
+    "extraction_seconds": 151.10442870000043,
+    "chunking_seconds": 0.04197380000005069,
+    "embedding_index_seconds": 175.75473199999942,
+    "total_seconds": 326.9011344999999
+  },
+  "optimized_targeted_ingestion": {
+    "cache_hit": true,
+    "selected_page_count": 239,
+    "chunk_count": 1584,
+    "stage_timings": {
+      "cache_load_seconds": 0.0
+    },
+    "total_seconds": 0.28237040000021807
+  },
+  "dashboard_readiness": {
+    "cache_hit": false,
+    "selected_page_count": 239,
+    "chunk_count": 1584,
+    "total_seconds": 103.53829769999902
+  },
+  "optimized_cache_reuse": {
+    "cache_hit": true,
+    "total_seconds": 0.2756344999997964,
+    "stage_timings": {
+      "cache_load_seconds": 0.0
+    }
+  }
+}

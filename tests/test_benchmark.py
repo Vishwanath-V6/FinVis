@@ -6,7 +6,7 @@ from scripts.run_benchmark import (
     _answer_matches,
     _retrieval_metrics,
     _validate_payload,
-    run,
+    run
 )
 
 

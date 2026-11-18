@@ -1,104 +1,123 @@
-# FinVis — Financial Intelligence Dashboard
+# FinVis
 
-FinVis is an evidence-first financial document workspace. It extracts page text
-and tables from financial PDFs, preserves page and chunk provenance, indexes the
-evidence with MiniLM and FAISS, and presents validated table values through a
-focused Streamlit dashboard. Question answering is available as a secondary
-evidence-cited workflow.
+FinVis is a local, evidence-first financial document intelligence application.
+It extracts financial tables and narrative text from annual and quarterly PDFs,
+preserves source provenance, calculates supported comparisons and ratios, builds
+a reusable MiniLM/FAISS retrieval index, and answers questions with citations.
 
-## Setup
+## Install
 
-Use Python 3.11-3.13 where possible. From the repository root:
+Use Python 3.11-3.13 on Windows:
 
 ```powershell
 py -m venv .venv
-.venv\Scripts\Activate.ps1
-pip install -r requirements.txt
+.\\.venv\\Scripts\\Activate.ps1
+python -m pip install -r requirements.txt
 ```
 
-The first embedding and QA model use downloads from Hugging Face:
-`sentence-transformers/all-MiniLM-L6-v2` and
-`distilbert-base-uncased-distilled-squad`. Do not commit downloaded model weights.
+Optional OCR: install Tesseract and add it to `PATH`. FinVis avoids OCR for
+pages that already contain sufficient native text.
 
-## Command-line pipeline
+## Run
 
-```python
-from src.preprocessing import extract_text, clean_pages, chunk_pages
-from src.retrieval import RetrievalIndex
-from src.inference import load_qa_model, answer_question
-
-pages = clean_pages(extract_text("financial_report.pdf"))
-index = RetrievalIndex().build(chunk_pages(pages))
-index.save("models/saved_model")
-tokenizer, model = load_qa_model()
-result = answer_question("What was revenue?", index, tokenizer, model)
-print(result["answer"], result["sources"])
-```
-
-Each chunk includes `document_id`, `source_filename`, one-based `page_number`,
-sequential `chunk_id`, `text`, `word_count`, and `character_count`. Retrieval
-results retain this metadata, so citations are tied to the exact evidence chunk.
-
-## Interfaces
-
-Run Streamlit:
+Streamlit application:
 
 ```powershell
 streamlit run app.py
 ```
 
-The dashboard provides:
-
-- **Overview** — extracted KPI cards and a validated financial profile.
-- **Financial Analysis** — metric/scope filters, period comparisons, Plotly trends,
-  and deterministic year-over-year calculations.
-- **Segment Analysis** — segment evidence only when supported by extracted tables.
-- **Evidence Explorer** — metric, period, unit, scope, page, table, and chunk
-  provenance with the original searchable evidence.
-- **Ask FinVis** — the existing retrieval-grounded QA flow.
-
-The initial workflow accepts a PDF and a natural-language analysis request. It
-does not fabricate missing metrics: empty or unsupported views explain why data
-is unavailable. OCR requires the external Tesseract installation described below.
-
-Run the API:
+FastAPI service:
 
 ```powershell
 uvicorn api:app --reload
 ```
 
-The API provides `GET /health`, `POST /index` with a PDF multipart upload, and
-`POST /ask` with `{"question": "...", "top_k": 5}`.
+API endpoints:
 
-## Notebooks and evaluation
+- `GET /health`
+- `POST /index` multipart PDF
+- `POST /ask` JSON `{"question":"What was revenue?","top_k":5}`
 
-The notebooks call the shared modules rather than maintaining a second pipeline:
+## Tests
 
-1. `01_data_preprocessing.ipynb` validates extraction, cleaning, and chunking.
-2. `02_model_training.ipynb` demonstrates pretrained embedding/index construction;
-   no embedding model is trained from scratch.
-3. `03_model_evaluation.ipynb` computes retrieval and answer metrics from supplied
-   cases. `data/sample_data.csv` deliberately contains unanswerable placeholders,
-   not fabricated financial facts.
-4. `04_inference_demo.ipynb` demonstrates indexed retrieval and citations.
+```powershell
+python -m pytest -q
+```
 
-Evaluation results are only meaningful when real PDFs and ground-truth cases are
-provided. Scanned PDFs require an external OCR installation; the ingestion layer
-fails clearly rather than silently returning fabricated text.
+## Document workflow
+
+The pipeline is:
+
+`PDF validation -> SHA-256 document ID -> cache lookup -> fast page scan ->
+targeted native extraction -> selective OCR -> table/header repair -> cleaning ->
+row-specific chunks -> structured records -> lexical/FAISS retrieval ->
+deterministic calculations -> dashboard -> cited Q&A`
+
+Large PDFs are processed page by page. The request narrows full-fidelity page
+selection, adjacent context pages are retained, and repeated document/request
+processing reuses the `.finvis_cache` cache.
+
+## Dataset and source description
+
+FinVis accepts user-owned financial PDF reports. No paid dataset or cloud API is
+required. `data/sample_data.csv` is a placeholder and contains no fabricated
+financial ground truth. `benchmark_outputs/` contains benchmark artifacts only
+when a supplied PDF and real question dataset have been evaluated.
+
+Create evaluation cases with question text, answerability, reference answers,
+and expected evidence chunk IDs. Do not claim benchmark results without real
+ground truth.
+
+## Dashboard
+
+- **Overview:** available KPI cards and financial profile.
+- **Financial Analysis:** metric/scope filters, Plotly trends, YoY changes,
+  and profit margins.
+- **Segment Analysis:** segment evidence only when present.
+- **Evidence Explorer:** raw evidence with page, table, chunk, scope, unit,
+  and reporting period metadata.
+- **Ask FinVis:** table-grounded/direct answers or extractive QA with citations.
+
+Missing values are not invented. Standalone and consolidated rows are kept
+separate. Units must match before period calculations.
+
+## Evaluation and benchmarks
+
+Run reusable ingestion/cache benchmark:
+
+```powershell
+python scripts/benchmark_ingestion.py --pdf report.pdf
+```
+
+Run before/after page-selection comparison:
+
+```powershell
+python scripts/benchmark_performance.py --pdf report.pdf
+```
+
+Run a ground-truth retrieval/QA benchmark:
+
+```powershell
+python scripts/run_benchmark.py --pdf report.pdf --input benchmark_inputs.json
+```
+
+The evaluation reports Hit@K, MRR, answer correctness, citation accuracy,
+abstention accuracy, and latency. Complex layouts, extraction quality, and
+scanned pages need human/source-backed error analysis.
+
+## Architecture documentation
+
+- [Problem statement](docs/PROBLEM_STATEMENT.md)
+- [Architecture](docs/ARCHITECTURE.md)
+- [Presentation outline](docs/PRESENTATION_OUTLINE.md)
+- [Demo script](docs/DEMO_SCRIPT.md)
+- [Implementation status](IMPLEMENTATION_STATUS.md)
 
 ## Limitations
 
-The current answerer is extractive. It returns the best valid span by model
-logit ranking; raw logits are not treated as calibrated confidence. Callers that
-have validation data can provide an explicit abstention policy to
-`answer_question`. Tables and multi-column layouts depend on PyMuPDF's extraction
-order. The API keeps one in-memory index per process; production deployments
-should use a managed lifecycle and authentication.
-
-PDF ingestion uses PyMuPDF table detection when available. Tables remain separate
-structured records and are indexed as table chunks with header-to-cell
-relationships. Pages with little or no text can use PyMuPDF's Tesseract OCR
-bridge (`extract_text(..., enable_ocr=True)`); the Tesseract executable and
-language data must be installed separately. OCR is not used to invent missing
-values, and extraction quality for scans, handwriting, and complex layouts must
-be validated against the source document.
+- PyMuPDF table extraction is layout dependent.
+- OCR quality depends on Tesseract and source image quality.
+- The pretrained extractive QA model is not a calibrated confidence model.
+- The API uses an in-memory index per process.
+- A 500-page PDF is supported through page selection, but actual latency and OCR
+  usage depend on report layout and hardware.

@@ -8,7 +8,14 @@ from typing import Any, Callable
 
 import torch
 
+from .dashboard import parse_financial_value
 from .retrieval import RetrievalIndex
+
+_STOPWORDS = {
+    "a", "an", "and", "as", "at", "base", "change", "company", "for", "from",
+    "higher", "in", "item", "limited", "lower", "motors", "of", "or", "percentage",
+    "tata", "the", "to", "using", "was", "what", "which", "with", "year",
+}
 
 
 def load_qa_model(model_name: str = "distilbert-base-uncased-distilled-squad"):
@@ -56,6 +63,14 @@ def answer_question(
             "sources": [],
             "evidence": [],
             "answer_source": "structured_table",
+        }
+    if tokenizer is None or model is None:
+        return {
+            "answer": None,
+            "sufficient_evidence": False,
+            "sources": [],
+            "evidence": [],
+            "answer_source": "lexical_index",
         }
 
     best = None
@@ -128,10 +143,38 @@ def _normalise_answer(value: str) -> str:
     return re.sub(r"\s+", " ", value.casefold()).strip()
 
 
+def _requested_periods(question: str) -> set[str]:
+    """Convert FY25, FY2025, and 2025 references into a common period key."""
+    periods: set[str] = set()
+    for match in re.findall(r"(?<!\w)(?:fy\s*)?(20\d{2}|\d{2})(?!\d)", question.casefold()):
+        periods.add(_period_key(match))
+    return periods
+
+
+def _header_periods(header: str) -> set[str]:
+    periods: set[str] = set()
+    for match in re.findall(r"(?:fy\s*)?(20\d{2}|\d{2})(?!\d)", header.casefold()):
+        periods.add(_period_key(match))
+    return periods
+
+
+def _label_match_score(label: str, question: str) -> float:
+    label_terms = set(re.findall(r"[a-z0-9]+", label.casefold()))
+    question_terms = set(re.findall(r"[a-z0-9]+", question.casefold()))
+    stopwords = {"the", "a", "an", "of", "in", "at", "for", "what", "was", "were"}
+    label_terms -= stopwords
+    question_terms -= stopwords
+    if not label_terms:
+        return 0.0
+    overlap = len(label_terms & question_terms)
+    if overlap == 0:
+        return 0.0
+    return overlap / len(label_terms)
+
+
 def _answer_from_table(question: str, results: list[dict[str, Any]]) -> dict[str, Any] | None:
     """Resolve an unambiguous metric/year/value directly from a table row."""
-    query_terms = {_metric_term(term) for term in re.findall(r"[a-z0-9]+", question.casefold())}
-    requested_years = {_period_key(year) for year in re.findall(r"(?:fy)?\d{2,4}", question.casefold())}
+    requested_years = _requested_periods(question)
     requested_scope = next(
         (scope for scope in ("consolidated", "standalone") if scope in question.casefold()),
         None,
@@ -150,54 +193,45 @@ def _answer_from_table(question: str, results: list[dict[str, Any]]) -> dict[str
             "evidence": [source],
             "answer_source": "structured_table_calculation",
         }
-    candidates: list[tuple[int, dict[str, Any], str]] = []
-    for result in results:
-        if result.get("content_type") != "table":
-            continue
-        row_label = str(result.get("table_row_label", "")).casefold()
-        label_terms = {_metric_term(term) for term in re.findall(r"[a-z0-9]+", row_label)}
-        if not label_terms or not label_terms <= query_terms:
+    candidates: list[tuple[float, int, dict[str, Any], str]] = []
+    for result in table_rows:
+        label_score = _label_match_score(str(result.get("table_row_label", "")), question)
+        if label_score <= 0:
             continue
         values = result.get("table_values")
-        if not isinstance(values, dict):
-            continue
         matching_values = []
         for header, value in values.items():
             header_text = str(header).casefold()
+            if str(header).strip() == str(result.get("table_row_label", "")).strip():
+                continue
             if requested_scope and requested_scope not in header_text:
                 continue
-            header_years = {
-                _period_key(year) for year in re.findall(r"(?:fy)?\d{2,4}", header_text)
-            }
+            header_years = _header_periods(header_text)
             if requested_years and not (requested_years & header_years):
                 continue
-            if isinstance(value, str) and value.strip():
-                matching_values.append((str(header), value.strip()))
+            if requested_scope is None and any(
+                scope in header_text for scope in ("standalone", "consolidated")
+            ):
+                continue
+            if not isinstance(value, str) or not value.strip() or parse_financial_value(value) is None:
+                continue
+            matching_values.append((str(header), value.strip()))
         if len(matching_values) != 1:
             continue
-        header, value = matching_values[0]
-        score = len(label_terms & query_terms) * 10
-        if requested_years:
-            score += 10
-        candidates.append((score, result, f"{value} {result.get('table_unit', '')}".strip()))
+        _, value = matching_values[0]
+        score = label_score + (10 if requested_years else 0) + (5 if requested_scope else 0)
+        answer = f"{value} {result.get('table_unit', '')}".strip()
+        candidates.append((score, len(str(result.get("table_row_label", ""))), result, answer))
     if not candidates:
         return None
-    candidates.sort(key=lambda item: item[0], reverse=True)
-    if len(candidates) > 1 and candidates[0][0] == candidates[1][0]:
+    candidates.sort(key=lambda item: (item[0], item[1]), reverse=True)
+    if len(candidates) > 1 and candidates[0][0] == candidates[1][0] and candidates[0][1] == candidates[1][1]:
         return None
-    _, source, answer = candidates[0]
+    _, _, source, answer = candidates[0]
     return {
         "answer": answer,
         "sufficient_evidence": True,
-        "sources": [
-            {
-                "document_id": source.get("document_id"),
-                "source_filename": source.get("source_filename"),
-                "page_number": source.get("page_number"),
-                "chunk_id": source.get("chunk_id"),
-                "score": source.get("score"),
-            }
-        ],
+        "sources": [_source_citation(source)],
         "evidence": [source],
         "answer_source": "structured_table",
     }

@@ -1,6 +1,6 @@
 import pandas as pd
 
-from src.dashboard import calculate_yoy, financial_records, parse_financial_value
+from src.dashboard import calculate_ratio, calculate_yoy, financial_records, parse_financial_value, profit_margin
 
 
 def test_parse_financial_value_preserves_parenthesized_sign():
@@ -54,3 +54,27 @@ def test_calculate_yoy_normalizes_short_financial_years():
     result = calculate_yoy(records)
     assert len(result) == 1
     assert result.iloc[0]["Change"] == 25.0
+
+
+def test_parse_indian_and_currency_units():
+    assert parse_financial_value("₹12,34,567") == 1234567
+    assert parse_financial_value("12.5 crore") == 125000000
+    assert parse_financial_value("2 million") == 2000000
+    assert parse_financial_value("-(922)") is None
+
+
+def test_ratio_rejects_missing_and_zero_denominators():
+    assert calculate_ratio(25, 100) == 25
+    assert calculate_ratio(25, 0) is None
+    assert calculate_ratio(None, 100) is None
+
+
+def test_profit_margin_matches_scope_year_and_unit():
+    records = pd.DataFrame([
+        {"Metric": "Revenue", "Year": "FY2024", "Scope": "Consolidated", "Unit": "₹ crore", "Value": 100},
+        {"Metric": "Net profit", "Year": "FY2024", "Scope": "Consolidated", "Unit": "₹ crore", "Value": 25},
+        {"Metric": "Net profit", "Year": "FY2024", "Scope": "Standalone", "Unit": "₹ crore", "Value": 20},
+    ])
+    result = profit_margin(records, "Net profit", "Revenue")
+    assert len(result) == 1
+    assert result.iloc[0]["Ratio %"] == 25

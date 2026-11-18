@@ -10,12 +10,16 @@ from pydantic import BaseModel, Field
 from src.inference import answer_question, load_qa_model
 from src.preprocessing import chunk_pages, clean_pages, extract_text
 from src.retrieval import RetrievalIndex
+from src.config import MAX_UPLOAD_BYTES
+from src.logging_utils import configure_logging
+
+configure_logging()
 
 app = FastAPI(title="Financial RAG Research Assistant API")
 index: RetrievalIndex | None = None
 qa_models = None
 index_lock = asyncio.Lock()
-MAX_UPLOAD_SIZE = 50 * 1024 * 1024
+MAX_UPLOAD_SIZE = MAX_UPLOAD_BYTES
 
 
 class QuestionRequest(BaseModel):
